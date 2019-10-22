@@ -5,15 +5,16 @@ import { Route, Switch } from "react-router-dom";
 
 import { LandingPageView } from "./views";
 
-class App extends Component {
-	render() {
-		return (
-			<div className="App">
-				This is the best Wedding Planner App ever!
-				<LandingPageView />
-			</div>
-		);
-	}
+function App() {
+	return (
+		<div className="App">
+			This is the best Wedding Planner App ever!
+			<Switch>
+				<Route exact path="/" component={LandingPageView} />
+				{/* <Route protected exact path="/SearchBar" component={SearchBar} /> */}
+			</Switch>
+		</div>
+	);
 }
 
 export default App;
