@@ -9,6 +9,7 @@ import logger from "redux-logger";
 import rootReducer from "./reducers";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
