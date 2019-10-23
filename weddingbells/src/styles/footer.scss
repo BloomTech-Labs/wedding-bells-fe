@@ -1,0 +1,29 @@
+.footer .logo {
+	padding: 20px;
+}
+.footer .cont .footer-links {
+	padding: 20px;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+
+	a {
+		margin: 20px;
+		&:link {
+			text-decoration: none;
+			color: black;
+		}
+
+		&:hover {
+			text-decoration: none;
+			color: orange;
+			font-size: 115%;
+		}
+
+		&:visited,
+		&:active {
+			text-decoration: none;
+			color: black;
+		}
+	}
+}
