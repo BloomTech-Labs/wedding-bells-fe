@@ -1,8 +1,10 @@
-import React, { Component } from "module";
+import React from "react";
 
-import OFFER_DATA from "./data";
+import OFFER_DATA from "../WhatWeOffer/data";
 
-class WhatWeOffer extends Component {
+import ServiceItem from "../ServiceItem/index";
+
+class WhatWeOffer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -14,7 +16,7 @@ class WhatWeOffer extends Component {
 		return (
 			<div className="services-section">
 				{services.map(({ id, ...otherServicesProps }) => (
-					<ServiceItem key={id} {...otherServicesProps, id} />
+					<ServiceItem key={id} {...otherServicesProps} />
 				))}
 			</div>
 		);
