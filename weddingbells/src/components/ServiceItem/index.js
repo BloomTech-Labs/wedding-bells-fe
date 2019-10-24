@@ -6,7 +6,9 @@ const ServiceItem = ({ title, subText, image, id }) => (
 			<h3 className="title">{title}</h3>
 			<p className="subText">{subText}</p>
 		</div>
-		<div className="svgImage">{image}</div>
+		<div className="svgImage">
+			<img src={image}></img>
+		</div>
 	</div>
 );
 
