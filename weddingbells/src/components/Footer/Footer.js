@@ -4,12 +4,21 @@ import { Link } from "react-router-dom";
 
 const Navbar = styled.div`
 	border: 1px red solid;
+
+	// sizing & placement
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+	height: 80px;
+	
+	// background
+    background-color: #c4c4c4;
 `;
 const Logo = styled.div`
-	border: 1px red solid;
+	// border: 1px red solid;
 `;
 const NavLinks = styled.div`
-	border: 1px red solid;
+	// border: 1px red solid;
 `;
 
 class Footer extends Component {
