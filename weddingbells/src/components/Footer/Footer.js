@@ -11,6 +11,7 @@ const Navbar = styled.div`
 const Cont = styled.div`
 	border: 1px red solid;
 
+
 	width: 80%;
 	display: flex;
 	justify-content: space-between;
