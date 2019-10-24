@@ -2,6 +2,10 @@ import image1 from "../../assets/image1.svg";
 import image2 from "../../assets/image2.svg";
 import image3 from "../../assets/image3.svg";
 
+// import image1 from "./image 1.jpg";
+// import image2 from "./image 4.jpg";
+// import image3 from "./image 5.jpg";
+
 const OFFER_DATA = [
 	{
 		id: 1,
