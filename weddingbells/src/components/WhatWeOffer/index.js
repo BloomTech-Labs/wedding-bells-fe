@@ -14,7 +14,7 @@ class WhatWeOffer extends Component {
 		return (
 			<div className="services-section">
 				{services.map(({ id, ...otherServicesProps }) => (
-					<ServiceItem key={id} {...otherServicesProps} />
+					<ServiceItem key={id} {...otherServicesProps, id} />
 				))}
 			</div>
 		);
