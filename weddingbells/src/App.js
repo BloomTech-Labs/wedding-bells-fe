@@ -8,7 +8,6 @@ import { LandingPageView } from "./views";
 function App() {
 	return (
 		<div className="App">
-			This is the best Wedding Planner App ever!
 			<Switch>
 				<Route exact path="/" component={LandingPageView} />
 				{/* <Route protected exact path="/SearchBar" component={SearchBar} /> */}

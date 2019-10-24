@@ -12,6 +12,8 @@ const LandingTop = styled.div`
 
     // background
     background-image: url("https://images.pexels.com/photos/1683989/pexels-photo-1683989.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-repeat: no-repeat;
+    background-size: cover;
 
     // display
     display: flex;

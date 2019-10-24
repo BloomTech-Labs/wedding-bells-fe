@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = styled.div`
 	border: 1px blue solid;
+	width: 100%;
 `;
 const Cont = styled.div`
 	border: 1px red solid;
@@ -19,13 +20,6 @@ const Cont = styled.div`
 `;
 const Logo = styled.div`
 	border: 1px green solid;
-
-
-	// sizing & placement
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-	height: 80px;
 	
 	// background
     background-color: #c4c4c4;
