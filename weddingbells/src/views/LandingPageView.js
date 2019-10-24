@@ -32,7 +32,7 @@ export default class LandingPageView extends Component {
             <div className="landingpage_wrapper">
                 <LandingTop>
                     <CallToAction className="landingpage_top_calltoaction">
-                        <Button>SHOTGUN WEDDING BABY</Button>
+                        <Button>SHOTGUN WEDDING</Button>
                     </CallToAction>
                 </LandingTop>
             </div>
