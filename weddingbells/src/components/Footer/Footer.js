@@ -10,6 +10,7 @@ const Navbar = styled.div`
 `;
 const Cont = styled.div`
 	border: 1px red solid;
+
 	width: 80%;
 	display: flex;
 	justify-content: space-between;
@@ -17,11 +18,22 @@ const Cont = styled.div`
 `;
 const Logo = styled.div`
 	border: 1px green solid;
-`;
 
+
+	// sizing & placement
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+	height: 80px;
+	
+	// background
+    background-color: #c4c4c4;
+`;
 const NavLinks = styled.div`
+
 	border: 1px orange solid;
 	width: 30%;
+
 `;
 
 class Footer extends Component {
