@@ -3,9 +3,12 @@ import styled from "styled-components";
 
 const Navbar = styled.div`
     // border
-    border: 1px red solid;
+    // border: 1px red solid;
 
     // sizing & placement
+    position: fixed;
+    top: 0px;
+    width: 100%;
     height: 80px;
 
     // background

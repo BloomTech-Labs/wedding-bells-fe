@@ -4,6 +4,7 @@ import "./styles/App.css";
 import { Route, Switch } from "react-router-dom";
 
 import { LandingPageView } from "./views";
+
 function App() {
 	return (
 		<div className="App">
