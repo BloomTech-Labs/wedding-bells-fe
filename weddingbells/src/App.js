@@ -5,17 +5,15 @@ import { Route, Switch } from "react-router-dom";
 
 import { LandingPageView } from "./views";
 
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-
 function App() {
 	return (
 		<div className="App">
-			<Header />
-			
+			This is the best Wedding Planner App ever!
+
 			<Switch>
 				<Route exact path="/" component={LandingPageView} />
 				{/* <Route protected exact path="/SearchBar" component={SearchBar} /> */}
+				
 			</Switch>
 
 			<Footer />
