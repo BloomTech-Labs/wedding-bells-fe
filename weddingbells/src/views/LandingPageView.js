@@ -4,6 +4,8 @@ import { Button } from "reactstrap";
 
 import WhatWeOffer from "../components/WhatWeOffer/index";
 
+import VendorsList from "../components/Vendor List/index";
+
 const LandingTop = styled.div`
 	// border
 	border: 2px green dotted;
@@ -40,6 +42,7 @@ export default class LandingPageView extends Component {
 					</CallToAction>
 				</LandingTop>
 				<WhatWeOffer />
+				<VendorsList />
 			</div>
 		);
 	}
