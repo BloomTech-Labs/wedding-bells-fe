@@ -24,5 +24,3 @@ class WhatWeOffer extends React.Component {
 }
 
 export default WhatWeOffer;
-
-//Bob refer to shop, collection preview and collection item components for crwn clothing for more help
