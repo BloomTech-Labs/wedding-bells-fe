@@ -13,14 +13,13 @@ class VendorsList extends Component {
 		return (
 			<div className="vendorsList">
 				<Jumbotron className="Vendor Table" fluid>
-					<h2 className="tableName">Vendors Name</h2>
 					<Table responsive hover bordered>
 						<thead>
 							<tr>
-								<th>#</th>
+								<th><h4>#</h4></th>
 								
-								<th>Vendor Name</th>
-								<th>Category</th>
+								<th><h4>Vendor Name</h4></th>
+								<th><h4>Category</h4></th>
 							</tr>
 						</thead>
 						<tbody>
