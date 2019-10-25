@@ -18,29 +18,26 @@ class VendorsList extends Component {
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>First Name</th>
-								<th>Last Name</th>
-								<th>Username</th>
+								
+								<th>Vendor Name</th>
+								<th>Category</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<th scope="row">1</th>
-								<td>Mark</td>
-								<td>Otto</td>
-								<td>@mdo</td>
+								<td>Ottos Bakery</td>
+								<td>Cakes</td>
 							</tr>
 							<tr>
 								<th scope="row">2</th>
-								<td>Jacob</td>
-								<td>Thornton</td>
-								<td>@fat</td>
+								<td>Thorntons Flowers</td>
+								<td>Floral</td>
 							</tr>
 							<tr>
 								<th scope="row">3</th>
-								<td>Larry</td>
-								<td>the Bird</td>
-								<td>@twitter</td>
+								<td>Jeykals and Hydes Locations</td>
+								<td>Venues</td>
 							</tr>
 						</tbody>
 					</Table>
