@@ -1,0 +1,15 @@
+.vendorsList {
+	display: flex;
+	border: 3px solid black;
+
+	.table-responsive {
+		border: 3px solid blue;
+		display: flex;
+		.table {
+			border: 3px solid brown;
+			width: 60%;
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
