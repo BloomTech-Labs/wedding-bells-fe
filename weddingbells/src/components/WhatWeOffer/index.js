@@ -1,8 +1,10 @@
-import React, { Component } from "module";
+import React from "react";
 
-import OFFER_DATA from "./data";
+import OFFER_DATA from "../WhatWeOffer/data";
 
-class WhatWeOffer extends Component {
+import ServiceItem from "../ServiceItem/index";
+
+class WhatWeOffer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -22,5 +24,3 @@ class WhatWeOffer extends Component {
 }
 
 export default WhatWeOffer;
-
-//Bob refer to shop, collection preview and collection item components for crwn clothing for more help

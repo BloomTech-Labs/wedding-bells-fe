@@ -7,9 +7,12 @@ import { Link } from "react-router-dom";
 
 const Navbar = styled.div`
 	border: 1px blue solid;
+	width: 100%;
 `;
 const Cont = styled.div`
 	border: 1px red solid;
+
+
 	width: 80%;
 	display: flex;
 	justify-content: space-between;
@@ -17,11 +20,15 @@ const Cont = styled.div`
 `;
 const Logo = styled.div`
 	border: 1px green solid;
+	
+	// background
+    background-color: #c4c4c4;
 `;
-
 const NavLinks = styled.div`
+
 	border: 1px orange solid;
 	width: 30%;
+
 `;
 
 class Footer extends Component {
