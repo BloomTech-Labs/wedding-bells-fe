@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Button } from "reactstrap";
 
+import FAQ from "../components/FAQ/FAQ.js";
+
 const LandingTop = styled.div`
     // border
     border: 2px green dotted;
@@ -37,6 +39,7 @@ export default class LandingPageView extends Component {
                         <Button>SHOTGUN WEDDING</Button>
                     </CallToAction>
                 </LandingTop>
+                <FAQ />
             </div>
         )
     }
