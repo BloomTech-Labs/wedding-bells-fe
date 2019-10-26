@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Button } from "reactstrap";
 
 import WhatWeOffer from "../components/WhatWeOffer/index";
+import About from "../components/About/About";
 
 import VendorsList from "../components/Vendor List/index";
 
@@ -43,6 +44,7 @@ export default class LandingPageView extends Component {
 				</LandingTop>
 				<WhatWeOffer />
 				<VendorsList />
+				<About />
 			</div>
 		);
 	}
