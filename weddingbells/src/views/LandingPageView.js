@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Button } from "reactstrap";
 
 import WhatWeOffer from "../components/WhatWeOffer/index";
+import About from "../components/About/About";
 
 const LandingTop = styled.div`
 	// border
@@ -40,6 +41,7 @@ export default class LandingPageView extends Component {
 					</CallToAction>
 				</LandingTop>
 				<WhatWeOffer />
+				<About />
 			</div>
 		);
 	}
