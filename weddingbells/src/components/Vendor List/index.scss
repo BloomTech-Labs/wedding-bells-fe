@@ -1,10 +1,23 @@
+.tableGroup {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	flex-direction: column;
+	align-content: center;
+	width: 75%;
+	vertical-align: middle;
+	align-items: center;
+	button {
+		width: 30%;
+	}
+}
+
 .vendorsList {
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: stretch;
 	align-content: center;
-	width: 75%;
 	vertical-align: middle;
 
 	// border: 3px solid black;
