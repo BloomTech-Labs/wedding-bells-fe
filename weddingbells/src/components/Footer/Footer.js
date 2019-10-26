@@ -12,7 +12,6 @@ const Navbar = styled.div`
 const Cont = styled.div`
 	border: 1px red solid;
 
-
 	width: 80%;
 	display: flex;
 	justify-content: space-between;
@@ -20,15 +19,13 @@ const Cont = styled.div`
 `;
 const Logo = styled.div`
 	border: 1px green solid;
-	
+
 	// background
-    background-color: #c4c4c4;
+	background-color: #c4c4c4;
 `;
 const NavLinks = styled.div`
-
 	border: 1px orange solid;
 	width: 30%;
-
 `;
 
 class Footer extends Component {
@@ -46,6 +43,19 @@ class Footer extends Component {
 						<Link id="log-up">Login/Sign Up</Link>
 					</NavLinks>
 				</Cont>
+				<div>
+					Icons made by{" "}
+					<a
+						href="https://www.flaticon.com/authors/kiranshastry"
+						title="Kiranshastry"
+					>
+						Kiranshastry
+					</a>{" "}
+					from{" "}
+					<a href="https://www.flaticon.com/" title="Flaticon">
+						www.flaticon.com
+					</a>
+				</div>
 			</Navbar>
 		);
 	}
