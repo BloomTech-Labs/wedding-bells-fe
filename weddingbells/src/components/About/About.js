@@ -34,19 +34,31 @@ export default function About() {
 		},
 	];
 
+	const About = styled.h2`
+		margin-top: 100px;
+	`;
+
+	const Team = styled.div`
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 300px;
+	`;
+
 	const TeamPics = styled.img`
-		height: 200px;
+		height: 150px;
 		width: auto;
 	`;
 
 	return (
 		<div>
-			<h2>About Us</h2>
-			{team.map(dev => (
-				<div>
+			<About>About Us</About>
+			<Team>
+				{team.map(dev => (
 					<TeamPics src={dev.img} />
-				</div>
-			))}
+				))}
+			</Team>
 		</div>
 	);
 }
