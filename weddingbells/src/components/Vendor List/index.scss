@@ -33,6 +33,27 @@
 	}
 }
 
+.guestList {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: center;
+	vertical-align: middle;
+
+	// border: 3px solid black;
+
+	.table-responsive {
+		// border: 3px solid blue;
+
+		.table {
+			// border: 3px solid brown;
+
+			vertical-align: middle;
+		}
+	}
+}
+
 .table.table-bordered td,
 .table.table-bordered th {
 	vertical-align: middle;

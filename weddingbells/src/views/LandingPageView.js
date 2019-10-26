@@ -6,6 +6,7 @@ import WhatWeOffer from "../components/WhatWeOffer/index";
 import About from "../components/About/About";
 
 import VendorsList from "../components/Vendor List/index";
+import GuestList from "../components/Guest List/index";
 
 const LandingTop = styled.div`
 	// border
@@ -44,6 +45,7 @@ export default class LandingPageView extends Component {
 				</LandingTop>
 				<WhatWeOffer />
 				<VendorsList />
+				<GuestList />
 				<About />
 			</div>
 		);
