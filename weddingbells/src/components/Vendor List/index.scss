@@ -1,22 +1,22 @@
 .vendorsList {
 	display: flex;
 	flex-wrap: nowrap;
-	justify-content: center;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: stretch;
+	flex-direction: column;
+	.addVendor {
+		height: 100%;
+	}
 	// border: 3px solid black;
 
 	.table-responsive {
 		// border: 3px solid blue;
-		display: flex;
-		flex-wrap: nowrap;
-		justify-content: center;
-		width: 100%;
 
 		.table {
 			// border: 3px solid brown;
-			max-width: 25%;
-			min-width: 15%;
-			margin: 0;
-			padding: 0;
+
+			vertical-align: middle;
 		}
 	}
 }
@@ -26,8 +26,28 @@ tbody {
 		th {
 			font-size: 20px;
 		}
+
 		td {
 			font-size: 20px;
+		}
+	}
+}
+
+.table {
+	vertical-align: middle;
+	td {
+		padding: 0;
+		margin: 0;
+		vertical-align: middle;
+		a {
+			padding: 0;
+			margin: 0;
+			img {
+				height: 10%;
+				width: auto;
+				padding: 0;
+				margin: 0;
+			}
 		}
 	}
 }
