@@ -29,17 +29,17 @@ class VendorsList extends Component {
 					</thead>
 					<tbody>
 						<tr>
-							<th scope="row">1</th>
+							<th>1</th>
 							<td>Ottos Bakery</td>
 							<td>Cakes</td>
 						</tr>
 						<tr>
-							<th scope="row">2</th>
+							<th>2</th>
 							<td>Thorntons Flowers</td>
 							<td>Floral</td>
 						</tr>
 						<tr>
-							<th scope="row">3</th>
+							<th>3</th>
 							<td>Jeykals and Hydes Locations</td>
 							<td>Venues</td>
 						</tr>

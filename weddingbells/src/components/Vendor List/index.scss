@@ -1,15 +1,32 @@
 .vendorsList {
 	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
 	border: 3px solid black;
 
 	.table-responsive {
 		border: 3px solid blue;
 		display: flex;
+		flex-wrap: nowrap;
+		justify-content: center;
+		width: 60%;
+
 		.table {
 			border: 3px solid brown;
-			width: 60%;
+			width: 35%;
 			margin: 0;
 			padding: 0;
+		}
+	}
+}
+
+tbody {
+	tr {
+		th {
+			font-size: 20px;
+		}
+		td {
+			font-size: 20px;
 		}
 	}
 }
