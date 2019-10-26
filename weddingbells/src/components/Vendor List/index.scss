@@ -2,18 +2,19 @@
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: center;
-	border: 3px solid black;
+	// border: 3px solid black;
 
 	.table-responsive {
-		border: 3px solid blue;
+		// border: 3px solid blue;
 		display: flex;
 		flex-wrap: nowrap;
 		justify-content: center;
-		width: 60%;
+		width: 100%;
 
 		.table {
-			border: 3px solid brown;
-			width: 35%;
+			// border: 3px solid brown;
+			max-width: 25%;
+			min-width: 15%;
 			margin: 0;
 			padding: 0;
 		}
