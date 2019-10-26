@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Button } from "reactstrap";
 
 import FAQ from "../components/FAQ/FAQ.js";
+import Testimonials from "../components/Testimonials/Testimonials.js";
 
 const LandingTop = styled.div`
     // border
@@ -40,6 +41,7 @@ export default class LandingPageView extends Component {
                     </CallToAction>
                 </LandingTop>
                 <FAQ />
+                <Testimonials />
             </div>
         )
     }
