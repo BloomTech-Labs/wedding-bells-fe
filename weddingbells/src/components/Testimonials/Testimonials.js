@@ -17,9 +17,7 @@ class Testimonials extends Component {
 		super();
 		this.state = {
 			activeIndex: 0,
-			setActieIndex: 0,
 			animating: false,
-			setAnimating: false,
 			testimonials: TESTIMONIALS_DATA,
 		};
 	}
@@ -53,20 +51,7 @@ class Testimonials extends Component {
 		});
 	};
 
-	slides = this.state.testimonials.map(testimonial => {
-		return (
-			<CarouselItem
-				onExiting={() => this.setState({ animating: true })}
-				onExited={() => this.setState({ animating: false })}
-				key={testimonial.id}
-			>
-				{testimonial.quoteText}
-			</CarouselItem>
-		);
-	});
-
 	render() {
-		console.log(this.state.testimonials)
 		return (
 			<div className="testimonials-wrapper">
 				<h3>Testimonials</h3>
@@ -76,11 +61,19 @@ class Testimonials extends Component {
 					previous={this.previous}
 				>
 					<CarouselIndicators
-						testimonials={this.state.testimonials}
+						items={this.state.testimonials}
 						activeIndex={this.state.activeIndex}
 						onClickHandler={this.goToIndex}
 					/>
-					{this.slides}
+					{this.state.testimonials.map(testimonial => (
+						<CarouselItem
+							onExiting={() => this.setState({ animating: true })}
+							onExited={() => this.setState({ animating: false })}
+							key={testimonial.id}
+						>
+							{testimonial.quoteText}
+						</CarouselItem>
+					))}
 					<CarouselControl
 						direction="prev"
 						directionText="Previous"
