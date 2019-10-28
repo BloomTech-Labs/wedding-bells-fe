@@ -56,7 +56,10 @@ export default function About() {
 			<About>About Us</About>
 			<Team>
 				{team.map(dev => (
-					<TeamPics src={dev.img} />
+					<div>
+						<TeamPics src={dev.img} />
+						<p>{dev.name}</p>
+					</div>
 				))}
 			</Team>
 		</div>
