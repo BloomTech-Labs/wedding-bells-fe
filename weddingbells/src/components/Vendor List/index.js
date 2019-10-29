@@ -48,13 +48,24 @@ class VendorsList extends Component {
 								<td>Ottos Bakery</td>
 								<td>Cakes</td>
 								<td className="editMe">
-									<a href="#">
-										<img src={require("../../assets/pencil.svg")} />
+									<a
+										href="http://localhost:3000/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<img alt="Edit" src={require("../../assets/pencil.svg")} />
 									</a>
 								</td>
 								<td className="deleteMe">
-									<a href="#">
-										<img src={require("../../assets/delete.svg")} />
+									<a
+										href="http://localhost:3000/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<img
+											alt="delete"
+											src={require("../../assets/delete.svg")}
+										/>
 									</a>
 								</td>
 							</tr>
@@ -63,13 +74,24 @@ class VendorsList extends Component {
 								<td>Thorntons Flowers</td>
 								<td>Floral</td>
 								<td className="editMe">
-									<a href="#">
-										<img src={require("../../assets/pencil.svg")} />
+									<a
+										href="http://localhost:3000/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<img alt="Edit" src={require("../../assets/pencil.svg")} />
 									</a>
 								</td>
 								<td className="deleteMe">
-									<a href="#">
-										<img src={require("../../assets/delete.svg")} />
+									<a
+										href="http://localhost:3000/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<img
+											alt="Delete"
+											src={require("../../assets/delete.svg")}
+										/>
 									</a>
 								</td>
 							</tr>
@@ -78,13 +100,24 @@ class VendorsList extends Component {
 								<td>Jeykals and Hydes Locations</td>
 								<td>Venues</td>
 								<td className="editMe">
-									<a href="#">
-										<img src={require("../../assets/pencil.svg")} />
+									<a
+										href="http://localhost:3000/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<img alt="Edit" src={require("../../assets/pencil.svg")} />
 									</a>
 								</td>
 								<td className="deleteMe">
-									<a href="#">
-										<img src={require("../../assets/delete.svg")} />
+									<a
+										href="http://localhost:3000/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<img
+											alt="Delete"
+											src={require("../../assets/delete.svg")}
+										/>
 									</a>
 								</td>
 							</tr>
