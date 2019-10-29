@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Button } from "reactstrap";
 
+import FAQ from "../components/FAQ/FAQ.js";
+import Testimonials from "../components/Testimonials/Testimonials.js";
 import WhatWeOffer from "../components/WhatWeOffer/index";
 import About from "../components/About/About";
 
@@ -47,6 +49,8 @@ export default class LandingPageView extends Component {
 				<VendorsList />
 				<GuestList />
 				<About />
+				<FAQ />
+                <Testimonials />
 			</div>
 		);
 	}
