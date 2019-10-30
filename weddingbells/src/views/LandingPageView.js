@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Button } from "reactstrap";
 
+import FAQ from "../components/FAQ/FAQ.js";
+import Testimonials from "../components/Testimonials/Testimonials.js";
 import WhatWeOffer from "../components/WhatWeOffer/index";
+import About from "../components/About/About";
 
 const LandingTop = styled.div`
 	// border
@@ -40,6 +43,9 @@ export default class LandingPageView extends Component {
 					</CallToAction>
 				</LandingTop>
 				<WhatWeOffer />
+				<About />
+				<FAQ />
+                <Testimonials />
 			</div>
 		);
 	}
