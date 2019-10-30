@@ -6,6 +6,7 @@ import FAQ from "../components/FAQ/FAQ.js";
 import Testimonials from "../components/Testimonials/Testimonials.js";
 import WhatWeOffer from "../components/WhatWeOffer/index";
 import About from "../components/About/About";
+import AuthModal from "../components/AuthModal/AuthModal";
 
 const LandingTop = styled.div`
 	// border
@@ -34,18 +35,33 @@ const CallToAction = styled.div`
 `;
 
 export default class LandingPageView extends Component {
+	constructor() {
+		super();
+
+		this.state = {
+			authModalVisible: false,
+		};
+	}
+
+	toggleAuthModal = () => {
+		this.setState({
+			authModalVisible: !this.state.authModalVisible,
+		});
+	};
+
 	render() {
 		return (
 			<div className="landingpage_wrapper">
 				<LandingTop>
 					<CallToAction className="landingpage_top_calltoaction">
-						<Button>SHOTGUN WEDDING</Button>
+						<Button onClick={this.toggleAuthModal}>SHOTGUN WEDDING</Button>
 					</CallToAction>
 				</LandingTop>
 				<WhatWeOffer />
 				<About />
 				<FAQ />
-                <Testimonials />
+				<Testimonials />
+				<AuthModal isOpen={this.state.authModalVisible} toggleAuthModal={this.toggleAuthModal}/>
 			</div>
 		);
 	}
