@@ -20,6 +20,7 @@ ReactDOM.render(
 		<Provider store={store}>
 			<Header />
 			<App />
+
 			<Footer />
 		</Provider>
 	</Router>,
