@@ -48,9 +48,9 @@ export default class LandingPageView extends Component {
 				<WhatWeOffer />
 				<VendorsList />
 				<GuestList />
-				<About />
 				<FAQ />
-                <Testimonials />
+				<Testimonials />
+				<About />
 			</div>
 		);
 	}
