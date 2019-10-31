@@ -37,10 +37,16 @@ class Footer extends Component {
 						<h3>Wedding Bells </h3>
 					</Logo>
 					<NavLinks className="footer-links">
-						<Link id="services">Services</Link>
-						<Link id="faq">FAQ</Link>
-						<Link id="about-us">About Us</Link>
-						<Link id="log-up">Login/Sign Up</Link>
+						<a href="#services" className="link">
+							Services
+						</a>
+						<a href="#FAQ" className="link">
+							FAQ
+						</a>
+						<a href="#about-us" className="link">
+							About Us
+						</a>
+						<div className="link">Login/Signup</div>
 					</NavLinks>
 				</Cont>
 				<div>
