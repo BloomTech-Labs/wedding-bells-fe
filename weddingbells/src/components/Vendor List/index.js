@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./index.scss";
-import { Table, Button } from "reactstrap";
+import OmniModal from "../Modal/index";
+import { Table } from "reactstrap";
 
 class VendorsList extends Component {
 	constructor(props) {
@@ -14,13 +15,13 @@ class VendorsList extends Component {
 		return (
 			<div className="vendorsList">
 				<div className="tableGroup">
-					<Button
+					<OmniModal
 						className="addVendor"
 						color="primary"
-						onClick={console.log("GG, you clicked me")}
-					>
-						Add a Vendor
-					</Button>{" "}
+						buttonLabel="Add Vendor"
+						modalTitle="Add Vendor"
+					/>
+
 					<Table responsive hover bordered>
 						<thead>
 							<tr>
