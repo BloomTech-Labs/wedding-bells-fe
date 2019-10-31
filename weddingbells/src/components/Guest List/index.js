@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../Vendor List/index.scss";
 import { Table, Button } from "reactstrap";
 
+import OmniModal from "../Modal/index";
 class GuestList extends Component {
 	constructor(props) {
 		super(props);
@@ -14,13 +15,12 @@ class GuestList extends Component {
 		return (
 			<div className="guestList">
 				<div className="tableGroup">
-					<Button
+					<OmniModal
 						className="addGuest"
-						color="primary"
-						onClick={console.log("GG, you clicked me")}
-					>
-						Add a Guest
-					</Button>{" "}
+						buttonLabel="Add Guest "
+						modalTitle="Add Guest"
+					/>
+
 					<Table responsive hover bordered>
 						<thead>
 							<tr>
