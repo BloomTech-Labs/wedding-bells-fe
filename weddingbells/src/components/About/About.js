@@ -69,7 +69,7 @@ export default function About() {
 			<About>About Us</About>
 			<Team>
 				{team.map(dev => (
-					<div>
+					<div id="about-us">
 						<TeamPics src={dev.img} />
 
 						<p>{dev.name}</p>

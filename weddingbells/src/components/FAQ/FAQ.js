@@ -13,11 +13,11 @@ class FAQ extends Component {
 	}
 	render() {
 		return (
-			<div className="faq-wrapper">
+			<div id="FAQ" className="faq-wrapper">
 				<h3>FAQ</h3>
-                {this.state.faqs.map((faq) => (
-                    <FAQcard key={faq.id} {...faq} />
-                ))}
+				{this.state.faqs.map(faq => (
+					<FAQcard key={faq.id} {...faq} />
+				))}
 			</div>
 		);
 	}
