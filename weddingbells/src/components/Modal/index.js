@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
-const ModalExample = props => {
-	const { buttonLabel, className } = props;
+const OmniModal = props => {
+	const { buttonLabel, className, modalTitle } = props;
 
 	const [modal, setModal] = useState(false);
 
@@ -19,7 +19,7 @@ const ModalExample = props => {
 	);
 	return (
 		<div>
-			<Button color="danger" onClick={toggle}>
+			<Button color="primary" onClick={toggle}>
 				{buttonLabel}
 			</Button>
 			<Modal
@@ -28,7 +28,7 @@ const ModalExample = props => {
 				className={className}
 				external={externalCloseBtn}
 			>
-				<ModalHeader>Modal title</ModalHeader>
+				<ModalHeader>{modalTitle}</ModalHeader>
 				<ModalBody>
 					<b>Look at the top right of the page/viewport!</b>
 					<br />
@@ -52,3 +52,5 @@ const ModalExample = props => {
 		</div>
 	);
 };
+
+export default OmniModal;
