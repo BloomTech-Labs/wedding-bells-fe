@@ -3,7 +3,9 @@ import React, { Component } from "react";
 import "../../styles/footer.scss";
 
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = styled.div`
 	border: 1px blue solid;
@@ -37,15 +39,15 @@ class Footer extends Component {
 						<h3>Wedding Bells </h3>
 					</Logo>
 					<NavLinks className="footer-links">
-						<a href="#services" className="link">
+						<HashLink to="#services" className="HashLink">
 							Services
-						</a>
-						<a href="#FAQ" className="link">
+						</HashLink>
+						<HashLink to="#faq" className="link">
 							FAQ
-						</a>
-						<a href="#about-us" className="link">
+						</HashLink>
+						<HashLink to="#about-us" className="link">
 							About Us
-						</a>
+						</HashLink>
 						<div className="link">Login/Signup</div>
 					</NavLinks>
 				</Cont>

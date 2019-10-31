@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-
+import { HashLink } from "react-router-hash-link";
 const Navbar = styled.div`
 	// border
 	// border: 1px red solid;
@@ -48,15 +48,15 @@ class Header extends Component {
 			<Navbar className="header_wrapper">
 				<Logo className="header_logo">Wedding Bells</Logo>
 				<Links className="header_links">
-					<a href="#services" className="link">
+					<HashLink to="#services" className="link">
 						Services
-					</a>
-					<a href="#FAQ" className="link">
+					</HashLink>
+					<HashLink to="#FAQ" className="link">
 						FAQ
-					</a>
-					<a href="#about-us" className="link">
+					</HashLink>
+					<HashLink to="#about-us" className="link">
 						About Us
-					</a>
+					</HashLink>
 					<div className="link">Login/Signup</div>
 				</Links>
 			</Navbar>

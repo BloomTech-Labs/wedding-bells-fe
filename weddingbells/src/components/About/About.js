@@ -65,7 +65,7 @@ export default function About() {
 	`;
 
 	return (
-		<div>
+		<div id="about-us">
 			<About>About Us</About>
 			<Team>
 				{team.map(dev => (
