@@ -51,7 +51,7 @@ class Header extends Component {
 					<HashLink to="#services" className="link">
 						Services
 					</HashLink>
-					<HashLink to="#FAQ" className="link">
+					<HashLink to="#faq" className="link">
 						FAQ
 					</HashLink>
 					<HashLink to="#about-us" className="link">
