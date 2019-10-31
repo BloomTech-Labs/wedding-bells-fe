@@ -1,71 +1,67 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-
+import { HashLink } from "react-router-hash-link";
 const Navbar = styled.div`
-    // border
-    // border: 1px red solid;
+	// border
+	// border: 1px red solid;
 
-    // sizing & placement
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    height: 80px;
+	// sizing & placement
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	height: 80px;
 
-    // background
-    background-color: #c4c4c4;
+	// background
+	background-color: #c4c4c4;
 
-    // display
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+	// display
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
 
-    // text
-    font-size: 23px;
+	// text
+	font-size: 23px;
 `;
 
 const Logo = styled.div`
-    // size & placement
-    margin-left: 75px;
+	// size & placement
+	margin-left: 75px;
 `;
 
 const Links = styled.div`
-    // size & placement
-    margin-right: 75px;
-    width: 30%;
+	// size & placement
+	margin-right: 75px;
+	width: 30%;
 
-    // display
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+	// display
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
 `;
 
 class Header extends Component {
-    render() {
-        return (
-            <Navbar className="header_wrapper">
-                <Logo className="header_logo">
-                    Wedding Bells
-                </Logo>
-                <Links className="header_links">
-                    <div className="link">
-                        Services
-                    </div>
-                    <div className="link">
-                        FAQ
-                    </div>
-                    <div className="link">
-                        About Us
-                    </div>
-                    <div className="link">
-                        Login/Signup
-                    </div>
-                </Links>
-            </Navbar>
-        )
-    }
+	render() {
+		return (
+			<Navbar className="header_wrapper">
+				<Logo className="header_logo">Wedding Bells</Logo>
+				<Links className="header_links">
+					<HashLink to="#services" className="HashLink">
+						Services
+					</HashLink>
+					<HashLink to="#faq" className="HashLink">
+						FAQ
+					</HashLink>
+					<HashLink to="#about-us" className="HashLink">
+						About Us
+					</HashLink>
+					<div className="link">Login/Signup</div>
+				</Links>
+			</Navbar>
+		);
+	}
 }
 
 export default Header;
