@@ -48,13 +48,13 @@ class Header extends Component {
 			<Navbar className="header_wrapper">
 				<Logo className="header_logo">Wedding Bells</Logo>
 				<Links className="header_links">
-					<HashLink to="#services" className="link">
+					<HashLink to="#services" className="HashLink">
 						Services
 					</HashLink>
-					<HashLink to="#faq" className="link">
+					<HashLink to="#faq" className="HashLink">
 						FAQ
 					</HashLink>
-					<HashLink to="#about-us" className="link">
+					<HashLink to="#about-us" className="HashLink">
 						About Us
 					</HashLink>
 					<div className="link">Login/Signup</div>

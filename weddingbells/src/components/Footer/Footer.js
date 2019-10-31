@@ -42,13 +42,13 @@ class Footer extends Component {
 						<HashLink to="#services" className="HashLink">
 							Services
 						</HashLink>
-						<HashLink to="#faq" className="link">
+						<HashLink to="#faq" className="HashLink">
 							FAQ
 						</HashLink>
-						<HashLink to="#about-us" className="link">
+						<HashLink to="#about-us" className="HashLink">
 							About Us
 						</HashLink>
-						<div className="link">Login/Signup</div>
+						<div className="HashLink">Login/Signup</div>
 					</NavLinks>
 				</Cont>
 				<div>
