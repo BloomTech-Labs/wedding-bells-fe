@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../Vendor List/index.scss";
-import { Table, Button } from "reactstrap";
+import { Table } from "reactstrap";
 
 import OmniModal from "../Modal/index";
 class GuestList extends Component {
