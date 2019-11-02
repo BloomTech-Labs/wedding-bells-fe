@@ -9,6 +9,8 @@ import WhatWeOffer from "../components/WhatWeOffer/index";
 import About from "../components/About/About";
 import AuthModal from "../components/AuthModal/AuthModal";
 
+import { toggleAuthModal } from "../actions";
+
 const LandingTop = styled.div`
 	// border
 	border: 2px green dotted;
@@ -39,9 +41,9 @@ class LandingPageView extends Component {
 	// constructor() {
 	// 	super();
 
-		// this.state = {
-		// 	authModalVisible: false,
-		// };
+	// this.state = {
+	// 	authModalVisible: false,
+	// };
 	// }
 
 	toggleAuthModal = () => {
@@ -62,7 +64,10 @@ class LandingPageView extends Component {
 				<About />
 				<FAQ />
 				<Testimonials />
-				<AuthModal isOpen={this.props.authModalVisible} toggleAuthModal={this.toggleAuthModal}/>
+				<AuthModal
+					isOpen={this.props.authModalVisible}
+					toggleAuthModal={this.toggleAuthModal}
+				/>
 			</div>
 		);
 	}
