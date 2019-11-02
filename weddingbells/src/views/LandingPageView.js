@@ -36,18 +36,18 @@ const CallToAction = styled.div`
 `;
 
 class LandingPageView extends Component {
-	constructor() {
-		super();
+	// constructor() {
+	// 	super();
 
-		this.state = {
-			authModalVisible: false,
-		};
-	}
+		// this.state = {
+		// 	authModalVisible: false,
+		// };
+	// }
 
 	toggleAuthModal = () => {
-		this.setState({
-			authModalVisible: !this.state.authModalVisible,
-		});
+		// this.setState({
+		// 	authModalVisible: !this.state.authModalVisible,
+		// });
 	};
 
 	render() {
@@ -62,7 +62,7 @@ class LandingPageView extends Component {
 				<About />
 				<FAQ />
 				<Testimonials />
-				<AuthModal isOpen={this.state.authModalVisible} toggleAuthModal={this.toggleAuthModal}/>
+				<AuthModal isOpen={this.props.authModalVisible} toggleAuthModal={this.toggleAuthModal}/>
 			</div>
 		);
 	}
