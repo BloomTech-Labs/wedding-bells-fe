@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import styled from "styled-components";
 import { Button } from "reactstrap";
 
@@ -8,8 +7,6 @@ import Testimonials from "../components/Testimonials/Testimonials.js";
 import WhatWeOffer from "../components/WhatWeOffer/index";
 import About from "../components/About/About";
 import AuthModal from "../components/AuthModal/AuthModal";
-
-import { toggleAuthModal } from "../actions";
 
 const LandingTop = styled.div`
 	// border
@@ -38,26 +35,15 @@ const CallToAction = styled.div`
 `;
 
 class LandingPageView extends Component {
-	// constructor() {
-	// 	super();
-
-	// this.state = {
-	// 	authModalVisible: false,
-	// };
-	// }
-
-	toggleAuthModal = () => {
-		// this.setState({
-		// 	authModalVisible: !this.state.authModalVisible,
-		// });
-	};
-
 	render() {
+		console.log(this);
 		return (
 			<div className="landingpage_wrapper">
 				<LandingTop>
 					<CallToAction className="landingpage_top_calltoaction">
-						<Button onClick={this.toggleAuthModal}>SHOTGUN WEDDING</Button>
+						<Button onClick={this.props.toggleAuthModal}>
+							SHOTGUN WEDDING
+						</Button>
 					</CallToAction>
 				</LandingTop>
 				<WhatWeOffer />
@@ -66,18 +52,11 @@ class LandingPageView extends Component {
 				<Testimonials />
 				<AuthModal
 					isOpen={this.props.authModalVisible}
-					toggleAuthModal={this.toggleAuthModal}
+					toggleAuthModal={this.props.toggleAuthModal}
 				/>
 			</div>
 		);
 	}
 }
 
-const mapStateToProps = state => ({
-	authModalVisible: state.landingPageReducer.authModalVisible,
-});
-
-export default connect(
-	mapStateToProps,
-	{}
-)(LandingPageView);
+export default LandingPageView;

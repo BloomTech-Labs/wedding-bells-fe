@@ -10,17 +10,12 @@ import rootReducer from "./reducers";
 import { BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
 	<Router>
 		<Provider store={store}>
-			<Header />
 			<App />
-			<Footer />
 		</Provider>
 	</Router>,
 	document.getElementById("root")
