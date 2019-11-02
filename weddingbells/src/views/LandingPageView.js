@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
 import { Button } from "reactstrap";
 
@@ -33,7 +34,7 @@ const CallToAction = styled.div`
 	margin: auto auto;
 `;
 
-export default class LandingPageView extends Component {
+class LandingPageView extends Component {
 	render() {
 		return (
 			<div className="landingpage_wrapper">
@@ -45,8 +46,17 @@ export default class LandingPageView extends Component {
 				<WhatWeOffer />
 				<About />
 				<FAQ />
-                <Testimonials />
+				<Testimonials />
 			</div>
 		);
 	}
 }
+
+const mapStateToProps = state => ({
+	authModalVisible: state.landingPageReducer.authModalVisible,
+});
+
+export default connect(
+	mapStateToProps,
+	{}
+)(LandingPageView);
