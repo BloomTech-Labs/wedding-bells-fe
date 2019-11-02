@@ -9,6 +9,7 @@ class Announcements extends Component {
 			announcements: {},
 		};
 	}
+	
 	componentDidMount() {
         this.setState({updateAnnouncements()})
     }
