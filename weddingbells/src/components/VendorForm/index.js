@@ -3,7 +3,6 @@ import {
 	InputGroup,
 	InputGroupAddon,
 	InputGroupText,
-	Input,
 	Button,
 	Form,
 	FormGroup,
@@ -21,14 +20,6 @@ class VendorForm extends React.Component {
 	}
 
 	render() {
-		const handleChange = event => {
-			this.setState({ value: event.target.value });
-		};
-
-		const handleSubmit = event => {
-			alert("Your favorite flavor is: " + this.state.value);
-			event.preventDefault();
-		};
 		return (
 			<div className="vendorForm">
 				<Form inline className="form">
@@ -38,7 +29,7 @@ class VendorForm extends React.Component {
 							type="text"
 							name="vendorName"
 							id="vendorName"
-							onChange={this.handleChange}
+							onChange={this.props.onChange}
 						/>
 					</FormGroup>
 					<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
@@ -75,9 +66,10 @@ class VendorForm extends React.Component {
 							</option>
 						</Input>
 					</FormGroup>
-					<Button>Submit</Button>
 				</Form>
 			</div>
 		);
 	}
 }
+
+export default VendorForm;
