@@ -12,6 +12,14 @@ class VendorsList extends Component {
 	}
 
 	render() {
+		const handleChange = event => {
+			this.setState({ value: event.target.value });
+		};
+
+		const handleSubmit = event => {
+			alert("Your favorite flavor is: " + this.state.value);
+			event.preventDefault();
+		};
 		return (
 			<div className="vendorsList">
 				<div className="tableGroup">
@@ -20,6 +28,8 @@ class VendorsList extends Component {
 						color="primary"
 						buttonLabel="Add Vendor"
 						modalTitle="Add Vendor"
+						onChange={handleChange}
+						onSubmit={handleSubmit}
 					/>
 
 					<Table responsive hover bordered>
