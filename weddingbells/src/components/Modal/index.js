@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
+import VendorForm from "../VendorForm/index";
+
 const OmniModal = props => {
-	const { buttonLabel, className, modalTitle } = props;
+	const { buttonLabel, className, modalTitle, onChange, onSubmit } = props;
 
 	const [modal, setModal] = useState(false);
 
@@ -30,16 +32,9 @@ const OmniModal = props => {
 			>
 				<ModalHeader>{modalTitle}</ModalHeader>
 				<ModalBody>
-					<b>Look at the top right of the page/viewport!</b>
-					<br />
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-					minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat. Duis aute irure dolor in
-					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-					culpa qui officia deserunt mollit anim id est laborum.
+					<VendorForm onChange={onChange} onSubmit={onSubmit} />
 				</ModalBody>
+
 				<ModalFooter>
 					<Button color="primary" onClick={toggle}>
 						Do Something
