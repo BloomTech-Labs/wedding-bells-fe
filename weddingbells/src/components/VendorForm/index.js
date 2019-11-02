@@ -20,6 +20,7 @@ class VendorForm extends React.Component {
 	}
 
 	render() {
+		const { onChange, onSubmit } = this.props;
 		return (
 			<div className="vendorForm">
 				<Form inline className="form">
@@ -29,7 +30,7 @@ class VendorForm extends React.Component {
 							type="text"
 							name="vendorName"
 							id="vendorName"
-							onChange={this.props.onChange}
+							onChange={onChange}
 						/>
 					</FormGroup>
 					<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
