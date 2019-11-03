@@ -22,53 +22,53 @@ class GuestForm extends React.Component {
 	render() {
 		const { onChange, onSubmit } = this.props;
 		return (
-			<div className="vendorForm">
-				<Form inline className="form">
-					<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-						<Label for="vendorName">Name Of Vendor</Label>
-						<Input
-							type="text"
-							name="vendorName"
-							id="vendorName"
-							onChange={onChange}
-						/>
-					</FormGroup>
-					<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-						<Label for="select">Select Vendor Type</Label>
-						<Input
-							value={this.state.value}
-							type="select"
-							name="select"
-							id="select"
-						>
-							<option disabled value="disabled">
-								Please choose an option
-							</option>
-							<option value="photographer">Photographer</option>
-							<option value="venue">Venue</option>
-							<option value="hairAndMakeup">Hair and Makeup</option>
-							<option value="attire">Attire</option>
-							<option value="baker">Baker</option>
-							<option value="florist">Florist</option>
-							<option value="musicPro">Music Pros</option>
-							<option value="videographer">Videographer</option>
-							<option value="stationer">Stationer</option>
-							<option value="caterer">Caterer</option>
-							<option value="officiant">Officiant</option>
-							<option value="jeweler">Jeweler</option>
-							<option value="favorsVendor">Favors Vendor</option>
-							<option value="rentalsCompany">Rentals Company</option>
-							<option value="transportationCompany">
-								Transportation Company
-							</option>
-							<option value="lightingDesigner">Lighting Designer</option>
-							<option disabled value="disabled">
-								Please choose an option
-							</option>
-						</Input>
-					</FormGroup>
-				</Form>
-			</div>
+			<FormGroup className="guestForm">
+				<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+					<Label for="guestName">Name Of Guest</Label>
+					<Input
+						type="text"
+						name="guestName"
+						id="guestName"
+						placeholder="Guests Name"
+					/>
+				</FormGroup>
+				<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+					<Label for="guestEmail">Guests Email</Label>
+					<Input
+						type="email"
+						name="guestEmail"
+						id="guestEmail"
+						placeholder="Guests Email"
+					/>
+				</FormGroup>
+				<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+					<Label for="going">Are they going?</Label>
+					<Input
+						type="text"
+						name="going"
+						id="going"
+						placeholder="Are they Going?"
+					/>
+				</FormGroup>
+				<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+					<Label for="respondedToInvite">Have they responded?</Label>
+					<Input
+						type="text"
+						name="respondedToInvite"
+						id="respondedToInvite"
+						placeholder="Have They Responded?"
+					/>
+				</FormGroup>
+				<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+					<Label for="plusOne">Are they bringing a plus one?</Label>
+					<Input
+						type="text"
+						name="plusOne"
+						id="plusOne"
+						placeholder="Are they bringing anyone?"
+					/>
+				</FormGroup>
+			</FormGroup>
 		);
 	}
 }
