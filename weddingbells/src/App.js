@@ -12,7 +12,6 @@ import { toggleAuthModal } from "./actions";
 
 class App extends Component {
 	render() {
-		console.log(this);
 		return (
 			<div className="App">
 				<Header authModalVisible={this.props.authModalVisible} toggleAuthModal={this.props.toggleAuthModal} />

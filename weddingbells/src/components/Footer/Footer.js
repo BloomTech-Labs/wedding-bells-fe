@@ -12,7 +12,6 @@ const Navbar = styled.div`
 const Cont = styled.div`
 	border: 1px red solid;
 
-
 	width: 80%;
 	display: flex;
 	justify-content: space-between;
@@ -20,15 +19,13 @@ const Cont = styled.div`
 `;
 const Logo = styled.div`
 	border: 1px green solid;
-	
+
 	// background
-    background-color: #c4c4c4;
+	background-color: #c4c4c4;
 `;
 const NavLinks = styled.div`
-
 	border: 1px orange solid;
 	width: 30%;
-
 `;
 
 class Footer extends Component {
@@ -40,10 +37,18 @@ class Footer extends Component {
 						<h3>Wedding Bells </h3>
 					</Logo>
 					<NavLinks className="footer-links">
-						<Link id="services">Services</Link>
-						<Link id="faq">FAQ</Link>
-						<Link id="about-us">About Us</Link>
-						<Link id="log-up">Login/Sign Up</Link>
+						<a href="#services" className="link">
+							Services
+						</a>
+						<a href="#FAQ" className="link">
+							FAQ
+						</a>
+						<a href="#about-us" className="link">
+							About Us
+						</a>
+						<a href="#" className="link" onClick={this.props.toggleAuthModal}>
+							Login/Signup
+						</a>
 					</NavLinks>
 				</Cont>
 			</Navbar>

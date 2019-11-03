@@ -1,35 +1,46 @@
 import React from "react";
 import sunflower from "./sunflower.jpg";
+import poly from "./poly.jpg";
+import cedric from "./cedric.jpg";
+import sammy from "./sammy.jpg";
+import marco from "./marco.jpg";
+import dan from "./dan.jpg";
+import brey from "./brey.jpg";
+import bob from "./bob.jpg";
 import styled from "styled-components";
 
 export default function About() {
 	const team = [
 		{
 			name: "Poly Goveia",
-			img: sunflower,
+			img: poly,
 		},
 		{
 			name: "Cedric Amaya",
-			img: sunflower,
+			img: cedric,
 		},
 		{
 			name: "Robert Pedersen",
-			img: sunflower,
+			img: bob,
 		},
 		{
 			name: "Brey Batten",
-			img: sunflower,
+			img: brey,
 		},
 		{
 			name: "Sammy Chang",
-			img: sunflower,
+			img: sammy,
 		},
 		{
 			name: "Dan Sample",
-			img: sunflower,
+			img: dan,
 		},
 		{
 			name: "Marco Guzman",
+			img: marco,
+		},
+		{
+			name: "Davorin Piljic",
 			img: sunflower,
 		},
 	];
@@ -49,6 +60,8 @@ export default function About() {
 	const TeamPics = styled.img`
 		height: 150px;
 		width: auto;
+		border-radius: 5px;
+		box-shadow: 10px 10px 50px grey;
 	`;
 
 	return (
@@ -56,7 +69,11 @@ export default function About() {
 			<About>About Us</About>
 			<Team>
 				{team.map(dev => (
-					<TeamPics src={dev.img} />
+					<div>
+						<TeamPics src={dev.img} />
+
+						<p>{dev.name}</p>
+					</div>
 				))}
 			</Team>
 		</div>

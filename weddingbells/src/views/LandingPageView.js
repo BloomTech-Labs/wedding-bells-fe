@@ -36,7 +36,6 @@ const CallToAction = styled.div`
 
 class LandingPageView extends Component {
 	render() {
-		console.log(this);
 		return (
 			<div className="landingpage_wrapper">
 				<LandingTop>
