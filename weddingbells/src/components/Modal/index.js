@@ -48,8 +48,11 @@ const OmniModal = props => {
 				<ModalHeader>{modalTitle}</ModalHeader>
 				<ModalBody>
 					<Form>
-						<VendorForm onChange={onChange} />
-						<GuestForm onChange={onChange} />
+						{modalTitle === "Add Vendor" ? (
+							<VendorForm onChange={onChange} />
+						) : (
+							<GuestForm onChange={onChange} />
+						)}
 						<Button color="danger" onClick={onSubmit}>
 							Submit
 						</Button>{" "}
