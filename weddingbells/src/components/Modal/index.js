@@ -1,7 +1,22 @@
 import React, { useState } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import {
+	Button,
+	Modal,
+	ModalHeader,
+	ModalBody,
+	ModalFooter,
+	InputGroup,
+	InputGroupAddon,
+	InputGroupText,
+	Form,
+	FormGroup,
+	Label,
+	Input,
+	FormText,
+} from "reactstrap";
 
 import VendorForm from "../VendorForm/index";
+import GuestForm from "../GuestForm/index";
 
 const OmniModal = props => {
 	const { buttonLabel, className, modalTitle, onChange, onSubmit } = props;
@@ -32,17 +47,14 @@ const OmniModal = props => {
 			>
 				<ModalHeader>{modalTitle}</ModalHeader>
 				<ModalBody>
-					<VendorForm onChange={onChange} onSubmit={onSubmit} />
+					<Form>
+						<VendorForm onChange={onChange} />
+						<GuestForm onChange={onChange} />
+						<Button color="danger" onClick={onSubmit}>
+							Submit
+						</Button>{" "}
+					</Form>
 				</ModalBody>
-
-				<ModalFooter>
-					<Button color="primary" onClick={toggle}>
-						Do Something
-					</Button>{" "}
-					<Button color="secondary" onClick={toggle}>
-						Cancel
-					</Button>
-				</ModalFooter>
 			</Modal>
 		</div>
 	);
