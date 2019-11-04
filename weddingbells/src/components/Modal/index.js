@@ -1,19 +1,5 @@
 import React, { useState } from "react";
-import {
-	Button,
-	Modal,
-	ModalHeader,
-	ModalBody,
-	ModalFooter,
-	InputGroup,
-	InputGroupAddon,
-	InputGroupText,
-	Form,
-	FormGroup,
-	Label,
-	Input,
-	FormText,
-} from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody, Form } from "reactstrap";
 
 import VendorForm from "../VendorForm/index";
 import GuestForm from "../GuestForm/index";
