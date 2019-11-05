@@ -5,7 +5,7 @@ import VendorForm from "../VendorForm/index";
 import GuestForm from "../GuestForm/index";
 
 const OmniModal = props => {
-	const { buttonLabel, className, modalTitle, onDelete, onSubmit } = props;
+	const { buttonLabel, className, modalTitle, onSubmit } = props;
 
 	const [modal, setModal] = useState(false);
 
@@ -34,11 +34,7 @@ const OmniModal = props => {
 				<ModalHeader>{modalTitle}</ModalHeader>
 				<ModalBody>
 					<Form>
-						{modalTitle === "Add Vendor" ? (
-							<VendorForm onChange={onChange} />
-						) : (
-							<GuestForm onChange={onChange} />
-						)}
+						{modalTitle === "Add Vendor" ? <VendorForm /> : <GuestForm />}
 						<Button color="danger" onClick={onSubmit}>
 							Submit
 						</Button>{" "}

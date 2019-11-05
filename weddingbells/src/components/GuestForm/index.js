@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { FormGroup, Label, Input } from "reactstrap";
 
 export default function GuestForm() {
@@ -17,43 +16,11 @@ export default function GuestForm() {
 			[evt.target.name]: value,
 		});
 	}
-
-	function handleSubmit(evt) {
-		evt.preventDefault();
-		const guest = {
-			...state,
-		};
-
-		axios
-			.post("/Insert/Web/Address", { guest })
-			.then(res => {
-				console.log("Adding that guests information");
-				console.log("The guests information has been added");
-			})
-			.catch(error => {
-				console.error("Server Error", error);
-			});
-	}
-
-	function handleDelete(evt) {
-		evt.preventDefault();
-
-		axios
-			.delete(`/Insert/Web/Address/${state.id}`)
-			.then(res => {
-				console.log("Deleting that guests information");
-				console.log("The guests information has been deleted");
-			})
-			.catch(error => {
-				console.error("Server Error", error);
-			});
-	}
-
 	return (
 		<FormGroup
 			className="guestForm"
-			onSubmit={handleSubmit}
-			onDelete={handleDelete}
+			// onSubmit={handleSubmit}
+			// onDelete={handleDelete}
 		>
 			<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
 				<Label for="guestName">Name Of Guest</Label>

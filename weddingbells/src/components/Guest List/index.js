@@ -3,50 +3,13 @@ import "../Vendor List/index.scss";
 import { Table } from "reactstrap";
 
 import OmniModal from "../Modal/index";
-import axios from "axios";
+
 class GuestList extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			guests: [],
-		};
+		this.state = {};
 	}
 
-	componentDidUpdate() {
-		this.getGuests();
-	}
-	/*
-Starting from this line, start the guest axios calls
-*/
-
-	/*
-Ending on this line, end the guest axios calls
-*/
-	getGuests() {
-		axios
-			.get("/Insert/Web/Address")
-			.then(response => {
-				console.log("Starting to get guests");
-				this.setState(() => ({ guests: response.data }));
-				console.log("Guests have been retrieved");
-			})
-			.catch(error => {
-				console.error("Server Error", error);
-			});
-	}
-
-	deleteGuests() {
-		axios
-			.get("/Insert/Web/Address")
-			.then(response => {
-				console.log("Starting to get guests");
-				this.setState(() => ({ guests: response.data }));
-				console.log("Guests have been retrieved");
-			})
-			.catch(error => {
-				console.error("Server Error", error);
-			});
-	}
 	render() {
 		return (
 			<div className="guestList">
@@ -117,6 +80,8 @@ Ending on this line, end the guest axios calls
 									</a>
 								</td>
 							</tr>
+						</tbody>
+						<tbody>
 							<tr>
 								<th>2</th>
 								<td>Poly Goveia</td>
