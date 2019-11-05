@@ -3,7 +3,7 @@ import "../Vendor List/index.scss";
 import { Table } from "reactstrap";
 
 import OmniModal from "../Modal/index";
-import Axios from "axios";
+import axios from "axios";
 class GuestList extends Component {
 	constructor(props) {
 		super(props);
@@ -11,12 +11,20 @@ class GuestList extends Component {
 			guests: [],
 		};
 	}
+
 	componentDidUpdate() {
 		this.getGuests();
 	}
+	/*
+Starting from this line, start the guest axios calls
+*/
 
+	/*
+Ending on this line, end the guest axios calls
+*/
 	getGuests() {
-		Axios.get("/Insert/Web/Address")
+		axios
+			.get("/Insert/Web/Address")
 			.then(response => {
 				console.log("Starting to get guests");
 				this.setState(() => ({ guests: response.data }));
@@ -27,11 +35,18 @@ class GuestList extends Component {
 			});
 	}
 
-	postGuests() {}
-
-	updateGuests() {}
-
-	deleteGuests() {}
+	deleteGuests() {
+		axios
+			.get("/Insert/Web/Address")
+			.then(response => {
+				console.log("Starting to get guests");
+				this.setState(() => ({ guests: response.data }));
+				console.log("Guests have been retrieved");
+			})
+			.catch(error => {
+				console.error("Server Error", error);
+			});
+	}
 	render() {
 		return (
 			<div className="guestList">
