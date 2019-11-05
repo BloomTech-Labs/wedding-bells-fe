@@ -5,7 +5,7 @@ import VendorForm from "../VendorForm/index";
 import GuestForm from "../GuestForm/index";
 
 const OmniModal = props => {
-	const { buttonLabel, className, modalTitle, onChange, onSubmit } = props;
+	const { buttonLabel, className, modalTitle, onDelete, onSubmit } = props;
 
 	const [modal, setModal] = useState(false);
 
