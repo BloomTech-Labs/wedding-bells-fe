@@ -96,7 +96,7 @@ export default function GuestForm() {
 											editMe={editMe}
 											deleteMe={deleteMe}
 											{...guest}
-										/>;
+										/>
 									)
 								)
 							}
