@@ -90,13 +90,13 @@ export default function GuestForm() {
 							{
 								state.guestsInfo.map(
 									(guest, idx) => {
-										<GuestData
+										(<GuestData
 											key={idx}
 											onSubmit={handleSubmitGuest}
 											editMe={editMe}
 											deleteMe={deleteMe}
 											{...guest}
-										/>;
+										/>);
 									}
 								)
 							}
