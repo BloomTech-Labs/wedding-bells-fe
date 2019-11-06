@@ -43,8 +43,8 @@ export function GuestData({
 	onUpdate,
 	onDelete,
 }) {
-	<React.Fragment>
-		return (<tr>
+	return (<React.Fragment>
+		<tr>
 			<th>{id}</th>
 			<td>{name}</td>
 			<td>{email}</td>
