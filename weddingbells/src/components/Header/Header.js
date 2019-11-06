@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { HashLink } from "react-router-hash-link";
+import {Link} from "react-router-dom"
 const Navbar = styled.div`
 	// border
 	// border: 1px red solid;
