@@ -9,7 +9,7 @@ import editMe from "../../assets/pencil.svg";
 
 import OmniModal from "../Modal/index";
 
-import { Headers, GuestData as Guest } from "../Guest List/mappedOver";
+import { Headers, GuestData } from "../Guest List/mappedOver";
 
 export default function GuestForm() {
 	const [state, setState] = React.useState({
@@ -84,12 +84,11 @@ export default function GuestForm() {
 					/>
 
 					<Table responsive hover bordered>
-						<thead>
-							<Headers />
-						</thead>
+						<Headers />
+
 						<tbody>
 							{guestsInfo.map((guest, idx) => {
-								<Guest
+								<GuestData
 									key={idx}
 									onSubmit={handleSubmitGuest}
 									editMe={editMe}

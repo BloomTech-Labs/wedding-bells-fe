@@ -57,7 +57,9 @@ class Header extends Component {
 					<HashLink to="#about-us" className="HashLink">
 						About Us
 					</HashLink>
-					<div className="link">Login/Signup</div>
+					<Link href="#" className="link" onClick={this.props.toggleAuthModal}>
+						Login/Signup
+					</Link>
 				</Links>
 			</Navbar>
 		);

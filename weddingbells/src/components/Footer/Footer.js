@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { Link } from "react-router-dom";
+
 import "../../styles/footer.scss";
 
 import styled from "styled-components";
@@ -48,7 +50,9 @@ class Footer extends Component {
 						<HashLink to="#about-us" className="HashLink">
 							About Us
 						</HashLink>
-						<div className="HashLink">Login/Signup</div>
+						<Link to="#" className="link" onClick={this.props.toggleAuthModal}>
+							Login/Signup
+						</Link>
 					</NavLinks>
 				</Cont>
 				<div>

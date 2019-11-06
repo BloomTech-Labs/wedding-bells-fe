@@ -6,6 +6,7 @@ import FAQ from "../components/FAQ/FAQ.js";
 import Testimonials from "../components/Testimonials/Testimonials.js";
 import WhatWeOffer from "../components/WhatWeOffer/index";
 import About from "../components/About/About";
+import AuthModal from "../components/AuthModal/AuthModal";
 
 import VendorsList from "../components/Vendor List/index";
 import GuestList from "../components/Guest List/index";
@@ -36,13 +37,15 @@ const CallToAction = styled.div`
 	margin: auto auto;
 `;
 
-export default class LandingPageView extends Component {
+class LandingPageView extends Component {
 	render() {
 		return (
 			<div className="landingpage_wrapper">
 				<LandingTop>
 					<CallToAction className="landingpage_top_calltoaction">
-						<Button>SHOTGUN WEDDING</Button>
+						<Button onClick={this.props.toggleAuthModal}>
+							SHOTGUN WEDDING
+						</Button>
 					</CallToAction>
 				</LandingTop>
 				<WhatWeOffer />
@@ -51,7 +54,13 @@ export default class LandingPageView extends Component {
 				<FAQ />
 				<Testimonials />
 				<About />
+				<AuthModal
+					isOpen={this.props.authModalVisible}
+					toggleAuthModal={this.props.toggleAuthModal}
+				/>
 			</div>
 		);
 	}
 }
+
+export default LandingPageView;
