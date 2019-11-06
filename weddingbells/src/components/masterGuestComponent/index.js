@@ -9,6 +9,8 @@ import editMe from "../../assets/pencil.svg";
 
 import OmniModal from "../Modal/index";
 
+import { Headers, GuestData as Guest } from "../Guest List/mappedOver";
+
 export default function GuestForm() {
 	const [state, setState] = React.useState({
 		//We just need the overall state from the database here, which will be updated by the componentDidMount/ComponentDidUpdate life cycles
@@ -78,45 +80,18 @@ export default function GuestForm() {
 						className="addGuest"
 						buttonLabel="Add Guest "
 						modalTitle="Add Guest"
+						onSubmit={handleSubmitGuest}
 					/>
 
 					<Table responsive hover bordered>
 						<thead>
-							<tr>
-								<th>
-									<h5>#</h5>
-								</th>
-
-								<th>
-									<h5>Name</h5>
-								</th>
-								<th>
-									<h5>Email</h5>
-								</th>
-								<th>
-									<h5>Going?</h5>
-								</th>
-								<th>
-									<h5>Responded to Invitation?</h5>
-								</th>
-								<th>
-									<h5>Plus One?</h5>
-								</th>
-								<th>
-									<h5>Update</h5>
-								</th>
-								<th>
-									<h5>Delete</h5>
-								</th>
-							</tr>
+							<Headers />
 						</thead>
 						<tbody>
 							{guestsInfo.map((guest, idx) => {
 								<Guest
 									key={idx}
-									onUpdate={handleSubmitGuest}
 									onSubmit={handleSubmitGuest}
-									onDelete={handleDeleteGuest}
 									editMe={editMe}
 									deleteMe={deleteMe}
 									{...guest}
