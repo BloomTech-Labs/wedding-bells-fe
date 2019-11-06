@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { FormGroup, Label, Input } from "reactstrap";
+import { FormGroup, Label, Input, Table } from "reactstrap";
 
 import Guest from "../Guest List/mappedOver";
 
@@ -32,7 +32,7 @@ export default function GuestForm() {
 			.get("/Insert/Web/Address")
 			.then(response => {
 				console.log("Starting to get guests");
-				this.setState(() => ({ guests: response.data }));
+				this.setState(() => ({ guestsInfo: response.data }));
 				console.log("Guests have been retrieved");
 			})
 			.catch(error => {
@@ -87,15 +87,19 @@ export default function GuestForm() {
 						<Headers />
 
 						<tbody>
-							{guestsInfo.map((guest, idx) => {
-								<GuestData
-									key={idx}
-									onSubmit={handleSubmitGuest}
-									editMe={editMe}
-									deleteMe={deleteMe}
-									{...guest}
-								/>;
-							})}
+							{
+								state.guestsInfo.map(
+									(guest, idx) => {
+										<GuestData
+											key={idx}
+											onSubmit={handleSubmitGuest}
+											editMe={editMe}
+											deleteMe={deleteMe}
+											{...guest}
+										/>;
+									}
+								)
+							}
 						</tbody>
 					</Table>
 				</div>
