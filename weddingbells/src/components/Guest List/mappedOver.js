@@ -33,7 +33,7 @@ export const Headers = props => {
 	</thead>);
 };
 
-export function GuestData({
+export const GuestData = ({
 	name,
 	email,
 	going,
@@ -42,7 +42,7 @@ export function GuestData({
 	id,
 	onUpdate,
 	onDelete,
-}) {
+}) => {
 	return (<React.Fragment>
 		<tr>
 			<th>{id}</th>
