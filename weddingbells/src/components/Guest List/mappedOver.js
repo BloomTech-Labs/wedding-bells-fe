@@ -1,6 +1,36 @@
 import React from "react";
 
-function Guest({
+export function Headers({}) {
+	<tr>
+		<th>
+			<h5>#</h5>
+		</th>
+
+		<th>
+			<h5>Name</h5>
+		</th>
+		<th>
+			<h5>Email</h5>
+		</th>
+		<th>
+			<h5>Going?</h5>
+		</th>
+		<th>
+			<h5>Responded to Invitation?</h5>
+		</th>
+		<th>
+			<h5>Plus One?</h5>
+		</th>
+		<th>
+			<h5>Update</h5>
+		</th>
+		<th>
+			<h5>Delete</h5>
+		</th>
+	</tr>;
+}
+
+export function GuestData({
 	name,
 	email,
 	going,
@@ -8,10 +38,7 @@ function Guest({
 	plusOne,
 	id,
 	onUpdate,
-	onSubmit,
 	onDelete,
-	editMe,
-	deleteMe,
 }) {
 	<React.Fragment>
 		<tr>
@@ -22,14 +49,14 @@ function Guest({
 			<td>{response}</td>
 			<td>{plusOne}</td>
 			<td className="editMe">
-				<a href={onUpdate} target="_blank" rel="noopener noreferrer">
+				<Link to={onUpdate} target="_blank" rel="noopener noreferrer">
 					<img alt="edit" src={require("../../assets/pencil.svg")} />
-				</a>
+				</Link>
 			</td>
 			<td className="deleteMe">
-				<a href={onDelete} target="_blank" rel="noopener noreferrer">
+				<Link to={onDelete} target="_blank" rel="noopener noreferrer">
 					<img alt="delete" src={require("../../assets/delete.svg")} />
-				</a>
+				</Link>
 			</td>
 		</tr>
 	</React.Fragment>;
