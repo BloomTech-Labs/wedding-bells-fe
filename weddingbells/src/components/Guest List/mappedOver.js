@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export const Headers = props => {
-	<thead>
+	return (<thead>
 		<tr>
 			<th>
 				<h5>#</h5>
@@ -30,7 +30,7 @@ export const Headers = props => {
 				<h5>Delete</h5>
 			</th>
 		</tr>
-	</thead>;
+	</thead>);
 };
 
 export function GuestData({
@@ -44,7 +44,7 @@ export function GuestData({
 	onDelete,
 }) {
 	<React.Fragment>
-		<tr>
+		return (<tr>
 			<th>{id}</th>
 			<td>{name}</td>
 			<td>{email}</td>
@@ -62,5 +62,5 @@ export function GuestData({
 				</Link>
 			</td>
 		</tr>
-	</React.Fragment>;
+	</React.Fragment>);
 }
