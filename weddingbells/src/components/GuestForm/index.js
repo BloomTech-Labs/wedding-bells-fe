@@ -17,11 +17,7 @@ export default function GuestForm() {
 		});
 	}
 	return (
-		<FormGroup
-			className="guestForm"
-			// onSubmit={handleSubmit}
-			// onDelete={handleDelete}
-		>
+		<FormGroup className="guestForm">
 			<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
 				<Label for="guestName">Name Of Guest</Label>
 				<Input
