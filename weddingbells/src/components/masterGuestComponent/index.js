@@ -1,8 +1,6 @@
-import React from "react";
+import React, { useEffect, useCallback } from "react";
 import axios from "axios";
-import { FormGroup, Label, Input, Table } from "reactstrap";
-
-import Guest from "../Guest List/mappedOver";
+import { Table } from "reactstrap";
 
 import deleteMe from "../../assets/delete.svg";
 import editMe from "../../assets/pencil.svg";
@@ -17,14 +15,30 @@ export default function GuestForm() {
 		guestsInfo: {},
 	});
 
+	const post = "post";
+
+	const handlePost = useCallback(() => {
+		return post;
+	}, [post]);
+
+	const del = "delete";
+
+	const handleDel = useCallback(() => {
+		return del;
+	}, [del]);
+
+	useEffect(() => {
+		setState(prevState => [...prevState, "GET axios request fired"]);
+	}, [handlePost, handleDel]);
+
 	//Function for the change handler goes here
-	function handleChange(evt) {
-		const value = evt.target.value;
-		setState({
-			...state,
-			[evt.target.name]: value,
-		});
-	}
+	// function handleChange(evt) {
+	// 	const value = evt.target.value;
+	// 	setState({
+	// 		...state,
+	// 		[evt.target.name]: value,
+	// 	});
+	// }
 
 	//When the componentDidMount and the ComponentDidUpdate lifcycles occur, the GET method below will occur
 	function getGuests() {
@@ -87,19 +101,15 @@ export default function GuestForm() {
 						<Headers />
 
 						<tbody>
-							{
-								state.guestsInfo.map(
-									(guest, idx) => (
-										<GuestData
-											key={idx}
-											onSubmit={handleSubmitGuest}
-											editMe={editMe}
-											deleteMe={deleteMe}
-											{...guest}
-										/>
-									)
-								)
-							}
+							{state.guestsInfo.map((guest, idx) => (
+								<GuestData
+									key={idx}
+									onSubmit={handleSubmitGuest}
+									editMe={editMe}
+									deleteMe={deleteMe}
+									{...guest}
+								/>
+							))}
 						</tbody>
 					</Table>
 				</div>
