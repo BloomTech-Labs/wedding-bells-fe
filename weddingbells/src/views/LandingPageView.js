@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import { Button } from "reactstrap";
-import "../styles/LandingPageView.scss";
+import "../styles/landingpageview.scss";
 
 import FAQ from "../components/FAQ/FAQ.js";
 import Testimonials from "../components/Testimonials/Testimonials.js";
-import WhatWeOffer from "../components/WhatWeOffer/index";
+import WhatWeOffer from "../components/WhatWeOffer/WhatWeOffer.js";
 import About from "../components/About/About";
 import AuthModal from "../components/AuthModal/AuthModal";
 

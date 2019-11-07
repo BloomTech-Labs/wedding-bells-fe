@@ -1,5 +1,22 @@
-.footer .logo {
+.footer {
+	border: 1px blue solid;
+	width: 100%;
+}
+
+.footer .cont {
+	border: 1px red solid;
+
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+}
+
+.footer .cont .logo {
 	padding: 20px;
+
+	border: 1px green solid;
+	background-color: #c4c4c4;
 
 	display: flex;
 	justify-content: space-around;
@@ -12,12 +29,14 @@
 	}
 
 }
+
 .footer .cont .footer-links {
 	padding: 20px;
 	display: flex;
 	justify-content: space-around;
 	flex-direction: row;
-
+	border: 1px orange solid;
+	width: 30%;
 	a {
 		// margin: 20px;
 		&:link {

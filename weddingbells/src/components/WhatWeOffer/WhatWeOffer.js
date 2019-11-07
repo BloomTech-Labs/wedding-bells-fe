@@ -1,8 +1,8 @@
 import React from "react";
 
-import OFFER_DATA from "../WhatWeOffer/data";
+import OFFER_DATA from "./data";
 
-import ServiceItem from "../ServiceItem/index";
+import ServiceItem from "../ServiceItem/ServiceItem.js";
 
 class WhatWeOffer extends React.Component {
 	constructor(props) {

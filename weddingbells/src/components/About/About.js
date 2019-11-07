@@ -1,4 +1,9 @@
 import React from "react";
+
+// import styling
+import styled from "styled-components";
+
+// import profile pictures
 import sunflower from "./sunflower.jpg";
 import poly from "./poly.jpg";
 import cedric from "./cedric.jpg";
@@ -7,7 +12,6 @@ import marco from "./marco.jpg";
 import dan from "./dan.jpg";
 import brey from "./brey.jpg";
 import bob from "./bob.jpg";
-import styled from "styled-components";
 
 export default function About() {
 	const team = [
