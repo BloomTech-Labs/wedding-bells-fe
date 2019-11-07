@@ -32,7 +32,7 @@ export default function GuestForm() {
 
 	/* Starting from this line and down, whenever the guestInfo loads or is updated the component will re-render */
 	const fetchGuestInfo = async () => {
-		const response = await axios.get("/url/endpoint");
+		const response = await axios.get("/api/weddings/:weddingId/guests");
 		setGuestInfo(response.data);
 	};
 
@@ -49,7 +49,7 @@ export default function GuestForm() {
 		};
 
 		axios
-			.post("/Insert/Web/Address", { guest })
+			.post("/api/weddings/:weddingId/guests/:id", { guest })
 			.then(res => {
 				console.log("Adding that guests information");
 				console.log("The guests information has been added");
@@ -64,7 +64,7 @@ export default function GuestForm() {
 		evt.preventDefault();
 
 		axios
-			/*.delete(`/Insert/Web/Address/${state.id}`) */
+			.delete("/api/weddings/:weddingId/guests/:id")
 			.then(res => {
 				console.log("Deleting that guests information");
 				console.log("The guests information has been deleted");
