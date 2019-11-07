@@ -11,10 +11,6 @@ import { Headers, GuestData } from "../Guest List/mappedOver";
 
 export default function GuestForm() {
 	const [guestInfo, setGuestInfo] = useState({ guestInfo: {} });
-	// const [state, setState] = React.useState({
-	// 	//We just need the overall state from the database here, which will be updated by the componentDidMount/ComponentDidUpdate life cycles
-	// 	guestsInfo: {},
-	// });
 
 	//Since we are using React hooks, we are no longer going to use componentDidMount and on top of this, we are not going to need the usual axios.GET request as located below
 
