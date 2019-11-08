@@ -32,7 +32,7 @@ export default function VendorComponent() {
 		};
 
 		axios
-			.post("/api/weddings/:weddingId/vendors/:id", { guest })
+			.post("/api/weddings/:weddingId/vendors/:id", { vendor })
 			.then(res => {
 				console.log("Adding that vendors information");
 				console.log("The vendors information has been added");
@@ -70,13 +70,13 @@ export default function VendorComponent() {
 						<Headers />
 
 						<tbody>
-							{vendorInfo.vendorInfo.map((guest, idx) => (
+							{vendorInfo.vendorInfo.map((vendor, idx) => (
 								<VendorData
 									key={idx}
 									editMe={editMe}
 									deleteMe={deleteMe}
 									onDelete={handleDeleteVendor}
-									{...guest}
+									{...vendor}
 								/>
 							))}
 						</tbody>
