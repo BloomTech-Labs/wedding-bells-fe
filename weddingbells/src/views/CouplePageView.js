@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import GuestComponent from "../components/masterGuestComponent/index";
-import VendorComponent from "../components/masterVendorComponent/index";
+import VendorComponent from "../components/MasterVendorComponent/index";
 
 class CouplePageView extends Component {
 	render() {

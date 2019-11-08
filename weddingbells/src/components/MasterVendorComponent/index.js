@@ -27,7 +27,7 @@ export default function VendorComponent() {
 	//When a user adds vendor information via the form with the modal, the following function will be what will do the action
 	function handleSubmitVendor(evt) {
 		evt.preventDefault();
-		const guest = {
+		const vendor = {
 			...vendorInfo,
 		};
 
