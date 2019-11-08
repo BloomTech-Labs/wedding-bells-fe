@@ -39,10 +39,6 @@ export default function About() {
 			name: "Marco Guzman",
 			img: marco,
 		},
-		{
-			name: "Davorin Piljic",
-			img: sunflower,
-		},
 	];
 
 	const About = styled.h2`
