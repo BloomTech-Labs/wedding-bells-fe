@@ -36,11 +36,8 @@ export const Headers = props => {
 };
 
 export const VendorData = ({
-	name,
-	email,
-	going,
-	response,
-	plusOne,
+	vendorName,
+	category,
 	id,
 	onUpdate,
 	onDelete,
@@ -49,11 +46,8 @@ export const VendorData = ({
 		<React.Fragment>
 			<tr>
 				<th>{id}</th>
-				<td>{name}</td>
-				<td>{email}</td>
-				<td>{going}</td>
-				<td>{response}</td>
-				<td>{plusOne}</td>
+				<td>{vendorName}</td>
+				<td>{category}</td>
 				<td className="editMe">
 					<Link onClick={onUpdate} target="_blank" rel="noopener noreferrer">
 						<img alt="edit" src={require("../../assets/pencil.svg")} />
