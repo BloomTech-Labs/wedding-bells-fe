@@ -10,19 +10,10 @@ export const Headers = props => {
 				</th>
 
 				<th>
-					<h5>Name</h5>
+					<h5>Vendor Name</h5>
 				</th>
 				<th>
-					<h5>Email</h5>
-				</th>
-				<th>
-					<h5>Going?</h5>
-				</th>
-				<th>
-					<h5>Responded to Invitation?</h5>
-				</th>
-				<th>
-					<h5>Plus One?</h5>
+					<h5>Category</h5>
 				</th>
 				<th>
 					<h5>Update</h5>
