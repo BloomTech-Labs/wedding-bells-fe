@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-import GuestForm from "../components/masterGuestComponent/index";
+import GuestComponent from "../components/masterGuestComponent/index";
 
 class CouplePageView extends Component {
 	render() {
 		return (
 			<div className="couplePageView">
-				<GuestForm />
+				<GuestComponent />
 			</div>
 		);
 	}
