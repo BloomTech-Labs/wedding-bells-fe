@@ -46,7 +46,9 @@ class Footer extends Component {
 						<a href="#about-us" className="link">
 							About Us
 						</a>
-						<div className="link">Login/Signup</div>
+						<a href="#" className="link" onClick={this.props.toggleAuthModal}>
+							Login/Signup
+						</a>
 					</NavLinks>
 				</Cont>
 			</Navbar>
