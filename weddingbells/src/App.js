@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./styles/App.css";
 
 import { connect } from "react-redux";
-import { Route, Switch, withRouter, Redirect } from "react-router-dom";
+import { Link, Route, Switch, withRouter, Redirect } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -18,37 +18,12 @@ class App extends Component {
 		console.log(netlifyAuth);
 		return (
 			<div className="App">
-				<Header
-					authModalVisible={this.props.authModalVisible}
-					toggleAuthModal={this.props.toggleAuthModal}
-				/>
+				<Header />
 				<Switch>
-					<Route
-						exact
-						path="/"
-						render={() => (
-							<LandingPageView
-								authModalVisible={this.props.authModalVisible}
-								toggleAuthModal={this.props.toggleAuthModal}
-							/>
-						)}
-					/>
+					<Route exact path="/" render={() => <LandingPageView />} />
 					<PrivateRoute path="/protected" component={ProtectedView} />
-					{/* <Route protected exact path="/SearchBar" component={SearchBar} /> */}
 				</Switch>
-				<Footer
-					authModalVisible={this.props.authModalVisible}
-					toggleAuthModal={this.props.toggleAuthModal}
-				/>
-				<button
-					onClick={() => {
-						netlifyAuth.authenticate(() => {
-							this.setState({ redirectToReferrer: true });
-						});
-					}}
-				>
-					Warning: Will break EVERYTHING!
-				</button>
+				<Footer />
 			</div>
 		);
 	}
@@ -80,20 +55,28 @@ const netlifyAuth = {
 
 // Going to replace Login/Logout in header/footer
 // Going to redirect user to logged-in view
-const AuthButton = withRouter(({ history }) =>
+export const AuthButton = withRouter(({ history }) =>
 	netlifyAuth.isAuthenticated ? (
 		<p>
 			Welcome!{" "}
-			<button
+			<Link
 				onClick={() => {
 					netlifyAuth.signout(() => history.push("/"));
 				}}
 			>
 				Sign out
-			</button>
+			</Link>
 		</p>
 	) : (
-		<p>You are not logged in.</p>
+		<Link
+			onClick={() => {
+				netlifyAuth.authenticate(() => {
+					this.setState({ redirectToReferrer: true });
+				});
+			}}
+		>
+			Login
+		</Link>
 	)
 );
 

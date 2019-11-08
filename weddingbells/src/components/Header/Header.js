@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { HashLink } from "react-router-hash-link";
-import {Link} from "react-router-dom"
+// import { Link } from "react-router-dom";
+import { AuthButton } from "../../App";
+
 const Navbar = styled.div`
 	// border
 	// border: 1px red solid;
@@ -58,9 +60,7 @@ class Header extends Component {
 					<HashLink to="#about-us" className="HashLink">
 						About Us
 					</HashLink>
-					<Link href="#" className="link" onClick={this.props.toggleAuthModal}>
-						Login/Signup
-					</Link>
+					<AuthButton />
 				</Links>
 			</Navbar>
 		);

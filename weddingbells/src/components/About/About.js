@@ -1,5 +1,4 @@
 import React from "react";
-import sunflower from "./sunflower.jpg";
 import poly from "./poly.jpg";
 import cedric from "./cedric.jpg";
 import sammy from "./sammy.jpg";
