@@ -11,6 +11,8 @@ import AuthModal from "../components/AuthModal/AuthModal";
 import VendorsList from "../components/Vendor List/index";
 import GuestList from "../components/Guest List/index";
 
+import { AuthButton } from "../App";
+
 const LandingTop = styled.div`
 	// border
 	border: 2px green dotted;
@@ -43,9 +45,7 @@ class LandingPageView extends Component {
 			<div className="landingpage_wrapper">
 				<LandingTop>
 					<CallToAction className="landingpage_top_calltoaction">
-						<Button onClick={this.props.toggleAuthModal}>
-							SHOTGUN WEDDING
-						</Button>
+						<AuthButton />
 					</CallToAction>
 				</LandingTop>
 				<WhatWeOffer />
