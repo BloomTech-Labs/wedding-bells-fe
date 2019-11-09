@@ -1,6 +1,7 @@
 import React from "react";
 
 // import styling
+import "../../styles/about.scss";
 import styled from "styled-components";
 
 // import profile pictures
@@ -49,37 +50,18 @@ export default function About() {
 		},
 	];
 
-	const About = styled.h2`
-		margin-top: 100px;
-	`;
-
-	const Team = styled.div`
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
-		align-items: center;
-		height: 300px;
-	`;
-
-	const TeamPics = styled.img`
-		height: 150px;
-		width: auto;
-		border-radius: 5px;
-		box-shadow: 10px 10px 50px grey;
-	`;
-
 	return (
 		<div id="about-us">
-			<About>About Us</About>
-			<Team>
+			<h2 className="about">About Us</h2>
+			<div className="team">
 				{team.map(dev => (
 					<div>
-						<TeamPics src={dev.img} />
+						<img className="team-pics" src={dev.img} />
 
 						<p>{dev.name}</p>
 					</div>
 				))}
-			</Team>
+			</div>
 		</div>
 	);
 }
