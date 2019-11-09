@@ -14,7 +14,7 @@ class WhatWeOffer extends React.Component {
 	render() {
 		const { services } = this.state;
 		return (
-			<div id="services" className="services-section">
+			<div id="services" className="services-wrapper">
 				{services.map(({ id, ...otherServicesProps }) => (
 					<ServiceItem key={id} {...otherServicesProps} />
 				))}
