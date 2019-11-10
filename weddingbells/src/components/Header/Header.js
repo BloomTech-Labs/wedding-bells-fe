@@ -7,7 +7,9 @@ class Header extends Component {
 	render() {
 		return (
 			<div className="header-wrapper">
-				<div className="header-logo">Wedding Bells</div>
+				<div className="header-logo">
+					<h3>Wedding Bells</h3>
+				</div>
 				<div className="header-links">
 					<a href="#services" className="link">
 						Services

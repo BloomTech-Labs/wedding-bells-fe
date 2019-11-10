@@ -14,9 +14,6 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-
-	// text
-	font-size: 24px;
 }
 
 .header-wrapper .header-logo {
@@ -26,22 +23,17 @@
 
 .header-wrapper .header-links {
 	// size & placement
-	margin-right: 75px;
 	width: 30%;
 
 	// display
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-    justify-content: space-between;
-    
-    // text
-    text-decoration: none;
-}
-
-.header-wrapper .header-links .link {
-    // text
-    color: #000000;
-    font-size: 20px;
-    text-decoration: none;
+    justify-content: space-around;
+	
+	.link {
+		// text
+		color: #000000;
+		text-decoration: none;
+	}
 }
