@@ -20,9 +20,9 @@ class LandingPageView extends Component {
 					</div>
 				</div>
 				<WhatWeOffer />
-				<About />
 				<FAQ />
 				<Testimonials />
+				<About />
 				<AuthModal
 					isOpen={this.props.authModalVisible}
 					toggleAuthModal={this.props.toggleAuthModal}
