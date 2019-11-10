@@ -55,7 +55,7 @@ export default function About() {
 			<div className="team">
 				{team.map(dev => (
 					<div>
-						<img className="team-pics" src={dev.img} />
+						<img className="team-pics" src={dev.img} alt={dev.name}/>
 
 						<p>{dev.name}</p>
 					</div>
