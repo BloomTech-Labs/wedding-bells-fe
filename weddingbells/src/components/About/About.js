@@ -2,7 +2,6 @@ import React from "react";
 
 // import styling
 import "../../styles/about.scss";
-import styled from "styled-components";
 
 // import profile pictures
 import sunflower from "./sunflower.jpg";
