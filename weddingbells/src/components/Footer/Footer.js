@@ -20,7 +20,7 @@ class Footer extends Component {
 					<a href="#about-us" className="link">
 						About Us
 					</a>
-					<a href="#" className="link" onClick={this.props.toggleAuthModal}>
+					<a href="#login-signup" className="link" onClick={this.props.toggleAuthModal}>
 						Login/Signup
 					</a>
 				</div>
