@@ -4,7 +4,7 @@ import "../styles/landingpageview.scss";
 
 import FAQ from "../components/FAQ/FAQ.js";
 import Testimonials from "../components/Testimonials/Testimonials.js";
-import WhatWeOffer from "../components/WhatWeOffer/WhatWeOffer.js";
+import Services from "../components/Services/Services.js";
 import About from "../components/About/About";
 import AuthModal from "../components/AuthModal/AuthModal";
 
@@ -19,7 +19,7 @@ class LandingPageView extends Component {
 						</Button>
 					</div>
 				</div>
-				<WhatWeOffer />
+				<Services />
 				<FAQ />
 				<Testimonials />
 				<About />

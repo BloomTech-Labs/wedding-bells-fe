@@ -1,6 +1,6 @@
 import React from "react";
 
-const ServiceItem = ({ title, subText, image, id }) => (
+const ServicesItem = ({ title, subText, image, id }) => (
 	<div className="services-item">
 		<div className="textBlock">
 			<h3 className="title">{title}</h3>
@@ -12,4 +12,4 @@ const ServiceItem = ({ title, subText, image, id }) => (
 	</div>
 );
 
-export default ServiceItem;
+export default ServicesItem;

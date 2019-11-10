@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 
-class Testimonialcard extends Component {
+class TestimonialsItem extends Component {
 	constructor(props) {
 		super(props);
 	}
 
 	render() {
 		return (
-			<div className="testimonial-card">
+			<div className="testimonials-item">
                 
 			</div>
 		);
 	}
 }
 
-export default Testimonialcard;
+export default TestimonialsItem;
