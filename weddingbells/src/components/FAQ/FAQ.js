@@ -1,7 +1,12 @@
 import React, { Component } from "react";
-// import "./styles/FAQ.scss";
 
+// import styling
+import "../../styles/faq.scss";
+
+// import components
 import FAQcard from "./FAQcard.js";
+
+// import data
 import FAQ_DATA from "./data";
 
 class FAQ extends Component {
@@ -13,7 +18,7 @@ class FAQ extends Component {
 	}
 	render() {
 		return (
-			<div className="faq-wrapper">
+			<div id="FAQ" className="faq-wrapper">
 				<h3>FAQ</h3>
                 {this.state.faqs.map((faq) => (
                     <FAQcard key={faq.id} {...faq} />
