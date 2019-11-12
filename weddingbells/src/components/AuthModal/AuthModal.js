@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
+// import styling
 import "../../styles/authmodal.scss";
-
 import {
 	Form,
 	Input,
@@ -16,7 +16,6 @@ import {
 	NavItem,
 	NavLink,
 } from "reactstrap";
-
 import classnames from "classnames";
 
 class AuthModal extends Component {

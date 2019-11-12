@@ -1,7 +1,12 @@
 import React, { Component } from "react";
-// import "./styles/FAQ.scss";
 
+// import styling
+import "../../styles/faq.scss";
+
+// import components
 import FAQcard from "./FAQcard.js";
+
+// import data
 import FAQ_DATA from "./data";
 
 class FAQ extends Component {
