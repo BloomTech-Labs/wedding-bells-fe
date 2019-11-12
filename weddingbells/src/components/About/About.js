@@ -1,4 +1,9 @@
 import React from "react";
+
+// import styling
+import "../../styles/about.scss";
+
+// import profile pictures
 import poly from "./poly.jpg";
 import cedric from "./cedric.jpg";
 import sammy from "./sammy.jpg";
@@ -41,8 +46,8 @@ export default function About() {
 
 	return (
 		<div id="about-us">
-			<About>About Us</About>
-			<Team>
+			<h2 className="about">About Us</h2>
+			<div className="team">
 				{team.map(dev => (
 					<div>
 						<img className="team-pics" src={dev.img} alt={dev.name} />
@@ -50,7 +55,7 @@ export default function About() {
 						<p>{dev.name}</p>
 					</div>
 				))}
-			</Team>
+			</div>
 		</div>
 	);
 }

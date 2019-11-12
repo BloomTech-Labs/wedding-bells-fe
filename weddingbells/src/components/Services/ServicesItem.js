@@ -7,11 +7,7 @@ const ServicesItem = ({ title, subText, image, id }) => (
 			<p className="subText">{subText}</p>
 		</div>
 		<div className="svgImage">
-<<<<<<< HEAD:weddingbells/src/components/ServiceItem/index.js
 			<img alt={title} src={image}></img>
-=======
-			<img src={image} alt="" />
->>>>>>> 554af7e92493b0480a341bef23fbc2606b32d8ba:weddingbells/src/components/Services/ServicesItem.js
 		</div>
 	</div>
 );

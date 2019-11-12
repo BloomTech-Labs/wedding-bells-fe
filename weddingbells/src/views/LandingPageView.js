@@ -12,14 +12,14 @@ class LandingPageView extends Component {
 	render() {
 		return (
 			<div className="landingpage_wrapper">
-				<LandingTop>
-					<CallToAction className="landingpage_top_calltoaction">
-						<AuthButton />
-					</CallToAction>
-				</LandingTop>
-				<WhatWeOffer />
-				<VendorsList />
-				<GuestList />
+				<div className="top">
+					<div className="calltoaction">
+						<Button onClick={this.props.toggleAuthModal}>
+							SHOTGUN WEDDING
+						</Button>
+					</div>
+				</div>
+				<Services />
 				<FAQ />
 				<Testimonials />
 				<About />

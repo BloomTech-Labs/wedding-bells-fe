@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import { HashLink } from "react-router-hash-link";
 // import { Link } from "react-router-dom";
 import { AuthButton } from "../../App";
@@ -10,9 +9,9 @@ import "../../styles/header.scss";
 class Header extends Component {
 	render() {
 		return (
-			<Navbar className="header_wrapper">
-				<Logo className="header_logo">Wedding Bells</Logo>
-				<Links className="header_links">
+			<div className="header_wrapper">
+				<div className="header_logo">Wedding Bells</div>
+				<div className="header_links">
 					<HashLink to="#services" className="HashLink">
 						Services
 					</HashLink>
@@ -23,8 +22,8 @@ class Header extends Component {
 						About Us
 					</HashLink>
 					<AuthButton />
-				</Links>
-			</Navbar>
+				</div>
+			</div>
 		);
 	}
 }
