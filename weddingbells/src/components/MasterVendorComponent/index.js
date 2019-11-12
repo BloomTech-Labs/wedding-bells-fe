@@ -25,8 +25,8 @@ export default function VendorComponent() {
 	/* Ending at this line, whenever the vendorInfo loads or is updated the component will re-render */
 
 	//When a user adds vendor information via the form with the modal, the following function will be what will do the action
-	function handleSubmitVendor(evt) {
-		evt.preventDefault();
+	const handleSubmitVendor = e => {
+		// e.preventDefault();
 		const vendor = {
 			...vendorInfo,
 		};
@@ -40,7 +40,7 @@ export default function VendorComponent() {
 			.catch(error => {
 				console.error("Server Error", error);
 			});
-	}
+	};
 	//When a user deletes vendors information via the trash icon, the following function will be what will do the action
 	function handleDeleteVendor(evt) {
 		evt.preventDefault();

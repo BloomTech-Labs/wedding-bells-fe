@@ -1,67 +1,68 @@
 import React from "react";
-import { FormGroup, Label, Input } from "reactstrap";
+import useForm from "react-hook-form";
 
-function VendorForm() {
-	const [state, setState] = React.useState({
-		vendorName: "",
-		value: "disabled",
-	});
+import {
+	Button,
+	Form,
+	FormGroup,
+	Label,
+	Input,
+	FormText,
+	Col,
+} from "reactstrap";
 
-	function handleChange(evt) {
-		const value = evt.target.value;
-		setState({
-			...state,
-			[evt.target.name]: value,
-		});
-	}
+const VendorForm = ({ onSubmit }) => {
+	const { register, handleSubmit, errors } = useForm();
+
+	console.log(errors);
+
 	return (
-		<FormGroup className="vendorForm">
-			<FormGroup className="mb-2 mr-sm-2 mb-sm-0 ">
-				<Label for="vendorName">Name Of Vendor</Label>
-				<Input
-					type="text"
-					name="vendorName"
-					id="vendorName"
-					placeholder="Whats the vendors name?"
-					value={state.vendorName}
-					onChange={handleChange}
-				/>
+		<Form onSubmit={handleSubmit(onSubmit)}>
+			<FormGroup row>
+				<Label for="Vendor Name" sm={4}>
+					Vendor Name
+				</Label>
+				<Col sm={5}>
+					<input
+						type="text"
+						placeholder="Vendor Name"
+						name="Vendor Name"
+						id="Vendor Name"
+						placeholder="Charles Bakery"
+						ref={register({ required: true, maxLength: 80 })}
+					/>
+				</Col>
 			</FormGroup>
-			<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-				<Label for="select">Select Vendor Type</Label>
-				<Input
-					value={state.value}
-					type="select"
-					name="select"
-					id="select"
-					onChange={handleChange}
-				>
-					<option disabled value="disabled">
-						Please choose an option
-					</option>
-					<option value="photographer">Photographer</option>
-					<option value="venue">Venue</option>
-					<option value="hairAndMakeup">Hair and Makeup</option>
-					<option value="attire">Attire</option>
-					<option value="baker">Baker</option>
-					<option value="florist">Florist</option>
-					<option value="musicPro">Music Pros</option>
-					<option value="videographer">Videographer</option>
-					<option value="stationer">Stationer</option>
-					<option value="caterer">Caterer</option>
-					<option value="officiant">Officiant</option>
-					<option value="jeweler">Jeweler</option>
-					<option value="favorsVendor">Favors Vendor</option>
-					<option value="rentalsCompany">Rentals Company</option>
-					<option value="transportationCompany">Transportation Company</option>
-					<option value="lightingDesigner">Lighting Designer</option>
-					<option disabled value="disabled">
-						Please choose an option
-					</option>
-				</Input>
+			<FormGroup row>
+				<Label for="Select Vendor" sm={4}>
+					Select Vendor
+				</Label>
+				<Col sm={5}>
+					<select name="Vendor Category" ref={register({ required: true })}>
+						<option value="Photographer">Photographer</option>
+						<option value="Venue">Venue</option>
+						<option value="Hair and Makeup">Hair and Makeup</option>
+						<option value="Attire">Attire</option>
+						<option value="Baker">Baker</option>
+						<option value="Florist">Florist</option>
+						<option value="Music Pros">Music Pros</option>
+						<option value="Videographer">Videographer</option>
+						<option value="Stationer">Stationer</option>
+						<option value="Caterer">Caterer</option>
+						<option value="Officiant">Officiant</option>
+						<option value="Jeweler">Jeweler</option>
+						<option value="Favors Vendor">Favors Vendor</option>
+						<option value="Rentals Company">Rentals Company</option>
+						<option value="Transportation Company">
+							Transportation Company
+						</option>
+						<option value="Lighting Designer">Lighting Designer</option>
+					</select>
+				</Col>
 			</FormGroup>
-		</FormGroup>
+			<input type="submit" />
+		</Form>
 	);
-}
+};
 
 export default VendorForm;
