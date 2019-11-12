@@ -9,9 +9,9 @@ import "../../styles/header.scss";
 class Header extends Component {
 	render() {
 		return (
-			<div className="header_wrapper">
-				<div className="header_logo">Wedding Bells</div>
-				<div className="header_links">
+			<div className="header-wrapper">
+				<div className="header-logo">Wedding Bells</div>
+				<div className="header-links">
 					<HashLink to="#services" className="HashLink">
 						Services
 					</HashLink>
