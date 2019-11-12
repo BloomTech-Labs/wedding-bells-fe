@@ -11,7 +11,7 @@ import { Headers, VendorData } from "../Vendor List/mappedOver";
 
 export default function VendorComponent() {
 	//Use React hooks to set state
-	const [vendorInfo, setVendorInfo] = useState({ vendorInfo: {} });
+	const [vendorInfo, setVendorInfo] = useState([{ vendorInfo: {} }]);
 
 	/* Starting from this line and down, whenever the vendorInfo loads or is updated the component will re-render */
 	const fetchVendorInfo = async () => {
@@ -70,7 +70,7 @@ export default function VendorComponent() {
 						<Headers />
 
 						<tbody>
-							{vendorInfo.vendorInfo.map((vendor, idx) => (
+							{vendorInfo.map((vendor, idx) => (
 								<VendorData
 									key={idx}
 									editMe={editMe}

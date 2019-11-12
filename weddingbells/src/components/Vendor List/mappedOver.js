@@ -1,4 +1,7 @@
 import React from "react";
+
+import "../../styles/mappedOver.scss";
+
 import { Link } from "react-router-dom";
 
 export const Headers = props => {
@@ -39,14 +42,22 @@ export const VendorData = ({
 				<th>{id}</th>
 				<td>{vendorName}</td>
 				<td>{category}</td>
-				<td className="editMe">
+				<td className="editing">
 					<Link onClick={onUpdate} target="_blank" rel="noopener noreferrer">
-						<img alt="edit" src={require("../../assets/pencil.svg")} />
+						<img
+							alt="edit"
+							className="editMe"
+							src={require("../../assets/pencil.svg")}
+						/>
 					</Link>
 				</td>
-				<td className="deleteMe">
+				<td className="deleting">
 					<Link onClick={onDelete} target="_blank" rel="noopener noreferrer">
-						<img alt="delete" src={require("../../assets/delete.svg")} />
+						<img
+							alt="delete"
+							className="deleteMe"
+							src={require("../../assets/delete.svg")}
+						/>
 					</Link>
 				</td>
 			</tr>

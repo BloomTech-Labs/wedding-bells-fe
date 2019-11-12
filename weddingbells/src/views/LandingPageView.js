@@ -8,6 +8,9 @@ import Services from "../components/Services/Services.js";
 import About from "../components/About/About";
 import AuthModal from "../components/AuthModal/AuthModal";
 
+import GuestComponent from "../components/masterGuestComponent/index";
+import VendorComponent from "../components/MasterVendorComponent/index";
+
 class LandingPageView extends Component {
 	render() {
 		return (
@@ -20,6 +23,8 @@ class LandingPageView extends Component {
 					</div>
 				</div>
 				<Services />
+				<GuestComponent />
+				<VendorComponent />
 				<FAQ />
 				<Testimonials />
 				<About />
