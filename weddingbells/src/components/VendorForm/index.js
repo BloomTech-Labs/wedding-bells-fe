@@ -1,15 +1,7 @@
 import React from "react";
 import useForm from "react-hook-form";
 
-import {
-	Button,
-	Form,
-	FormGroup,
-	Label,
-	Input,
-	FormText,
-	Col,
-} from "reactstrap";
+import { Form, FormGroup, Label, Col } from "reactstrap";
 
 const VendorForm = ({ onSubmit }) => {
 	const { register, handleSubmit, errors } = useForm();

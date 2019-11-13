@@ -1,78 +1,83 @@
 import React from "react";
-import { FormGroup, Label, Input } from "reactstrap";
+import useForm from "react-hook-form";
 
-export default function GuestForm() {
-	const [state, setState] = React.useState({
-		guestName: "",
-		guestEmail: "",
-		respondedToInvite: "",
-		response: "",
-		plusOne: "",
-	});
-	function handleChange(evt) {
-		const value = evt.target.value;
-		setState({
-			...state,
-			[evt.target.name]: value,
-		});
-	}
+import { Form, FormGroup, Label, Col } from "reactstrap";
+
+const GuestForm = ({ onSubmit }) => {
+	const { register, handleSubmit, errors } = useForm();
+
+	console.log(errors);
+
 	return (
-		<FormGroup className="guestForm">
-			<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-				<Label for="guestName">Name Of Guest</Label>
-				<Input
-					type="text"
-					name="guestName"
-					id="guestName"
-					placeholder="Guests Name"
-					value={state.name}
-					onChange={handleChange}
-				/>
+		<Form onSubmit={handleSubmit(onSubmit)}>
+			<FormGroup row>
+				<Label for="Guest Name" sm={6}>
+					Guest Name
+				</Label>
+				<Col sm={5}>
+					<input
+						type="text"
+						placeholder="Guest Name"
+						name="Guest Name"
+						ref={register({ required: true, maxLength: 80 })}
+					/>
+				</Col>
 			</FormGroup>
-			<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-				<Label for="guestEmail">Guests Email</Label>
-				<Input
-					type="email"
-					name="guestEmail"
-					id="guestEmail"
-					placeholder="Guests Email"
-					value={state.email}
-					onChange={handleChange}
-				/>
+			<FormGroup row>
+				<Label for="Guest Email" sm={6}>
+					Guest Email
+				</Label>
+				<Col sm={5}>
+					<input
+						type="email"
+						placeholder="Guest Email"
+						name="Guest Email"
+						ref={register({ required: true, maxLength: 100 })}
+					/>
+				</Col>
 			</FormGroup>
-			<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-				<Label for="going">Are they going?</Label>
-				<Input
-					type="text"
-					name="going"
-					id="going"
-					placeholder="Are they Going?"
-					value={state.going}
-					onChange={handleChange}
-				/>
+			<FormGroup row>
+				<Label for="Are they going?" sm={6}>
+					Are they going?
+				</Label>
+				<Col sm={5}>
+					<select name="Attending?" ref={register({ required: true })}>
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+					</select>
+				</Col>
 			</FormGroup>
-			<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-				<Label for="respondedToInvite">Have they responded?</Label>
-				<Input
-					type="text"
-					name="respondedToInvite"
-					id="respondedToInvite"
-					placeholder="Have They Responded?"
-					value={state.response}
-					onChange={handleChange}
-				/>
+			<FormGroup row>
+				<Label for="Have they responded?" sm={6}>
+					Have they responded?
+				</Label>
+				<Col sm={5}>
+					<select
+						name="Have they responded to you?"
+						ref={register({ required: true })}
+					>
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+					</select>
+				</Col>
 			</FormGroup>
-			<FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-				<Label for="plusOne">Are they bringing a plus one?</Label>
-				<Input
-					type="text"
-					name="plusOne"
-					id="plusOne"
-					placeholder="Are they bringing anyone?"
-					value={state.plusOne}
-					onChange={handleChange}
-				/>
+			<FormGroup row>
+				<Label for="Are they bringing a plus one?" sm={6}>
+					Are they bringing a plus one?
+				</Label>
+				<Col sm={5}>
+					<select
+						name="Are they bringing a plus one?"
+						ref={register({ required: true })}
+					>
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+					</select>
+				</Col>
 			</FormGroup>
-		</FormGroup>
+			<input type="submit" />
+		</Form>
 	);
-}
+};
+
+export default GuestForm;
