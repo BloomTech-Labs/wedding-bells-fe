@@ -1,0 +1,95 @@
+.tableGroup {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	flex-direction: column;
+	align-content: center;
+	width: 75%;
+	vertical-align: middle;
+	align-items: center;
+	button {
+		background-color: #007bff;
+		border: none;
+		width: 135px;
+	}
+}
+
+.vendorsList {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: center;
+	vertical-align: middle;
+
+	// border: 3px solid black;
+
+	.table-responsive {
+		// border: 3px solid blue;
+
+		.table {
+			// border: 3px solid brown;
+
+			vertical-align: middle;
+		}
+	}
+}
+
+.guestList {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: center;
+	vertical-align: middle;
+
+	// border: 3px solid black;
+
+	.table-responsive {
+		// border: 3px solid blue;
+
+		.table {
+			// border: 3px solid brown;
+
+			vertical-align: middle;
+		}
+	}
+}
+
+.table.table-bordered td,
+.table.table-bordered th {
+	vertical-align: middle;
+}
+tbody {
+	tr {
+		th {
+			font-size: 20px;
+			vertical-align: middle;
+		}
+
+		td {
+			font-size: 20px;
+			vertical-align: middle;
+		}
+	}
+}
+
+.table {
+	vertical-align: middle;
+
+	td {
+		padding: 0;
+		margin: 0;
+		vertical-align: middle;
+		a {
+			padding: 0;
+			margin: 0;
+			img {
+				height: 10%;
+				width: auto;
+				padding: 0;
+				margin: 0;
+			}
+		}
+	}
+}

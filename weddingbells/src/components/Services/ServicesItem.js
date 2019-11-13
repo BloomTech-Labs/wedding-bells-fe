@@ -7,7 +7,7 @@ const ServicesItem = ({ title, subText, image, id }) => (
 			<p className="subText">{subText}</p>
 		</div>
 		<div className="svgImage">
-			<img src={image} alt="" />
+			<img alt={title} src={image}></img>
 		</div>
 	</div>
 );

@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 
-// import styling
+import { Link } from "react-router-dom";
+
 import "../../styles/footer.scss";
+
+import { HashLink } from "react-router-hash-link";
 
 class Footer extends Component {
 	render() {
@@ -11,17 +14,30 @@ class Footer extends Component {
 					<h3>Wedding Bells </h3>
 				</div>
 				<div className="footer-links">
-					<a href="#services" className="link">
+					<HashLink to="#services" className="HashLink">
 						Services
-					</a>
-					<a href="#FAQ" className="link">
+					</HashLink>
+					<HashLink to="#faq" className="HashLink">
 						FAQ
-					</a>
-					<a href="#about-us" className="link">
+					</HashLink>
+					<HashLink to="#about-us" className="HashLink">
 						About Us
-					</a>
-					<a href="#login-signup" className="link" onClick={this.props.toggleAuthModal}>
+					</HashLink>
+					<Link to="#" className="link" onClick={this.props.toggleAuthModal}>
 						Login/Signup
+					</Link>
+				</div>
+				<div>
+					Icons made by{" "}
+					<a
+						href="https://www.flaticon.com/authors/kiranshastry"
+						title="Kiranshastry"
+					>
+						Kiranshastry
+					</a>{" "}
+					from{" "}
+					<a href="https://www.flaticon.com/" title="Flaticon">
+						www.flaticon.com
 					</a>
 				</div>
 			</div>
