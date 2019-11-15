@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import axios from "axios";
+
+// import dependencies
+import { connect } from "react-redux";
+
+// import actions
+import { login, signup } from "../../actions";
 
 // import styling
 import "../../styles/authmodal.scss";
@@ -25,29 +30,58 @@ class AuthModal extends Component {
 
 		this.state = {
 			activeTab: "1",
+			loginCredentials: {
+				email: "",
+				password: "",
+			},
+			signupCredentials: {
+				spouse_one_name: "",
+				spouse_two_name: "",
+				email: "",
+				password: "",
+			},
 		};
 	}
-	// handleSubmitGuest = evt => {
-	// 	evt.preventDefault();
-	// 	const guest = {
-	// 		...guestInfo,
-	// 	};
 
-	// 	axios
-	// 		.post("/api/weddings/:weddingId/guests/:id", { guest })
-	// 		.then(res => {
-	// 			console.log("Adding that guests information");
-	// 			console.log("The guests information has been added");
-	// 		})
-	// 		.catch(error => {
-	// 			console.error("Server Error", error);
-	// 		});
-	// };
-	handlerChangeTab = tabID => {
+	handlerLogIn = e => {
+		e.preventDefault();
+		this.props
+			.signup(this.state.loginCredentials)
+			.then(() => this.props.history.push("/helpBobwheredoIgonow"));
+	};
+
+	handlerSignUp = e => {
+		e.preventDefault();
+		this.props
+			.signup(this.state.signupCredentials)
+			.then(() => this.props.history.push("/helpBobwheredoIgonow"));
+	};
+
+	handlerTabChange = tabID => {
 		if (this.state.activeTab !== tabID) {
 			this.setState({ activeTab: tabID });
 		}
 	};
+
+	handlerTextChange = e => {
+		if (this.state.activeTab === "1") {
+			this.setState({
+				loginCredentials: {
+					...this.state.loginCredentials,
+					[e.target.name]: e.target.value,
+				},
+			});
+		} else if (this.state.activeTab === "2") {
+			this.setState({
+				signupCredentials: {
+					...this.state.signupCredentials,
+					[e.target.name]: e.target.value,
+				},
+			});
+		}
+	};
+
+	// reset state when closing modal needed
 
 	render() {
 		return (
@@ -66,7 +100,7 @@ class AuthModal extends Component {
 							<NavLink
 								className={classnames({ active: this.state.activeTab === "1" })}
 								onClick={() => {
-									this.handlerChangeTab("1");
+									this.handlerTabChange("1");
 								}}
 							>
 								Already have an account?
@@ -76,7 +110,7 @@ class AuthModal extends Component {
 							<NavLink
 								className={classnames({ active: this.state.activeTab === "2" })}
 								onClick={() => {
-									this.handlerChangeTab("2");
+									this.handlerTabChange("2");
 								}}
 							>
 								Looking to Join?
@@ -91,7 +125,7 @@ class AuthModal extends Component {
 									<Input placeholder="Password"></Input>
 								</Form>
 								<ModalFooter>
-									<Button onClick={this.props.toggleAuthModal}>Sign In</Button>
+									<Button onClick={this.handlerLogin}>Log In</Button>
 								</ModalFooter>
 								<ModalFooter>
 									<Button onClick={this.props.toggleAuthModal}>
@@ -106,14 +140,35 @@ class AuthModal extends Component {
 						<TabPane tabId="2">
 							<ModalBody>
 								<Form>
-									<Input placeholder="Spouse #1 Name"></Input>
-									<Input placeholder="Spouse #2 Name"></Input>
-									<Input placeholder="Email Address"></Input>
-									<Input placeholder="Password"></Input>
-									<Input placeholder="Confirm Password"></Input>
+									<Input
+										placeholder="Spouse #1 Name"
+										name="spouse_one_name"
+										value={this.state.signupCredentials.spouse_one_name}
+										onChange={this.handlerTextChange}
+									></Input>
+									<Input
+										placeholder="Spouse #2 Name"
+										name="spouse_two_name"
+										value={this.state.signupCredentials.spouse_two_name}
+										onChange={this.handlerTextChange}
+									></Input>
+									<Input
+										placeholder="Email Address"
+										name="email"
+										value={this.state.signupCredentials.email}
+										onChange={this.handlerTextChange}
+									></Input>
+									<Input
+										placeholder="Password"
+										name="password"
+										value={this.state.signupCredentials.password}
+										onChange={this.handlerTextChange}
+									></Input>
+									{/* To add a confirm password later
+									<Input placeholder="Confirm Password" value={this.state.signupCredentials.spouse_one_name}></Input> */}
 								</Form>
 								<ModalFooter>
-									<Button onClick={this.props.toggleAuthModal}>Sign Up</Button>
+									<Button onClick={this.handlerSignUp}>Sign Up</Button>
 								</ModalFooter>
 							</ModalBody>
 						</TabPane>
@@ -124,4 +179,7 @@ class AuthModal extends Component {
 	}
 }
 
-export default AuthModal;
+export default connect(
+	null,
+	{ login, signup }
+)(AuthModal);

@@ -3,7 +3,7 @@ import { Button } from "reactstrap";
 import "./landingpageview.scss";
 
 import { connect } from "react-redux";
-import { login } from "../actions";
+import { login, toggleAuthModal } from "../actions";
 
 import FAQ from "../components/FAQ/FAQ.js";
 import Testimonials from "../components/Testimonials/Testimonials.js";
@@ -20,7 +20,7 @@ class LandingPageView extends Component {
 			<div className="landingpage_wrapper">
 				<div className="top">
 					<div className="calltoaction">
-						<Button onClick={this.props.login}>
+						<Button onClick={this.props.toggleAuthModal}>
 							SHOTGUN WEDDING
 						</Button>
 					</div>
@@ -40,9 +40,11 @@ class LandingPageView extends Component {
 	}
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+	authModalVisible: state.landingPageReducer.authModalVisible,
+});
 
 export default connect(
 	mapStateToProps,
-	{ login }
+	{ login, toggleAuthModal }
 )(LandingPageView);

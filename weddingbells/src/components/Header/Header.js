@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { HashLink } from "react-router-hash-link";
 // import { Link } from "react-router-dom";
-import { AuthButton } from "../../App";
 
 // import styling
 import "../../styles/header.scss";
@@ -21,7 +20,9 @@ class Header extends Component {
 					<HashLink to="#about-us" className="HashLink">
 						About Us
 					</HashLink>
-					<AuthButton />
+					<HashLink to="#" className="link" onClick={this.props.toggleAuthModal}>
+						Login/Signup
+					</HashLink>
 				</div>
 			</div>
 		);

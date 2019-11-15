@@ -14,21 +14,16 @@ export const TOGGLE_AUTH_MODAL = "TOGGLE_AUTH_MODAL";
 export const login = creds => dispatch => {
 	dispatch({ type: LOGIN_START });
 	return axios
-		.post("http://localhost:5000/api/auth/login", {
-			spouse_one_name: "Poly",
-			spouse_two_name: "HerBae",
-			email: "test2@gmail.com",
-			password: "password123"
-		})
-		.then(res => localStorage.setItem("token", res.data.token))
+		.post("http://localhost:5000/api/auth/login", creds)
+		.then(res => localStorage.setItem("token", res.data.token));
 };
 
 export const signup = creds => dispatch => {
 	dispatch({ type: SIGNUP_START });
-	return axios
-	.post("http://localhost:5000/api/auth/register", creds)
-	// something?
-}
+	return axios.post("http://localhost:5000/api/auth/register", creds);
+};
+
+export const signout = () => dispatch => {};
 
 export const toggleAuthModal = () => dispatch => {
 	dispatch({ type: TOGGLE_AUTH_MODAL });

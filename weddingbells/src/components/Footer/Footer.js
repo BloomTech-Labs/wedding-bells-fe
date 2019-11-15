@@ -27,6 +27,7 @@ class Footer extends Component {
 						Login/Signup
 					</Link>
 				</div>
+				{/* Why is this here?
 				<div>
 					Icons made by{" "}
 					<a
@@ -39,7 +40,7 @@ class Footer extends Component {
 					<a href="https://www.flaticon.com/" title="Flaticon">
 						www.flaticon.com
 					</a>
-				</div>
+				</div> */}
 			</div>
 		);
 	}
