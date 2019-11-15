@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 import "./landingpageview.scss";
 
+import { connect } from "react-redux";
+import { login } from "../actions";
+
 import FAQ from "../components/FAQ/FAQ.js";
 import Testimonials from "../components/Testimonials/Testimonials.js";
 import Services from "../components/Services/Services.js";
@@ -17,7 +20,7 @@ class LandingPageView extends Component {
 			<div className="landingpage_wrapper">
 				<div className="top">
 					<div className="calltoaction">
-						<Button onClick={this.props.toggleAuthModal}>
+						<Button onClick={this.props.login}>
 							SHOTGUN WEDDING
 						</Button>
 					</div>
@@ -37,4 +40,9 @@ class LandingPageView extends Component {
 	}
 }
 
-export default LandingPageView;
+const mapStateToProps = state => ({});
+
+export default connect(
+	mapStateToProps,
+	{ login }
+)(LandingPageView);

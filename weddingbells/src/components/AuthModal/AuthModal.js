@@ -27,22 +27,22 @@ class AuthModal extends Component {
 			activeTab: "1",
 		};
 	}
-	handleSubmitGuest = evt => {
-		evt.preventDefault();
-		const guest = {
-			...guestInfo,
-		};
+	// handleSubmitGuest = evt => {
+	// 	evt.preventDefault();
+	// 	const guest = {
+	// 		...guestInfo,
+	// 	};
 
-		axios
-			.post("/api/weddings/:weddingId/guests/:id", { guest })
-			.then(res => {
-				console.log("Adding that guests information");
-				console.log("The guests information has been added");
-			})
-			.catch(error => {
-				console.error("Server Error", error);
-			});
-	};
+	// 	axios
+	// 		.post("/api/weddings/:weddingId/guests/:id", { guest })
+	// 		.then(res => {
+	// 			console.log("Adding that guests information");
+	// 			console.log("The guests information has been added");
+	// 		})
+	// 		.catch(error => {
+	// 			console.error("Server Error", error);
+	// 		});
+	// };
 	handlerChangeTab = tabID => {
 		if (this.state.activeTab !== tabID) {
 			this.setState({ activeTab: tabID });

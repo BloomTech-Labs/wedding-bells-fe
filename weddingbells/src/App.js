@@ -2,16 +2,19 @@ import React, { Component } from "react";
 import "./styles/App.css";
 
 import { connect } from "react-redux";
-import { Link, Route, Switch, withRouter, Redirect } from "react-router-dom";
+import { Link, Route, Switch, withRouter } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import { LandingPageView } from "./views";
 
 import { toggleAuthModal } from "./actions";
 
 import netlifyIdentity from "netlify-identity-widget";
+
+import { LandingPageView } from "./views";
 import { ProtectedView } from "./views";
+
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute.js";
 
 class App extends Component {
 	render() {
@@ -83,27 +86,6 @@ export const AuthButton = withRouter(({ history }) =>
 const mapStateToProps = state => ({
 	authModalVisible: state.landingPageReducer.authModalVisible,
 });
-
-// PrivateRoute component [to be moved!]
-function PrivateRoute({ component: Component, ...rest }) {
-	return (
-		<Route
-			{...rest}
-			render={props =>
-				netlifyAuth.isAuthenticated ? (
-					<Component {...props} />
-				) : (
-					<Redirect
-						to={{
-							pathname: "/loggedin",
-							state: { from: props.location },
-						}}
-					/>
-				)
-			}
-		/>
-	);
-}
 
 export default connect(
 	mapStateToProps,

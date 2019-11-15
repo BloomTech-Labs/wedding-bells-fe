@@ -1,10 +1,12 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 // add additional reducers with:
 // import { ${reducer_name} } from ${reducer_location};
-import { landingPageReducer } from './landingPageReducer.js';
+import { landingPageReducer } from "./landingPageReducer.js";
+import { authReducer } from "./authReducer.js";
 
 export default combineReducers({
-    // add additional reducers with:
+	// add additional reducers with:
     // ${reducer_name}
-    landingPageReducer,
+    authReducer,
+	landingPageReducer,
 });
