@@ -12,6 +12,7 @@ export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const TOGGLE_AUTH_MODAL = "TOGGLE_AUTH_MODAL";
 
 export const login = creds => dispatch => {
+	console.log(creds)
 	dispatch({ type: LOGIN_START });
 	return axios
 		.post("http://localhost:5000/api/auth/login", creds)

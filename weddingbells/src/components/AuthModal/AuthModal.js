@@ -45,16 +45,14 @@ class AuthModal extends Component {
 
 	handlerLogIn = e => {
 		e.preventDefault();
-		this.props
-			.signup(this.state.loginCredentials)
-			.then(() => this.props.history.push("/helpBobwheredoIgonow"));
+		this.props.login(this.state.loginCredentials);
+		// .then(() => this.props.history.push("/"));
 	};
 
 	handlerSignUp = e => {
 		e.preventDefault();
-		this.props
-			.signup(this.state.signupCredentials)
-			.then(() => this.props.history.push("/helpBobwheredoIgonow"));
+		this.props.signup(this.state.signupCredentials);
+		// .then(() => this.props.history.push("/"));
 	};
 
 	handlerTabChange = tabID => {
@@ -121,11 +119,21 @@ class AuthModal extends Component {
 						<TabPane tabId="1">
 							<ModalBody>
 								<Form>
-									<Input placeholder="Email Address"></Input>
-									<Input placeholder="Password"></Input>
+									<Input
+										placeholder="Email Address"
+										name="email"
+										value={this.state.loginCredentials.email}
+										onChange={this.handlerTextChange}
+									></Input>
+									<Input
+										placeholder="Password"
+										name="password"
+										value={this.state.loginCredentials.password}
+										onChange={this.handlerTextChange}
+									></Input>
 								</Form>
 								<ModalFooter>
-									<Button onClick={this.handlerLogin}>Log In</Button>
+									<Button onClick={this.handlerLogIn}>Log In</Button>
 								</ModalFooter>
 								<ModalFooter>
 									<Button onClick={this.props.toggleAuthModal}>
