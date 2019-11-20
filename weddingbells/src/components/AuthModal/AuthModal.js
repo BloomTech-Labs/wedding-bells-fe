@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 // import dependencies
 import { connect } from "react-redux";
+import { withRouter } from 'react-router-dom';
 
 // import actions
 import { login, signup } from "../../actions";
@@ -45,8 +46,8 @@ class AuthModal extends Component {
 
 	handlerLogIn = e => {
 		e.preventDefault();
-		this.props.login(this.state.loginCredentials);
-		// .then(() => this.props.history.push("/"));
+		this.props.login(this.state.loginCredentials)
+			.then(() => this.props.history.push("/protected"));
 	};
 
 	handlerSignUp = e => {
@@ -190,4 +191,4 @@ class AuthModal extends Component {
 export default connect(
 	null,
 	{ login, signup }
-)(AuthModal);
+)(withRouter(AuthModal));

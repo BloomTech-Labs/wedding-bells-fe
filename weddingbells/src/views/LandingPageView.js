@@ -3,6 +3,7 @@ import { Button } from "reactstrap";
 import "./landingpageview.scss";
 
 import { connect } from "react-redux";
+
 import { login, toggleAuthModal } from "../actions";
 
 import FAQ from "../components/FAQ/FAQ.js";
@@ -20,7 +21,7 @@ class LandingPageView extends Component {
 			<div className="landingpage_wrapper">
 				<div className="top">
 					<div className="calltoaction">
-						<Button onClick={this.props.toggleAuthModal}>
+						<Button onClick={() => this.props.toggleAuthModal()}>
 							SHOTGUN WEDDING
 						</Button>
 					</div>

@@ -10,12 +10,6 @@ import rootReducer from "./reducers";
 import { BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import netlifyIdentity from "netlify-identity-widget";
-
-window.netlifyIdentity = netlifyIdentity;
-// You must run this once before trying to interact with the widget
-netlifyIdentity.init();
-
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
