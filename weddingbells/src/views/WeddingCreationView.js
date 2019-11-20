@@ -7,6 +7,34 @@ import "../styles/WeddingCreation.scss";
 const WeddingCreationForm = () => {
 	const [address, setAddress] = useState(null);
 	const [date, setDate] = useState(null);
+	const [slug, setSlug] = useState("");
+
+	/**
+	 * TODO
+	 */
+	const generateSlug = () => {
+		// ex. alice-johnson-and-billy-bob-jun-05-2020
+		return `${spouse_one_name}-and-${spouse_two_name}-${date}`;
+	};
+
+	/**
+	 * TODO
+	 */
+	const onSubmit = () => {
+		/**
+		 * Steps
+		 * 1. get couple data from redux / localstorage (names + id)
+		 * 2. create couple's wedding slug using `generateSlug()`
+		 * 3. Call API:
+		 *    POST `<backend_host>/api/weddings
+		 *    {
+		 *      date,
+		 *      location,
+		 *      slug,
+		 *      couple_id: couple.id
+		 *    }
+		 */
+	};
 
 	const onSuggestSelect = (selection = {}) => {
 		const { description, formatted_address, label, placeId } = selection;
@@ -53,7 +81,7 @@ const WeddingCreationForm = () => {
 	};
 
 	return (
-		<form>
+		<form onSubmit={onSubmit}>
 			<GeoSuggest
 				country="us"
 				types={["geocode", "establishment"]}
@@ -66,6 +94,7 @@ const WeddingCreationForm = () => {
 				disabledDate={disabledDate}
 				onChange={onChange}
 			/>
+			<input type="submit" value="Create Wedding" />
 		</form>
 	);
 };
