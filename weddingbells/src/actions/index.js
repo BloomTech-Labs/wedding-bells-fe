@@ -14,10 +14,11 @@ export const TOGGLE_AUTH_MODAL = "TOGGLE_AUTH_MODAL";
 export const login = creds => dispatch => {
 	console.log(creds);
 	dispatch({ type: LOGIN_START });
-	return axios
-		.post("http://localhost:5000/api/auth/login", creds)
-		.then(res => localStorage.setItem("token", res.data.token))
-		.then(res => localStorage.setItem("jwt", res.data.token));
+	return axios.post("http://localhost:5000/api/auth/login", creds).then(res => {
+		localStorage.setItem("token", res.data.token);
+		localStorage.setItem("couple", JSON.stringify(res.data.couple));
+		dispatch({ type: LOGIN_SUCCESS, payload: res.data.couple });
+	});
 };
 
 export const signup = creds => dispatch => {

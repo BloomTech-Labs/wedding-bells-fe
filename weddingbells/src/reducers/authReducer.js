@@ -11,6 +11,7 @@ const initialState = {
 	isLoggingIn: false,
 	isSigningUp: false,
 	error: "",
+	couple: {},
 };
 
 export const authReducer = (state = initialState, action) => {
@@ -56,6 +57,7 @@ export const authReducer = (state = initialState, action) => {
 				isLoggingIn: false,
 				isSigningUp: false,
 				error: "",
+				couple: action.payload,
 			};
 		default:
 			return state;
