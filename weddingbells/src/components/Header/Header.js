@@ -11,13 +11,13 @@ class Header extends Component {
 			<div className="header-wrapper">
 				<div className="header-logo">Wedding Bells</div>
 				<div className="header-links">
-					<HashLink to="#services" className="HashLink">
+					<HashLink to="#services" className="link">
 						Services
 					</HashLink>
-					<HashLink to="#faq" className="HashLink">
+					<HashLink to="#faq" className="link">
 						FAQ
 					</HashLink>
-					<HashLink to="#about-us" className="HashLink">
+					<HashLink to="#about-us" className="link">
 						About Us
 					</HashLink>
 					<HashLink to="#" className="link" onClick={this.props.toggleAuthModal}>
