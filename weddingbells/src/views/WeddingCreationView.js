@@ -1,50 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import axios from "axios";
 import { DatePicker } from "antd";
 import GeoSuggest from "react-geosuggest";
 import styled from "styled-components";
 import "../styles/WeddingCreation.scss";
 
-const WeddingCreationForm = () => {
+const WeddingCreationForm = ({ couple }) => {
 	const [address, setAddress] = useState(null);
 	const [date, setDate] = useState(null);
-	const [slug, setSlug] = useState("");
 
 	/**
-	 * TODO
+	 * Function that creates the slug used for a specific couple's wedding.
+	 * @returns {String} ex. `alice-johnson-and-billy-bob-jun-05-2020`
 	 */
 	const generateSlug = () => {
-		// ex. alice-johnson-and-billy-bob-jun-05-2020
-		return `${spouse_one_name}-and-${spouse_two_name}-${date}`;
-	};
-
-	/**
-	 * TODO
-	 */
-	const onSubmit = () => {
-		/**
-		 * Steps
-		 * 1. get couple data from redux / localstorage (names + id)
-		 * 2. create couple's wedding slug using `generateSlug()`
-		 * 3. Call API:
-		 *    POST `<backend_host>/api/weddings
-		 *    {
-		 *      date,
-		 *      location,
-		 *      slug,
-		 *      couple_id: couple.id
-		 *    }
-		 */
-	};
-
-	const onSuggestSelect = (selection = {}) => {
-		const { description, formatted_address, label, placeId } = selection;
-		console.log({
-			description,
-			label,
-			formatted_address,
-		});
-
-		setAddress(description);
+		const { spouse_one_name, spouse_two_name } = couple;
+		return `${spouse_one_name}-and-${spouse_two_name}-${date}`
+			.toLowerCase()
+			.replace(/ /g, "-");
 	};
 
 	/**
@@ -71,12 +45,36 @@ const WeddingCreationForm = () => {
 		return current && current < endOfDayDate;
 	};
 
-	const onChange = (date, dateString) => {
-		console.log({
-			date,
-			dateString,
-		});
+	const onSubmit = async e => {
+		const BACKEND_BASE_HOSTNAME =
+			process.env.BACKEND_BASE_HOSTNAME || "http://localhost:5000";
+		e.preventDefault();
+		try {
+			const weddingSlug = generateSlug();
+			const { id } = couple;
+			const wedding = {
+				location: address,
+				date,
+				slug: weddingSlug,
+				couple_id: id,
+			};
+			const response = await axios.post(
+				`${BACKEND_BASE_HOSTNAME}/api/weddings`,
+				wedding
+			);
+			const { data } = response;
+			console.log(data);
+		} catch (error) {
+			console.error(error);
+		}
+	};
 
+	const onSuggestSelect = (selection = {}) => {
+		const { description } = selection;
+		setAddress(description);
+	};
+
+	const onChange = (date, dateString) => {
 		setDate(dateString);
 	};
 
@@ -106,12 +104,22 @@ const Page = styled.div`
 	width: 600px;
 `;
 
-const WeddingCreationView = () => {
+const WeddingCreationView = ({ couple }) => {
 	return (
 		<Page>
-			<WeddingCreationForm />
+			<WeddingCreationForm couple={couple} />
 		</Page>
 	);
 };
 
-export default WeddingCreationView;
+const testData = {
+	id: 3,
+	spouse_one_name: "Ashley Nicole",
+	spouse_two_name: "Blake Jones",
+};
+
+const mapStateToProps = state => ({
+	couple: (state.authReducer && state.authReducer.couple) || testData,
+});
+
+export default connect(mapStateToProps)(WeddingCreationView);
