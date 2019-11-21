@@ -46,8 +46,8 @@ const WeddingCreationForm = ({ couple }) => {
 	};
 
 	const onSubmit = async e => {
-		const BACKEND_BASE_HOSTNAME =
-			process.env.BACKEND_BASE_HOSTNAME || "http://localhost:5000";
+		const REACT_APP_BACKEND_BASE_URL =
+			process.env.REACT_APP_BACKEND_BASE_URL || "http://localhost:5000";
 		e.preventDefault();
 		try {
 			const weddingSlug = generateSlug();
@@ -59,7 +59,7 @@ const WeddingCreationForm = ({ couple }) => {
 				couple_id: id,
 			};
 			const response = await axios.post(
-				`${BACKEND_BASE_HOSTNAME}/api/weddings`,
+				`${REACT_APP_BACKEND_BASE_URL}/api/weddings`,
 				wedding
 			);
 			const { data } = response;
