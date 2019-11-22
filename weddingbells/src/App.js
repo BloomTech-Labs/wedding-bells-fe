@@ -7,10 +7,9 @@ import { Route, Switch, withRouter } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
-import { toggleAuthModal } from "./actions";
+import { LandingPageView, WeddingCreationView, ProtectedView } from "./views";
 
-import { LandingPageView } from "./views";
-import { ProtectedView } from "./views";
+import { toggleAuthModal } from "./actions";
 
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute.js";
 
@@ -21,6 +20,11 @@ class App extends Component {
 				<Header toggleAuthModal={this.props.toggleAuthModal} />
 				<Switch>
 					<Route exact path="/" render={() => <LandingPageView />} />
+					<Route
+						exact
+						path="/create-wedding"
+						render={() => <WeddingCreationView />}
+					/>
 					<PrivateRoute path="/protected" component={ProtectedView} />
 				</Switch>
 				<Footer toggleAuthModal={this.props.toggleAuthModal} />

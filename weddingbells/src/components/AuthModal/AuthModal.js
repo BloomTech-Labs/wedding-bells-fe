@@ -51,7 +51,7 @@ class AuthModal extends Component {
 		e.preventDefault();
 		this.props
 			.login(this.state.loginCredentials)
-			.then(() => this.props.history.push("/protected"));
+			.then(() => this.props.history.push("/create-wedding"));
 	};
 
 	handlerSignUp = e => {
@@ -118,7 +118,6 @@ class AuthModal extends Component {
 				});
 			}
 		}
-		console.log(this.state.activeTab);
 	};
 
 	// reset state when closing modal needed
