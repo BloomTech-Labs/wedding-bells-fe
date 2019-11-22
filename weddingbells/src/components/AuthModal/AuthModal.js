@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 // import dependencies
 import { connect } from "react-redux";
-import { withRouter } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 
 // import actions
 import { login, signup } from "../../actions";
@@ -11,6 +11,7 @@ import { login, signup } from "../../actions";
 import "../../styles/authmodal.scss";
 import {
 	Form,
+	FormFeedback,
 	Input,
 	Button,
 	Modal,
@@ -34,19 +35,22 @@ class AuthModal extends Component {
 			loginCredentials: {
 				email: "",
 				password: "",
+				isInvalidEmail: false,
 			},
 			signupCredentials: {
 				spouse_one_name: "",
 				spouse_two_name: "",
 				email: "",
 				password: "",
+				// isInvalidEmail: false,
 			},
 		};
 	}
 
 	handlerLogIn = e => {
 		e.preventDefault();
-		this.props.login(this.state.loginCredentials)
+		this.props
+			.login(this.state.loginCredentials)
 			.then(() => this.props.history.push("/protected"));
 	};
 
@@ -78,6 +82,43 @@ class AuthModal extends Component {
 				},
 			});
 		}
+	};
+
+	validateEmail = e => {
+		if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value)) {
+			if (this.state.activeTab === "1") {
+				this.setState({
+					loginCredentials: {
+						...this.state.loginCredentials,
+						isInvalidEmail: true,
+					},
+				});
+			} else if (this.state.activeTab === "2") {
+				this.setState({
+					signupCredentials: {
+						...this.state.signupCredentials,
+						isInvalidEmail: true,
+					},
+				});
+			}
+		} else {
+			if (this.state.activeTab === "1") {
+				this.setState({
+					loginCredentials: {
+						...this.state.loginCredentials,
+						isInvalidEmail: false,
+					},
+				});
+			} else if (this.state.activeTab === "2") {
+				this.setState({
+					signupCredentials: {
+						...this.state.signupCredentials,
+						isInvalidEmail: false,
+					},
+				});
+			}
+		}
+		console.log(this.state.activeTab);
 	};
 
 	// reset state when closing modal needed
@@ -123,15 +164,19 @@ class AuthModal extends Component {
 									<Input
 										placeholder="Email Address"
 										name="email"
+										type="email"
 										value={this.state.loginCredentials.email}
 										onChange={this.handlerTextChange}
-									></Input>
+										onBlur={this.validateEmail}
+										invalid={this.state.loginCredentials.isInvalidEmail}
+									/>
+									<FormFeedback invalid>Invalid e-mail address!</FormFeedback>
 									<Input
 										placeholder="Password"
 										name="password"
 										value={this.state.loginCredentials.password}
 										onChange={this.handlerTextChange}
-									></Input>
+									/>
 								</Form>
 								<ModalFooter>
 									<Button onClick={this.handlerLogIn}>Log In</Button>
@@ -166,7 +211,10 @@ class AuthModal extends Component {
 										name="email"
 										value={this.state.signupCredentials.email}
 										onChange={this.handlerTextChange}
+										onBlur={this.validateEmail}
+										invalid={this.state.signupCredentials.isInvalidEmail}
 									></Input>
+									<FormFeedback invalid>Invalid e-mail address!</FormFeedback>
 									<Input
 										placeholder="Password"
 										name="password"
@@ -188,7 +236,4 @@ class AuthModal extends Component {
 	}
 }
 
-export default connect(
-	null,
-	{ login, signup }
-)(withRouter(AuthModal));
+export default connect(null, { login, signup })(withRouter(AuthModal));
