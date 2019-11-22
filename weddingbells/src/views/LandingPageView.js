@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 import "./landingpageview.scss";
 
+import { connect } from "react-redux";
+
+import { login, toggleAuthModal } from "../actions";
+
 import FAQ from "../components/FAQ/FAQ.js";
 import Testimonials from "../components/Testimonials/Testimonials.js";
 import Services from "../components/Services/Services.js";
@@ -17,7 +21,7 @@ class LandingPageView extends Component {
 			<div className="landingpage_wrapper">
 				<div className="top">
 					<div className="calltoaction">
-						<Button onClick={this.props.toggleAuthModal}>
+						<Button onClick={() => this.props.toggleAuthModal()}>
 							SHOTGUN WEDDING
 						</Button>
 					</div>
@@ -37,4 +41,11 @@ class LandingPageView extends Component {
 	}
 }
 
-export default LandingPageView;
+const mapStateToProps = state => ({
+	authModalVisible: state.landingPageReducer.authModalVisible,
+});
+
+export default connect(
+	mapStateToProps,
+	{ login, toggleAuthModal }
+)(LandingPageView);

@@ -1,9 +1,17 @@
 import React, { Component } from "react";
 
+// import dependencies
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+
+// import actions
+import { login, signup } from "../../actions";
+
 // import styling
 import "../../styles/authmodal.scss";
 import {
 	Form,
+	FormFeedback,
 	Input,
 	Button,
 	Modal,
@@ -24,14 +32,95 @@ class AuthModal extends Component {
 
 		this.state = {
 			activeTab: "1",
+			loginCredentials: {
+				email: "",
+				password: "",
+				isInvalidEmail: false,
+			},
+			signupCredentials: {
+				spouse_one_name: "",
+				spouse_two_name: "",
+				email: "",
+				password: "",
+				// isInvalidEmail: false,
+			},
 		};
 	}
 
-	handlerChangeTab = tabID => {
+	handlerLogIn = e => {
+		e.preventDefault();
+		this.props
+			.login(this.state.loginCredentials)
+			.then(() => this.props.history.push("/create-wedding"));
+	};
+
+	handlerSignUp = e => {
+		e.preventDefault();
+		this.props.signup(this.state.signupCredentials);
+		// .then(() => this.props.history.push("/"));
+	};
+
+	handlerTabChange = tabID => {
 		if (this.state.activeTab !== tabID) {
 			this.setState({ activeTab: tabID });
 		}
 	};
+
+	handlerTextChange = e => {
+		if (this.state.activeTab === "1") {
+			this.setState({
+				loginCredentials: {
+					...this.state.loginCredentials,
+					[e.target.name]: e.target.value,
+				},
+			});
+		} else if (this.state.activeTab === "2") {
+			this.setState({
+				signupCredentials: {
+					...this.state.signupCredentials,
+					[e.target.name]: e.target.value,
+				},
+			});
+		}
+	};
+
+	validateEmail = e => {
+		if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value)) {
+			if (this.state.activeTab === "1") {
+				this.setState({
+					loginCredentials: {
+						...this.state.loginCredentials,
+						isInvalidEmail: true,
+					},
+				});
+			} else if (this.state.activeTab === "2") {
+				this.setState({
+					signupCredentials: {
+						...this.state.signupCredentials,
+						isInvalidEmail: true,
+					},
+				});
+			}
+		} else {
+			if (this.state.activeTab === "1") {
+				this.setState({
+					loginCredentials: {
+						...this.state.loginCredentials,
+						isInvalidEmail: false,
+					},
+				});
+			} else if (this.state.activeTab === "2") {
+				this.setState({
+					signupCredentials: {
+						...this.state.signupCredentials,
+						isInvalidEmail: false,
+					},
+				});
+			}
+		}
+	};
+
+	// reset state when closing modal needed
 
 	render() {
 		return (
@@ -50,7 +139,7 @@ class AuthModal extends Component {
 							<NavLink
 								className={classnames({ active: this.state.activeTab === "1" })}
 								onClick={() => {
-									this.handlerChangeTab("1");
+									this.handlerTabChange("1");
 								}}
 							>
 								Already have an account?
@@ -60,7 +149,7 @@ class AuthModal extends Component {
 							<NavLink
 								className={classnames({ active: this.state.activeTab === "2" })}
 								onClick={() => {
-									this.handlerChangeTab("2");
+									this.handlerTabChange("2");
 								}}
 							>
 								Looking to Join?
@@ -71,11 +160,25 @@ class AuthModal extends Component {
 						<TabPane tabId="1">
 							<ModalBody>
 								<Form>
-									<Input placeholder="Email Address"></Input>
-									<Input placeholder="Password"></Input>
+									<Input
+										placeholder="Email Address"
+										name="email"
+										type="email"
+										value={this.state.loginCredentials.email}
+										onChange={this.handlerTextChange}
+										onBlur={this.validateEmail}
+										invalid={this.state.loginCredentials.isInvalidEmail}
+									/>
+									<FormFeedback invalid>Invalid e-mail address!</FormFeedback>
+									<Input
+										placeholder="Password"
+										name="password"
+										value={this.state.loginCredentials.password}
+										onChange={this.handlerTextChange}
+									/>
 								</Form>
 								<ModalFooter>
-									<Button onClick={this.props.toggleAuthModal}>Sign In</Button>
+									<Button onClick={this.handlerLogIn}>Log In</Button>
 								</ModalFooter>
 								<ModalFooter>
 									<Button onClick={this.props.toggleAuthModal}>
@@ -90,14 +193,38 @@ class AuthModal extends Component {
 						<TabPane tabId="2">
 							<ModalBody>
 								<Form>
-									<Input placeholder="Spouse #1 Name"></Input>
-									<Input placeholder="Spouse #2 Name"></Input>
-									<Input placeholder="Email Address"></Input>
-									<Input placeholder="Password"></Input>
-									<Input placeholder="Confirm Password"></Input>
+									<Input
+										placeholder="Spouse #1 Name"
+										name="spouse_one_name"
+										value={this.state.signupCredentials.spouse_one_name}
+										onChange={this.handlerTextChange}
+									></Input>
+									<Input
+										placeholder="Spouse #2 Name"
+										name="spouse_two_name"
+										value={this.state.signupCredentials.spouse_two_name}
+										onChange={this.handlerTextChange}
+									></Input>
+									<Input
+										placeholder="Email Address"
+										name="email"
+										value={this.state.signupCredentials.email}
+										onChange={this.handlerTextChange}
+										onBlur={this.validateEmail}
+										invalid={this.state.signupCredentials.isInvalidEmail}
+									></Input>
+									<FormFeedback invalid>Invalid e-mail address!</FormFeedback>
+									<Input
+										placeholder="Password"
+										name="password"
+										value={this.state.signupCredentials.password}
+										onChange={this.handlerTextChange}
+									></Input>
+									{/* To add a confirm password later
+									<Input placeholder="Confirm Password" value={this.state.signupCredentials.spouse_one_name}></Input> */}
 								</Form>
 								<ModalFooter>
-									<Button onClick={this.props.toggleAuthModal}>Sign Up</Button>
+									<Button onClick={this.handlerSignUp}>Sign Up</Button>
 								</ModalFooter>
 							</ModalBody>
 						</TabPane>
@@ -108,4 +235,4 @@ class AuthModal extends Component {
 	}
 }
 
-export default AuthModal;
+export default connect(null, { login, signup })(withRouter(AuthModal));

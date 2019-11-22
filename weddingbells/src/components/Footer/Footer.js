@@ -14,19 +14,20 @@ class Footer extends Component {
 					<h3>Wedding Bells </h3>
 				</div>
 				<div className="footer-links">
-					<HashLink to="#services" className="HashLink">
+					<HashLink to="#services" className="link">
 						Services
 					</HashLink>
-					<HashLink to="#faq" className="HashLink">
+					<HashLink to="#faq" className="link">
 						FAQ
 					</HashLink>
-					<HashLink to="#about-us" className="HashLink">
+					<HashLink to="#about-us" className="link">
 						About Us
 					</HashLink>
 					<Link to="#" className="link" onClick={this.props.toggleAuthModal}>
 						Login/Signup
 					</Link>
 				</div>
+				{/* Why is this here?
 				<div>
 					Icons made by{" "}
 					<a
@@ -39,7 +40,7 @@ class Footer extends Component {
 					<a href="https://www.flaticon.com/" title="Flaticon">
 						www.flaticon.com
 					</a>
-				</div>
+				</div> */}
 			</div>
 		);
 	}
