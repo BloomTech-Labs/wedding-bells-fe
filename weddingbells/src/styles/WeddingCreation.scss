@@ -6,16 +6,26 @@
 	font-size: 18px;
 	font-size: 1rem;
 	position: relative;
-	width: 50%;
-	margin: 1em auto;
+	width: 300px;
+	margin: 1em 0;
 	text-align: left;
 }
 
 .geosuggest__input {
+	box-sizing: border-box;
+	margin: 0;
+	position: relative;
+	display: inline-block;
 	width: 100%;
-	border: 2px solid transparent;
-	box-shadow: 0 0 1px #3d464d;
-	padding: 0.5em 1em;
+	color: rgba(0, 0, 0, 0.65);
+	line-height: 1.5;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #d9d9d9;
+	border-radius: 4px;
+	height: 40px;
+	padding: 6px 11px;
+	font-size: 16px;
 	-webkit-transition: border 0.2s, box-shadow 0.2s;
 	transition: border 0.2s, box-shadow 0.2s;
 

@@ -79,21 +79,25 @@ const WeddingCreationForm = ({ couple }) => {
 	};
 
 	return (
-		<form onSubmit={onSubmit}>
+		<Form onSubmit={onSubmit}>
 			<GeoSuggest
 				country="us"
 				types={["geocode", "establishment"]}
 				onSuggestSelect={onSuggestSelect}
+				className="geosuggest-override"
 			/>
 			<DatePicker
 				size="large"
 				format="MMM-DD-YYYY"
 				showToday={false}
+				style={{
+					width: "300px",
+				}}
 				disabledDate={disabledDate}
 				onChange={onChange}
 			/>
-			<input type="submit" value="Create Wedding" />
-		</form>
+			<input className="btn btn-primary" type="submit" value="Create Wedding" />
+		</Form>
 	);
 };
 
@@ -101,7 +105,14 @@ const Page = styled.div`
 	margin: 80px auto 0;
 	height: 100%;
 	min-height: 500px;
-	width: 600px;
+	max-width: 800px;
+`;
+
+const Form = styled.form`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 `;
 
 const WeddingCreationView = ({ couple }) => {
