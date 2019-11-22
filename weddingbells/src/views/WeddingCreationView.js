@@ -119,6 +119,7 @@ const Page = styled.div`
 	height: 100%;
 	min-height: 500px;
 	max-width: 800px;
+	text-align: left;
 `;
 
 const Form = styled.form`
