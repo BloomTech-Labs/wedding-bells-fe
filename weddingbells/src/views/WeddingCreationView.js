@@ -65,8 +65,8 @@ const WeddingCreationForm = ({ couple }) => {
 			);
 			const { data } = response;
 			console.log(data);
+			// TODO - do something with wedding data (store in Redux?)
 		} catch (error) {
-			console.error(error);
 			setErrorMsg(
 				"Failed to create wedding! Check your internet connection and wedding data then try again."
 			);
