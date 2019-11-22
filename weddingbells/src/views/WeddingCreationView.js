@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-import { DatePicker } from "antd";
+import { Alert, DatePicker } from "antd";
 import GeoSuggest from "react-geosuggest";
 import styled from "styled-components";
 import "../styles/WeddingCreation.scss";
@@ -9,6 +9,7 @@ import "../styles/WeddingCreation.scss";
 const WeddingCreationForm = ({ couple }) => {
 	const [address, setAddress] = useState(null);
 	const [date, setDate] = useState(null);
+	const [errorMsg, setErrorMsg] = useState("");
 
 	/**
 	 * Function that creates the slug used for a specific couple's wedding.
@@ -66,6 +67,10 @@ const WeddingCreationForm = ({ couple }) => {
 			console.log(data);
 		} catch (error) {
 			console.error(error);
+			setErrorMsg(
+				"Failed to create wedding! Check your internet connection and wedding data then try again."
+			);
+			setTimeout(() => setErrorMsg(""), 5000);
 		}
 	};
 
@@ -79,25 +84,32 @@ const WeddingCreationForm = ({ couple }) => {
 	};
 
 	return (
-		<Form onSubmit={onSubmit}>
-			<GeoSuggest
-				country="us"
-				types={["geocode", "establishment"]}
-				onSuggestSelect={onSuggestSelect}
-				className="geosuggest-override"
-			/>
-			<DatePicker
-				size="large"
-				format="MMM-DD-YYYY"
-				showToday={false}
-				style={{
-					width: "300px",
-				}}
-				disabledDate={disabledDate}
-				onChange={onChange}
-			/>
-			<input className="btn btn-primary" type="submit" value="Create Wedding" />
-		</Form>
+		<>
+			<Form onSubmit={onSubmit}>
+				<GeoSuggest
+					country="us"
+					types={["geocode", "establishment"]}
+					onSuggestSelect={onSuggestSelect}
+					className="geosuggest-override"
+				/>
+				<DatePicker
+					size="large"
+					format="MMM-DD-YYYY"
+					showToday={false}
+					style={{
+						width: "300px",
+					}}
+					disabledDate={disabledDate}
+					onChange={onChange}
+				/>
+				<input
+					className="btn btn-primary"
+					type="submit"
+					value="Create Wedding"
+				/>
+			</Form>
+			{errorMsg && <Alert message={errorMsg} type="error" />}
+		</>
 	);
 };
 
