@@ -1,0 +1,18 @@
+#about-us .about {
+    margin-top: 100px;
+}
+
+#about-us .team {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 300px;
+}
+
+#about-us .team-pics {
+    height: 150px;
+    width: auto;
+    border-radius: 5px;
+    box-shadow: 10px 10px 50px grey;
+}

@@ -1,54 +1,37 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import { Button } from "reactstrap";
+import "./landingpageview.scss";
+
+import { connect } from "react-redux";
+
+import { login, toggleAuthModal } from "../actions";
 
 import FAQ from "../components/FAQ/FAQ.js";
 import Testimonials from "../components/Testimonials/Testimonials.js";
-import WhatWeOffer from "../components/WhatWeOffer/index";
+import Services from "../components/Services/Services.js";
 import About from "../components/About/About";
 import AuthModal from "../components/AuthModal/AuthModal";
 
-const LandingTop = styled.div`
-	// border
-	border: 2px green dotted;
-
-	// sizing & placement
-	height: 100vh;
-	width: 100%;
-
-	// background
-	background-image: url("https://images.pexels.com/photos/1683989/pexels-photo-1683989.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-	background-repeat: no-repeat;
-	background-size: cover;
-
-	// display
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-`;
-
-const CallToAction = styled.div`
-	// sizing & placement
-	margin: auto auto;
-`;
+import GuestComponent from "../components/masterGuestComponent/index";
+import VendorComponent from "../components/MasterVendorComponent/index";
 
 class LandingPageView extends Component {
 	render() {
 		return (
 			<div className="landingpage_wrapper">
-				<LandingTop>
-					<CallToAction className="landingpage_top_calltoaction">
-						<Button onClick={this.props.toggleAuthModal}>
+				<div className="top">
+					<div className="calltoaction">
+						<Button onClick={() => this.props.toggleAuthModal()}>
 							SHOTGUN WEDDING
 						</Button>
-					</CallToAction>
-				</LandingTop>
-				<WhatWeOffer />
-				<About />
+					</div>
+				</div>
+				<Services />
+				<GuestComponent />
+				<VendorComponent />
 				<FAQ />
 				<Testimonials />
+				<About />
 				<AuthModal
 					isOpen={this.props.authModalVisible}
 					toggleAuthModal={this.props.toggleAuthModal}
@@ -58,4 +41,11 @@ class LandingPageView extends Component {
 	}
 }
 
-export default LandingPageView;
+const mapStateToProps = state => ({
+	authModalVisible: state.landingPageReducer.authModalVisible,
+});
+
+export default connect(
+	mapStateToProps,
+	{ login, toggleAuthModal }
+)(LandingPageView);

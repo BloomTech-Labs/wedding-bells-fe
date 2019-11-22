@@ -2,41 +2,38 @@ import React, { Component } from "react";
 import "./styles/App.css";
 
 import { connect } from "react-redux";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import { LandingPageView } from "./views";
+
+import { LandingPageView, WeddingCreationView, ProtectedView } from "./views";
 
 import { toggleAuthModal } from "./actions";
+
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute.js";
 
 class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Header authModalVisible={this.props.authModalVisible} toggleAuthModal={this.props.toggleAuthModal} />
+				<Header toggleAuthModal={this.props.toggleAuthModal} />
 				<Switch>
-					{/* <Route exact path="/" component={LandingPageView} /> */}
+					<Route exact path="/" render={() => <LandingPageView />} />
 					<Route
 						exact
-						path="/"
-						render={() => (
-							<LandingPageView authModalVisible={this.props.authModalVisible} toggleAuthModal={this.props.toggleAuthModal} />
-						)}
+						path="/create-wedding"
+						render={() => <WeddingCreationView />}
 					/>
-					{/* <Route protected exact path="/SearchBar" component={SearchBar} /> */}
+					<PrivateRoute path="/protected" component={ProtectedView} />
 				</Switch>
-				<Footer authModalVisible={this.props.authModalVisible} toggleAuthModal={this.props.toggleAuthModal} />
+				<Footer toggleAuthModal={this.props.toggleAuthModal} />
 			</div>
 		);
 	}
 }
 
-const mapStateToProps = state => ({
-	authModalVisible: state.landingPageReducer.authModalVisible,
-});
-
 export default connect(
-	mapStateToProps,
+	null,
 	{ toggleAuthModal }
 )(App);
