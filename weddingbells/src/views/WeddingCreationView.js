@@ -108,7 +108,9 @@ const WeddingCreationForm = ({ couple }) => {
 					value="Create Wedding"
 				/>
 			</Form>
-			{errorMsg && <Alert message={errorMsg} type="error" />}
+			{errorMsg && (
+				<Alert message="Error" description={errorMsg} type="error" showIcon />
+			)}
 		</>
 	);
 };
