@@ -6,7 +6,7 @@ import { Link, Route, Switch, withRouter, Redirect } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import { LandingPageView } from "./views";
+import { LandingPageView, WeddingCreationView } from "./views";
 
 import { toggleAuthModal } from "./actions";
 
@@ -21,6 +21,11 @@ class App extends Component {
 				<Header />
 				<Switch>
 					<Route exact path="/" render={() => <LandingPageView />} />
+					<Route
+						exact
+						path="/create-wedding"
+						render={() => <WeddingCreationView />}
+					/>
 					<PrivateRoute path="/protected" component={ProtectedView} />
 				</Switch>
 				<Footer />
@@ -105,7 +110,4 @@ function PrivateRoute({ component: Component, ...rest }) {
 	);
 }
 
-export default connect(
-	mapStateToProps,
-	{ toggleAuthModal }
-)(App);
+export default connect(mapStateToProps, { toggleAuthModal })(App);

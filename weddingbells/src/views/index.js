@@ -4,3 +4,4 @@
 export { default as LandingPageView } from "./LandingPageView";
 export { default as CouplePageView } from "./CouplePageView";
 export { default as ProtectedView } from "./ProtectedView";
+export { default as WeddingCreationView } from "./WeddingCreationView";
