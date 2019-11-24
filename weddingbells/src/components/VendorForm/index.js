@@ -20,7 +20,6 @@ const VendorForm = ({ onSubmit }) => {
 						placeholder="Vendor Name"
 						name="Vendor Name"
 						id="Vendor Name"
-						placeholder="Charles Bakery"
 						ref={register({ required: true, maxLength: 80 })}
 					/>
 				</Col>
