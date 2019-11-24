@@ -11,12 +11,15 @@ import { Headers, VendorData } from "../Vendor List/mappedOver";
 
 export default function VendorComponent() {
 	//Use React hooks to set state
-	const [vendorInfo, setVendorInfo] = useState([{ vendorInfo: {} }]);
+	const [
+		vendorInfo, 
+		// setVendorInfo
+	] = useState([{ vendorInfo: {} }]);
 
 	/* Starting from this line and down, whenever the vendorInfo loads or is updated the component will re-render */
 	const fetchVendorInfo = async () => {
-		const response = await axios.get("/api/weddings/:weddingId/vendors");
-		setVendorInfo(response.data);
+		// const response = await axios.get("/api/weddings/:weddingId/vendors");
+		// setVendorInfo(response.data);
 	};
 
 	useEffect(() => {
