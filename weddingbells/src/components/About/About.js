@@ -48,8 +48,8 @@ export default function About() {
 		<div id="about-us">
 			<h2 className="about">About Us</h2>
 			<div className="team">
-				{team.map(dev => (
-					<div>
+				{team.map((dev, idx) => (
+					<div key={idx}>
 						<img className="team-pics" src={dev.img} alt={dev.name} />
 
 						<p>{dev.name}</p>
