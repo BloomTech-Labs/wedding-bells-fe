@@ -27,8 +27,7 @@ class LandingPageView extends Component {
 					</div>
 				</div>
 				<Services />
-				<GuestComponent />
-				<VendorComponent />
+
 				<FAQ />
 				<Testimonials />
 				<About />
@@ -45,7 +44,6 @@ const mapStateToProps = state => ({
 	authModalVisible: state.landingPageReducer.authModalVisible,
 });
 
-export default connect(
-	mapStateToProps,
-	{ login, toggleAuthModal }
-)(LandingPageView);
+export default connect(mapStateToProps, { login, toggleAuthModal })(
+	LandingPageView
+);
