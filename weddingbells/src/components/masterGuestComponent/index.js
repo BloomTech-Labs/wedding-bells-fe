@@ -10,10 +10,7 @@ import OmniModal from "../Modal/index";
 import { Headers, GuestData } from "../Guest List/mappedOver";
 
 export default function GuestComponent() {
-	const [
-		guestInfo,
-		// setGuestInfo
-	] = useState([{ guestInfo: {} }]);
+	const [guestInfo, setGuestInfo] = useState([{ guestInfo: {} }]);
 
 	//Since we are using React hooks, we are no longer going to use componentDidMount and on top of this, we are not going to need the usual axios.GET request as located below
 
