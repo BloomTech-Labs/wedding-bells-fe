@@ -11,7 +11,7 @@ import { Headers, GuestData } from "../Guest List/mappedOver";
 
 export default function GuestComponent() {
 	const [
-		guestInfo, 
+		guestInfo,
 		// setGuestInfo
 	] = useState([{ guestInfo: {} }]);
 
@@ -35,8 +35,8 @@ export default function GuestComponent() {
 
 	/* Starting from this line and down, whenever the guestInfo loads or is updated the component will re-render */
 	const fetchGuestInfo = async () => {
-		// const response = await axios.get("/api/weddings/:weddingId/guests");
-		// setGuestInfo(response.data);
+		const response = await axios.get("/api/weddings/:weddingId/guests");
+		setGuestInfo(response.data);
 	};
 
 	useEffect(() => {
