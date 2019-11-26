@@ -11,7 +11,7 @@ export const SIGNUP_START = "SIGNUP_START";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const TOGGLE_AUTH_MODAL = "TOGGLE_AUTH_MODAL";
 
-const BACKEND_API_URL = process.env.REACT_APP_BACKEND_API_URL;
+const BACKEND_API_URL = process.env.REACT_APP_BACKEND_API_URL || "http://localhost:5000";
 
 export const login = creds => dispatch => {
 	console.log(creds);
