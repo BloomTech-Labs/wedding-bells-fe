@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Table } from "reactstrap";
+import React, { useEffect, useState } from "./node_modules/react";
+import axios from "./node_modules/axios";
+import { Table } from "./node_modules/reactstrap";
 
 import deleteMe from "../../assets/delete.svg";
 import editMe from "../../assets/pencil.svg";
@@ -9,7 +9,7 @@ import OmniModal from "../Modal/index";
 
 import { Headers, GuestData } from "../GuestList/mappedOver";
 
-export default function GuestComponent() {
+export default function MasterGuestComponent() {
 	const [guestInfo, setGuestInfo] = useState([{ guestInfo: {} }]);
 
 	//Since we are using React hooks, we are no longer going to use componentDidMount and on top of this, we are not going to need the usual axios.GET request as located below
