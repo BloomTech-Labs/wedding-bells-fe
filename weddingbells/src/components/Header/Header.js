@@ -3,7 +3,7 @@ import { HashLink } from "react-router-hash-link";
 // import { Link } from "react-router-dom";
 
 // import styling
-import "../../styles/header.scss";
+import "./Header.scss";
 
 class Header extends Component {
 	render() {
@@ -20,7 +20,11 @@ class Header extends Component {
 					<HashLink to="#about-us" className="link">
 						About Us
 					</HashLink>
-					<HashLink to="#" className="link" onClick={this.props.toggleAuthModal}>
+					<HashLink
+						to="#"
+						className="link"
+						onClick={this.props.toggleAuthModal}
+					>
 						Login/Signup
 					</HashLink>
 				</div>

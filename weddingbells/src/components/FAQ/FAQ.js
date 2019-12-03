@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // import styling
-import "../../styles/faq.scss";
+import "./FAQ.scss";
 
 // import components
 import FAQcard from "./FAQcard.js";

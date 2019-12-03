@@ -1,7 +1,7 @@
 import React from "react";
 
 // import styling
-import "../../styles/about.scss";
+import "./About.scss";
 
 // import profile pictures
 import poly from "./images/poly.jpg";

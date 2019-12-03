@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
 
-import "../../styles/footer.scss";
+import "./Footer.scss";
 
 import { HashLink } from "react-router-hash-link";
 
