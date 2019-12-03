@@ -8,7 +8,7 @@ import { withRouter } from "react-router-dom";
 import { login, signup } from "../../actions";
 
 // import styling
-import "../../styles/authmodal.scss";
+import "./AuthModal.scss";
 import {
 	Form,
 	FormFeedback,
@@ -56,8 +56,9 @@ class AuthModal extends Component {
 
 	handlerSignUp = e => {
 		e.preventDefault();
-		this.props.signup(this.state.signupCredentials)
-		.then(() => this.props.history.push("/create-wedding"));
+		this.props
+			.signup(this.state.signupCredentials)
+			.then(() => this.props.history.push("/create-wedding"));
 	};
 
 	handlerTabChange = tabID => {
