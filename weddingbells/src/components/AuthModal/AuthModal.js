@@ -51,13 +51,13 @@ class AuthModal extends Component {
 		e.preventDefault();
 		this.props
 			.login(this.state.loginCredentials)
-			.then(() => this.props.history.push("/create-wedding"));
+			.then(() => this.props.history.push("/couple"));
 	};
 
 	handlerSignUp = e => {
 		e.preventDefault();
-		this.props.signup(this.state.signupCredentials);
-		// .then(() => this.props.history.push("/"));
+		this.props.signup(this.state.signupCredentials)
+		.then(() => this.props.history.push("/create-wedding"));
 	};
 
 	handlerTabChange = tabID => {
