@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "./node_modules/react";
-import axios from "./node_modules/axios";
-import { Table } from "./node_modules/reactstrap";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Table } from "reactstrap";
 
 import deleteMe from "../../assets/delete.svg";
 import editMe from "../../assets/pencil.svg";
