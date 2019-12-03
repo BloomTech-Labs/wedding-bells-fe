@@ -4,13 +4,13 @@ import React from "react";
 import "../../styles/about.scss";
 
 // import profile pictures
-import poly from "./poly.jpg";
-import cedric from "./cedric.jpg";
-import sammy from "./sammy.jpg";
-import marco from "./marco.jpg";
-import dan from "./dan.jpg";
-import brey from "./brey.jpg";
-import bob from "./bob.jpg";
+import poly from "./images/poly.jpg";
+import cedric from "./images/cedric.jpg";
+import sammy from "./images/sammy.jpg";
+import marco from "./images/marco.jpg";
+import dan from "./images/dan.jpg";
+import brey from "./images/brey.jpg";
+import bob from "./images/bob.jpg";
 
 export default function About() {
 	const team = [
