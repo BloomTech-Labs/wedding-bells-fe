@@ -43,7 +43,7 @@ export default function GuestComponent() {
 
 	//When a user adds a guest information via the form with the modal, the following function will be what will do the action
 	function handleSubmitGuest(evt) {
-		evt.preventDefault();
+		// evt.preventDefault();
 		const guest = {
 			...guestInfo,
 		};
@@ -61,7 +61,7 @@ export default function GuestComponent() {
 
 	//When a user deletes a guests information via the trash icon, the following function will be what will do the action
 	function handleDeleteGuest(evt) {
-		evt.preventDefault();
+		// evt.preventDefault();
 
 		axios
 			.delete("/api/weddings/:weddingId/guests/:id")

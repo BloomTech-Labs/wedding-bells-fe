@@ -7,7 +7,12 @@ import { Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
-import { LandingPageView, WeddingCreationView, ProtectedView } from "./views";
+import {
+	LandingPageView,
+	WeddingCreationView,
+	ProtectedView,
+	CouplePageView,
+} from "./views";
 
 import { toggleAuthModal } from "./actions";
 
@@ -26,6 +31,7 @@ class App extends Component {
 						render={() => <WeddingCreationView />}
 					/>
 					<PrivateRoute path="/protected" component={ProtectedView} />
+					<PrivateRoute path="/couple" component={CouplePageView} />
 				</Switch>
 				<Footer toggleAuthModal={this.props.toggleAuthModal} />
 			</div>
@@ -33,7 +39,4 @@ class App extends Component {
 	}
 }
 
-export default connect(
-	null,
-	{ toggleAuthModal }
-)(App);
+export default connect(null, { toggleAuthModal })(App);
