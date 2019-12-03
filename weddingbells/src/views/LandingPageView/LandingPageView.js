@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
-import "./landingpageview.scss";
+import "./LandingPageView.scss";
 
 import { connect } from "react-redux";
 
-import { login, toggleAuthModal } from "../actions";
+import { login, toggleAuthModal } from "../../actions";
 
-import FAQ from "../components/FAQ/FAQ.js";
-import Testimonials from "../components/Testimonials/Testimonials.js";
-import Services from "../components/Services/Services.js";
-import About from "../components/About/About";
-import AuthModal from "../components/AuthModal/AuthModal";
+import FAQ from "../../components/FAQ/FAQ.js";
+import Testimonials from "../../components/Testimonials/Testimonials.js";
+import Services from "../../components/Services/Services.js";
+import About from "../../components/About/About";
+import AuthModal from "../../components/AuthModal/AuthModal";
 
 class LandingPageView extends Component {
 	render() {
