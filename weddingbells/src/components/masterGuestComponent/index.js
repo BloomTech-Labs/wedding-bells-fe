@@ -29,10 +29,13 @@ export default function GuestComponent() {
 			});
 	}
 	*/
+	const envVarRoute = process.env.REACT_APP_BACKEND_BASE_URL;
 
 	/* Starting from this line and down, whenever the guestInfo loads or is updated the component will re-render */
 	const fetchGuestInfo = async () => {
-		const response = await axios.get("/api/weddings/:weddingId/guests");
+		const response = await axios.get(
+			`${envVarRoute}/api/weddings/:weddingId/guests`
+		);
 		setGuestInfo(response.data);
 	};
 
@@ -49,7 +52,7 @@ export default function GuestComponent() {
 		};
 
 		axios
-			.post("/api/weddings/:weddingId/guests/:id", { guest })
+			.post(`${envVarRoute}/api/weddings/:weddingId/guests/:id`, { guest })
 			.then(res => {
 				console.log("Adding that guests information");
 				console.log("The guests information has been added");
@@ -64,7 +67,7 @@ export default function GuestComponent() {
 		evt.preventDefault();
 
 		axios
-			.delete("/api/weddings/:weddingId/guests/:id")
+			.delete(`${envVarRoute}/api/weddings/:weddingId/guests/:id`)
 			.then(res => {
 				console.log("Deleting that guests information");
 				console.log("The guests information has been deleted");
