@@ -7,7 +7,7 @@ import editMe from "../../assets/pencil.svg";
 
 import OmniModal from "../Modal/index";
 
-import { Headers, VendorData } from "../Vendor List/mappedOver";
+import { Headers, VendorData } from "../VendorList/mappedOver";
 
 export default function VendorComponent() {
 	//Use React hooks to set state

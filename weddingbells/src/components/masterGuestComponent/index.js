@@ -7,7 +7,7 @@ import editMe from "../../assets/pencil.svg";
 
 import OmniModal from "../Modal/index";
 
-import { Headers, GuestData } from "../Guest List/mappedOver";
+import { Headers, GuestData } from "../GuestList/mappedOver";
 
 export default function GuestComponent() {
 	const [guestInfo, setGuestInfo] = useState([{ guestInfo: {} }]);

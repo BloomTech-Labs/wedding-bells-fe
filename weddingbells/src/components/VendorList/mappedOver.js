@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../styles/mappedOver.scss";
+import "./mappedOver.scss";
 
 import { Button } from "reactstrap";
 
@@ -43,7 +43,12 @@ export const VendorData = ({
 				<td>{vendorName}</td>
 				<td>{category}</td>
 				<td className="editing">
-					<Button color="link" onClick={onUpdate} target="_blank" rel="noopener noreferrer">
+					<Button
+						color="link"
+						onClick={onUpdate}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<img
 							alt="edit"
 							className="editMe"
@@ -52,7 +57,12 @@ export const VendorData = ({
 					</Button>
 				</td>
 				<td className="deleting">
-					<Button color="link" onClick={onDelete} target="_blank" rel="noopener noreferrer">
+					<Button
+						color="link"
+						onClick={onDelete}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<img
 							alt="delete"
 							className="deleteMe"
