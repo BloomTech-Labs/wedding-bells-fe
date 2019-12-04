@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import axios from "axios";
 import { Alert, DatePicker } from "antd";
 import GeoSuggest from "react-geosuggest";
 import styled from "styled-components";
 import "../styles/WeddingCreation.scss";
 
-const WeddingCreationForm = ({ couple }) => {
+const WeddingCreationForm = ({ couple, history }) => {
 	const [address, setAddress] = useState(null);
 	const [date, setDate] = useState(null);
 	const [errorMsg, setErrorMsg] = useState("");
@@ -105,6 +106,9 @@ const WeddingCreationForm = ({ couple }) => {
 					className="btn btn-primary"
 					type="submit"
 					value="Create Wedding"
+					onClick={() => {
+						history.push("/couple");
+					}}
 				/>
 			</Form>
 			{errorMsg && (
@@ -129,10 +133,10 @@ const Form = styled.form`
 	align-items: center;
 `;
 
-const WeddingCreationView = ({ couple }) => {
+const WeddingCreationView = ({ couple, history }) => {
 	return (
 		<Page>
-			<WeddingCreationForm couple={couple} />
+			<WeddingCreationForm couple={couple} history={history} />
 		</Page>
 	);
 };
@@ -147,4 +151,4 @@ const mapStateToProps = state => ({
 	couple: (state.authReducer && state.authReducer.couple) || testData,
 });
 
-export default connect(mapStateToProps)(WeddingCreationView);
+export default connect(mapStateToProps)(withRouter(WeddingCreationView));

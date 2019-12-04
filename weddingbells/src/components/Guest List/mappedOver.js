@@ -2,7 +2,7 @@ import React from "react";
 
 import "../../styles/mappedOver.scss";
 
-import { Link } from "react-router-dom";
+import { Button } from "reactstrap";
 
 export const Headers = props => {
 	return (
@@ -58,22 +58,22 @@ export const GuestData = ({
 				<td>{response}</td>
 				<td>{plusOne}</td>
 				<td className="editing">
-					<Link onClick={onUpdate} target="_blank" rel="noopener noreferrer">
+					<Button color="link" onClick={onUpdate} target="_blank" rel="noopener noreferrer">
 						<img
 							className="editMe"
 							alt="edit"
 							src={require("../../assets/pencil.svg")}
 						/>
-					</Link>
+					</Button>
 				</td>
 				<td className="deleting">
-					<Link onClick={onDelete} target="_blank" rel="noopener noreferrer">
+					<Button color="link" onClick={onDelete} target="_blank" rel="noopener noreferrer">
 						<img
 							alt="delete"
 							className="deleteMe"
 							src={require("../../assets/delete.svg")}
 						/>
-					</Link>
+					</Button>
 				</td>
 			</tr>
 		</React.Fragment>
