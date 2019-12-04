@@ -10,7 +10,10 @@ import OmniModal from "../Modal/index";
 import { Headers, GuestData } from "../Guest List/mappedOver";
 
 export default function GuestComponent() {
+	const weddingData = JSON.parse(localStorage.getItem("wedding"));
+
 	const [guestInfo, setGuestInfo] = useState([{ guestInfo: {} }]);
+	const [wedding, updateWedding] = useState(weddingData.id);
 
 	//Since we are using React hooks, we are no longer going to use componentDidMount and on top of this, we are not going to need the usual axios.GET request as located below
 
@@ -32,16 +35,18 @@ export default function GuestComponent() {
 	const envVarRoute = process.env.REACT_APP_BACKEND_BASE_URL;
 
 	/* Starting from this line and down, whenever the guestInfo loads or is updated the component will re-render */
+
 	const fetchGuestInfo = async () => {
 		const response = await axios.get(
-			`${envVarRoute}/api/weddings/:weddingId/guests`
+			`${envVarRoute}/api/weddings/${wedding}/guests`
 		);
 		setGuestInfo(response.data);
 	};
 
 	useEffect(() => {
 		fetchGuestInfo(guestInfo);
-	}, [guestInfo]);
+	}, []);
+
 	/* Ending at this line, whenever the guestInfo loads or is updated the component will re-render */
 
 	//When a user adds a guest information via the form with the modal, the following function will be what will do the action
@@ -52,7 +57,7 @@ export default function GuestComponent() {
 		};
 
 		axios
-			.post(`${envVarRoute}/api/weddings/:weddingId/guests/:id`, { guest })
+			.post(`${envVarRoute}/api/weddings/${wedding}/guests/`, { guest })
 			.then(res => {
 				console.log("Adding that guests information");
 				console.log("The guests information has been added");
@@ -67,7 +72,7 @@ export default function GuestComponent() {
 		// evt.preventDefault();
 
 		axios
-			.delete(`${envVarRoute}/api/weddings/:weddingId/guests/:id`)
+			.delete(`${envVarRoute}/api/weddings/${wedding}/guests/:id`)
 			.then(res => {
 				console.log("Deleting that guests information");
 				console.log("The guests information has been deleted");
