@@ -10,20 +10,26 @@ import OmniModal from "../Modal/index";
 import { Headers, VendorData } from "../Vendor List/mappedOver";
 
 export default function VendorComponent() {
+	const weddingData = JSON.parse(localStorage.getItem("wedding"));
+
 	//Use React hooks to set state
 	const [vendorInfo, setVendorInfo] = useState([{ vendorInfo: {} }]);
+	const [wedding, updateWedding] = useState(weddingData.id);
 
 	const envVarRoute = process.env.REACT_APP_BACKEND_BASE_URL;
 	/* Starting from this line and down, whenever the vendorInfo loads or is updated the component will re-render */
+
 	const fetchVendorInfo = async () => {
 		const response = await axios.get(
-			`${envVarRoute}/api/weddings/:weddingId/vendors`
+			`${envVarRoute}/api/weddings/${wedding}/vendors`
 		);
 		setVendorInfo(response.data);
 	};
+
 	useEffect(() => {
 		fetchVendorInfo(vendorInfo);
-	}, [vendorInfo]);
+	}, []);
+
 	/* Ending at this line, whenever the vendorInfo loads or is updated the component will re-render */
 
 	//When a user adds vendor information via the form with the modal, the following function will be what will do the action
@@ -34,7 +40,7 @@ export default function VendorComponent() {
 		};
 
 		axios
-			.post(`${envVarRoute}/api/weddings/:weddingId/vendors/:id`, { vendor })
+			.post(`${envVarRoute}/api/weddings/${wedding}/vendors/`, { vendor })
 			.then(res => {
 				console.log("Adding that vendors information");
 				console.log("The vendors information has been added");
@@ -48,7 +54,7 @@ export default function VendorComponent() {
 		evt.preventDefault();
 
 		axios
-			.delete(`${envVarRoute}/api/weddings/:weddingId/vendors/:id`)
+			.delete(`${envVarRoute}/api/weddings/${wedding}/vendors/:id`)
 			.then(res => {
 				console.log("Deleting that vendors information");
 				console.log("The vendors information has been deleted");
