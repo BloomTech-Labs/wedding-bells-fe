@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 // import styling
 import "./FAQ.scss";
+import { ListGroup } from "reactstrap";
 
 // import components
 import FAQcard from "./FAQcard.js";
@@ -20,9 +21,11 @@ class FAQ extends Component {
 		return (
 			<div id="faq" className="faq-wrapper">
 				<h3>FAQ</h3>
-				{this.state.faqs.map(faq => (
-					<FAQcard key={faq.id} {...faq} />
-				))}
+				<ListGroup>
+					{this.state.faqs.map(faq => (
+						<FAQcard key={faq.id} {...faq} />
+					))}
+				</ListGroup>
 			</div>
 		);
 	}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Collapse, Button, CardBody, Card } from "reactstrap";
+import { Collapse, Button, CardBody, Card, ListGroupItem } from "reactstrap";
 
 class FAQcard extends Component {
 	constructor(props) {
@@ -16,16 +16,14 @@ class FAQcard extends Component {
 
 	render() {
 		return (
-			<div className="faq-card">
-				<Button onClick={this.toggle}>
+			<ListGroupItem className="faq-card">
+				<Button color="link" onClick={this.toggle}>
 					- {this.props.title}
 				</Button>
 				<Collapse isOpen={this.state.collapse}>
-					<Card>
-						<CardBody>{this.props.subText}</CardBody>
-					</Card>
+					{this.props.subText}
 				</Collapse>
-			</div>
+			</ListGroupItem>
 		);
 	}
 }
