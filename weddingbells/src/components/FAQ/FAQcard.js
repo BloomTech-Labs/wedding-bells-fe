@@ -16,14 +16,14 @@ class FAQcard extends Component {
 
 	render() {
 		return (
-			<ListGroupItem className="faq-card">
-				<Button color="link" onClick={this.toggle}>
-					- {this.props.title}
+			<div className="faq-card">
+				<Button color="link" className="faq-item" onClick={this.toggle}>
+					{this.state.collapse ? "-" : "+"} {this.props.title}
 				</Button>
 				<Collapse isOpen={this.state.collapse}>
-					{this.props.subText}
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.props.subText}
 				</Collapse>
-			</ListGroupItem>
+			</div>
 		);
 	}
 }
