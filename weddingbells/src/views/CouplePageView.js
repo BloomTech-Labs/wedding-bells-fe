@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import "../styles/couplepageview.scss";
+
 import GuestComponent from "../components/masterGuestComponent/index";
 import VendorComponent from "../components/MasterVendorComponent/index";
 
