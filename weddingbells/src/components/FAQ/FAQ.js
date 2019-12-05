@@ -21,11 +21,11 @@ class FAQ extends Component {
 		return (
 			<div id="faq" className="faq-wrapper">
 				<h3>FAQ</h3>
-				<ListGroup>
+				<div>
 					{this.state.faqs.map(faq => (
 						<FAQcard key={faq.id} {...faq} />
 					))}
-				</ListGroup>
+				</div>
 			</div>
 		);
 	}
