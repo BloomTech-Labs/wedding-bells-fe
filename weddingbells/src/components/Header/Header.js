@@ -23,7 +23,7 @@ class Header extends Component {
 						<HashLink to="#about-us" className="link">
 							About Us
 					</HashLink>
-						<HashLink to="#" className="link" onClick={this.props.toggleAuthModal}>
+						<HashLink to="#" className="link" onClick={this.props.logOutUser}>
 							LogOut
 					</HashLink>
 					</div>

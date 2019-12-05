@@ -29,7 +29,7 @@ export const signup = creds => dispatch => {
 	return axios.post(`${envVarPage}/api/auth/register`, creds);
 };
 
-export const logout = creds => dispatch => {
+export const logOutUser = creds => dispatch => {
 	sessionStorage.removeItem("jwt");
 	dispatch({ type: LOG_OUT });
 	return axios.post(`${envVarPage}/api/auth/logout`, creds);
