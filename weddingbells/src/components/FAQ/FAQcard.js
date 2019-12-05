@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Collapse, Button, CardBody, Card, ListGroupItem } from "reactstrap";
+import { Collapse, Button } from "reactstrap";
 
 class FAQcard extends Component {
 	constructor(props) {

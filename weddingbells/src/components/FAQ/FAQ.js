@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 // import styling
 import "./FAQ.scss";
-import { ListGroup } from "reactstrap";
 
 // import components
 import FAQcard from "./FAQcard.js";
