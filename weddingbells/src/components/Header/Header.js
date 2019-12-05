@@ -9,7 +9,7 @@ class Header extends Component {
 	render() {
 		return (
 			<div className="header-wrapper">
-				<div className="header-logo">H3rra</div>
+				<h3 className="header-logo">H3rra</h3>
 				<div className="header-links">
 					<HashLink to="#services" className="link">
 						Services
