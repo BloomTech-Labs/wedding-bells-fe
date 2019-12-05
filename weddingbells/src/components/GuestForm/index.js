@@ -23,19 +23,6 @@ const GuestForm = () => {
 			});
 	};
 
-	//When a user deletes a guests information via the trash icon, the following function will be what will do the action
-	function onDelete(evt) {
-		axios
-			.delete(`${envVarRoute}/api/weddings/${wedding}/guests/:id`)
-			.then(res => {
-				console.log("Deleting that guests information");
-				console.log("The guests information has been deleted");
-			})
-			.catch(error => {
-				console.error("Server Error", error);
-			});
-	}
-
 	console.log(errors);
 
 	return (
