@@ -5,6 +5,7 @@ import {
 	SIGNUP_FAILURE,
 	SIGNUP_START,
 	SIGNUP_SUCCESS,
+	LOG_OUT
 } from "../actions";
 
 const initialState = {
@@ -52,6 +53,15 @@ export const authReducer = (state = initialState, action) => {
 				error: "",
 			};
 		case LOGIN_SUCCESS:
+			return {
+				...state,
+				isLoggingIn: false,
+				isSigningUp: false,
+				error: "",
+				couple: action.payload,
+			};
+		
+		case LOG_OUT:
 			return {
 				...state,
 				isLoggingIn: false,

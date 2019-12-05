@@ -10,6 +10,7 @@ export const SIGNUP_FAILURE = "SIGNUP_FAILURE";
 export const SIGNUP_START = "SIGNUP_START";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const TOGGLE_AUTH_MODAL = "TOGGLE_AUTH_MODAL";
+export const LOG_OUT = "LOG_OUT";
 
 const envVarPage = process.env.REACT_APP_BACKEND_BASE_URL;
 
@@ -28,7 +29,11 @@ export const signup = creds => dispatch => {
 	return axios.post(`${envVarPage}/api/auth/register`, creds);
 };
 
-export const signout = () => dispatch => {};
+export const logout = creds => dispatch => {
+	sessionStorage.removeItem("jwt");
+	dispatch({ type: LOG_OUT });
+	return axios.post(`${envVarPage}/api/auth/logout`, creds);
+};
 
 export const toggleAuthModal = () => dispatch => {
 	dispatch({ type: TOGGLE_AUTH_MODAL });
