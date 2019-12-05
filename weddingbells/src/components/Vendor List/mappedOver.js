@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+
+import axios from "axios";
 
 import "../../styles/mappedOver.scss";
 
@@ -9,18 +11,14 @@ export const Headers = props => {
 		<thead>
 			<tr>
 				<th>
-					<h5>#</h5>
-				</th>
-
-				<th>
 					<h5>Vendor Name</h5>
 				</th>
 				<th>
 					<h5>Category</h5>
 				</th>
-				<th>
+				{/* <th>
 					<h5>Update</h5>
-				</th>
+				</th> */}
 				<th>
 					<h5>Delete</h5>
 				</th>
@@ -29,20 +27,16 @@ export const Headers = props => {
 	);
 };
 
-export const VendorData = ({
-	company_name,
-	category,
-	id,
-	onUpdate,
-	onDelete,
-}) => {
+export const VendorData = ({ company_name, category, id, onUpdate }) => {
+	const weddingData = JSON.parse(localStorage.getItem("wedding"));
+	const [wedding, updateWedding] = useState(weddingData.id);
+	const envVarRoute = process.env.REACT_APP_BACKEND_BASE_URL;
 	return (
 		<React.Fragment>
 			<tr>
-				<th>{id}</th>
 				<td>{company_name}</td>
 				<td>{category}</td>
-				<td className="editing">
+				{/* <td className="editing">
 					<Button
 						color="link"
 						onClick={onUpdate}
@@ -55,11 +49,23 @@ export const VendorData = ({
 							src={require("../../assets/pencil.svg")}
 						/>
 					</Button>
-				</td>
+				</td> */}
 				<td className="deleting">
 					<Button
 						color="link"
-						onClick={onDelete}
+						//When a user deletes vendors information via the trash icon, the following function will be what will do the action
+						onClick={() => {
+							axios
+								.delete(`${envVarRoute}/api/weddings/${wedding}/vendors/${id}`)
+								.then(res => {
+									console.log("Deleting that vendors information");
+									console.log("The vendors information has been deleted");
+								})
+								.then(window.location.reload())
+								.catch(error => {
+									console.error("Server Error", error);
+								});
+						}}
 						target="_blank"
 						rel="noopener noreferrer"
 					>

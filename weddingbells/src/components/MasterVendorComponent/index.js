@@ -33,22 +33,6 @@ export default function VendorComponent() {
 
 	/* Ending at this line, whenever the vendorInfo loads or is updated the component will re-render */
 
-	//When a user deletes vendors information via the trash icon, the following function will be what will do the action
-	function onDelete(evt) {
-		const getVendorId = {
-
-		}
-		axios
-			.delete(`${envVarRoute}/api/weddings/${wedding}/vendors/${}`)
-			.then(res => {
-				console.log("Deleting that vendors information");
-				console.log("The vendors information has been deleted");
-			})
-			.catch(error => {
-				console.error("Server Error", error);
-			});
-	}
-
 	return (
 		<div className="masterVendorComponent">
 			<div className="vendorList">
@@ -68,7 +52,6 @@ export default function VendorComponent() {
 									key={idx}
 									editMe={editMe}
 									deleteMe={deleteMe}
-									onDelete={onDelete}
 									{...vendor}
 								/>
 							))}
