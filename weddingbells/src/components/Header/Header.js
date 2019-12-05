@@ -9,13 +9,9 @@ class Header extends Component {
 	render() {
 		return (
 			<div className="header-wrapper">
-<<<<<<< HEAD
-				<h3 className="header-logo">H3rra</h3>
-=======
 				<Link to="/" className="header-logo">
-					Wedding Bells
+					<h3>Wedding Bells</h3>
 				</Link>
->>>>>>> staging
 				<div className="header-links">
 					<HashLink to="#services" className="link">
 						Services
