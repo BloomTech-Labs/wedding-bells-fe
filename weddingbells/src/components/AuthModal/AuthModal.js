@@ -26,25 +26,26 @@ import {
 } from "reactstrap";
 import classnames from "classnames";
 
+const initialState = {
+	activeTab: "1",
+	loginCredentials: {
+		email: "",
+		password: "",
+		isInvalidEmail: false,
+	},
+	signupCredentials: {
+		spouse_one_name: "",
+		spouse_two_name: "",
+		email: "",
+		password: "",
+	},
+};
+
 class AuthModal extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			activeTab: "1",
-			loginCredentials: {
-				email: "",
-				password: "",
-				isInvalidEmail: false,
-			},
-			signupCredentials: {
-				spouse_one_name: "",
-				spouse_two_name: "",
-				email: "",
-				password: "",
-				// isInvalidEmail: false,
-			},
-		};
+		this.state = initialState;
 	}
 
 	handlerLogIn = e => {
@@ -130,6 +131,7 @@ class AuthModal extends Component {
 				size="lg"
 				toggle={this.props.toggleAuthModal}
 				className="authmodal-wrapper"
+				onClosed={() => this.setState(initialState)}
 			>
 				<ModalHeader toggle={this.props.toggleAuthModal}>
 					Wedding Bells
@@ -174,6 +176,7 @@ class AuthModal extends Component {
 									<Input
 										placeholder="Password"
 										name="password"
+										type="password"
 										value={this.state.loginCredentials.password}
 										onChange={this.handlerTextChange}
 									/>
@@ -218,6 +221,7 @@ class AuthModal extends Component {
 									<Input
 										placeholder="Password"
 										name="password"
+										type="password"
 										value={this.state.signupCredentials.password}
 										onChange={this.handlerTextChange}
 									></Input>
