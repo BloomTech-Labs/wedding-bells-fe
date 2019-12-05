@@ -34,8 +34,8 @@ export const VendorData = ({ company_name, category, id, onUpdate }) => {
 	return (
 		<React.Fragment>
 			<tr>
-				<td>{company_name}</td>
-				<td>{category}</td>
+				<td>{String(company_name).replace(/\b\w/g, l => l.toUpperCase())}</td>
+				<td>{String(category).replace(/\b\w/g, l => l.toUpperCase())}</td>
 				{/* <td className="editing">
 					<Button
 						color="link"
