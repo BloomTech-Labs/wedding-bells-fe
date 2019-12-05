@@ -33,14 +33,13 @@ export default function VendorComponent() {
 
 	/* Ending at this line, whenever the vendorInfo loads or is updated the component will re-render */
 
-	//When a user adds vendor information via the form with the modal, the following function will be what will do the action
-
 	//When a user deletes vendors information via the trash icon, the following function will be what will do the action
-	function handleDeleteVendor(evt) {
-		evt.preventDefault();
+	function onDelete(evt) {
+		const getVendorId = {
 
+		}
 		axios
-			.delete(`${envVarRoute}/api/weddings/${wedding}/vendors/:id`)
+			.delete(`${envVarRoute}/api/weddings/${wedding}/vendors/${}`)
 			.then(res => {
 				console.log("Deleting that vendors information");
 				console.log("The vendors information has been deleted");
@@ -49,6 +48,7 @@ export default function VendorComponent() {
 				console.error("Server Error", error);
 			});
 	}
+
 	return (
 		<div className="masterVendorComponent">
 			<div className="vendorList">
@@ -57,7 +57,6 @@ export default function VendorComponent() {
 						className="addVendor"
 						buttonLabel="Add Vendor"
 						modalTitle="Add Vendor"
-						// onSubmit={handleSubmitVendor}
 					/>
 
 					<Table responsive hover bordered>
@@ -69,7 +68,7 @@ export default function VendorComponent() {
 									key={idx}
 									editMe={editMe}
 									deleteMe={deleteMe}
-									onDelete={handleDeleteVendor}
+									onDelete={onDelete}
 									{...vendor}
 								/>
 							))}

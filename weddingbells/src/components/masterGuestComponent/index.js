@@ -49,38 +49,6 @@ export default function GuestComponent() {
 
 	/* Ending at this line, whenever the guestInfo loads or is updated the component will re-render */
 
-	//When a user adds a guest information via the form with the modal, the following function will be what will do the action
-	function handleSubmitGuest(evt) {
-		// evt.preventDefault();
-		const guest = {
-			...guestInfo,
-		};
-
-		axios
-			.post(`${envVarRoute}/api/weddings/${wedding}/guests/`, { guest })
-			.then(res => {
-				console.log("Adding that guests information");
-				console.log("The guests information has been added");
-			})
-			.catch(error => {
-				console.error("Server Error", error);
-			});
-	}
-
-	//When a user deletes a guests information via the trash icon, the following function will be what will do the action
-	function handleDeleteGuest(evt) {
-		// evt.preventDefault();
-
-		axios
-			.delete(`${envVarRoute}/api/weddings/${wedding}/guests/:id`)
-			.then(res => {
-				console.log("Deleting that guests information");
-				console.log("The guests information has been deleted");
-			})
-			.catch(error => {
-				console.error("Server Error", error);
-			});
-	}
 	return (
 		<div className="masterGuestComponent">
 			<div className="guestList">
@@ -89,7 +57,6 @@ export default function GuestComponent() {
 						className="addGuest"
 						buttonLabel="Add Guest "
 						modalTitle="Add Guest"
-						onSubmit={handleSubmitGuest}
 					/>
 
 					<Table responsive hover bordered>
@@ -101,7 +68,6 @@ export default function GuestComponent() {
 									key={idx}
 									editMe={editMe}
 									deleteMe={deleteMe}
-									onDelete={handleDeleteGuest}
 									{...guest}
 								/>
 							))}

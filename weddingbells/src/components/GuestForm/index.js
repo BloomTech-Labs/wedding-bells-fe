@@ -1,10 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import useForm from "react-hook-form";
 
 import { Form, FormGroup, Label, Col } from "reactstrap";
 
-const GuestForm = ({ onSubmit }) => {
+const GuestForm = () => {
 	const { register, handleSubmit, errors } = useForm();
+
+	const envVarRoute = process.env.REACT_APP_BACKEND_BASE_URL;
+	const weddingData = JSON.parse(localStorage.getItem("wedding"));
+	const [wedding, updateWedding] = useState(weddingData.id);
+	//When a user adds a guest information via the form with the modal, the following function will be what will do the action
+	const onSubmit = data => {
+		axios
+			.post(`${envVarRoute}/api/weddings/${wedding}/guests/`, data)
+			.then(res => {
+				console.log("Adding that guests information");
+				console.log("The guests information has been added");
+			})
+			.catch(error => {
+				console.error("Server Error", error);
+			});
+	};
+
+	//When a user deletes a guests information via the trash icon, the following function will be what will do the action
+	function onDelete(evt) {
+		axios
+			.delete(`${envVarRoute}/api/weddings/${wedding}/guests/:id`)
+			.then(res => {
+				console.log("Deleting that guests information");
+				console.log("The guests information has been deleted");
+			})
+			.catch(error => {
+				console.error("Server Error", error);
+			});
+	}
 
 	console.log(errors);
 

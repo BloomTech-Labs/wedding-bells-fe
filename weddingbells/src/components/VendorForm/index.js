@@ -17,7 +17,7 @@ const VendorForm = () => {
 		axios
 			.post(
 				`${envVarRoute}/api/weddings/${wedding}/vendors/`,
-				{ data },
+				data,
 				console.log(data)
 			)
 			.then(res => {
@@ -28,8 +28,7 @@ const VendorForm = () => {
 				console.error("Server Error", error);
 			});
 	};
-
-	console.log(errors);
+	//When a user adds vendor information via the form with the modal, the following function will be what will do the action
 
 	return (
 		<Form onSubmit={handleSubmit(onSubmit)}>
