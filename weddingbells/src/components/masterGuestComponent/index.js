@@ -40,6 +40,7 @@ export default function GuestComponent() {
 		const response = await axios.get(
 			`${envVarRoute}/api/weddings/${wedding}/guests`
 		);
+		console.log(response.data, "guest info");
 		setGuestInfo(response.data);
 	};
 

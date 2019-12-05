@@ -25,9 +25,9 @@ export const Headers = props => {
 				<th>
 					<h5>Plus One?</h5>
 				</th>
-				<th>
+				{/* <th>
 					<h5>Update</h5>
-				</th>
+				</th> */}
 				<th>
 					<h5>Delete</h5>
 				</th>
@@ -39,9 +39,9 @@ export const Headers = props => {
 export const GuestData = ({
 	name,
 	email,
-	going,
-	response,
-	plusOne,
+	is_going,
+	has_responded,
+	plus_one,
 	id,
 	onUpdate,
 	onDelete,
@@ -52,11 +52,11 @@ export const GuestData = ({
 	return (
 		<React.Fragment>
 			<tr>
-				<td>{name}</td>
-				<td>{email}</td>
-				<td>{going}</td>
-				<td>{response}</td>
-				<td>{plusOne}</td>
+				<td>{String(name).replace(/\b\w/g, l => l.toUpperCase())}</td>
+				<td>{String(email).replace(/\b\w/g, l => l.toUpperCase())}</td>
+				<td>{String(is_going).replace(/\b\w/g, l => l.toUpperCase())}</td>
+				<td>{String(has_responded).replace(/\b\w/g, l => l.toUpperCase())}</td>
+				<td>{String(plus_one).replace(/\b\w/g, l => l.toUpperCase())}</td>
 				{/* <td className="editing">
 					<Button color="link" onClick={onUpdate} target="_blank" rel="noopener noreferrer">
 						<img
