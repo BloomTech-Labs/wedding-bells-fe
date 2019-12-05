@@ -23,6 +23,7 @@ export default function VendorComponent() {
 		const response = await axios.get(
 			`${envVarRoute}/api/weddings/${wedding}/vendors`
 		);
+		console.log(response.data);
 		setVendorInfo(response.data);
 	};
 
@@ -33,22 +34,7 @@ export default function VendorComponent() {
 	/* Ending at this line, whenever the vendorInfo loads or is updated the component will re-render */
 
 	//When a user adds vendor information via the form with the modal, the following function will be what will do the action
-	const handleSubmitVendor = e => {
-		// e.preventDefault();
-		const vendor = {
-			...vendorInfo,
-		};
 
-		axios
-			.post(`${envVarRoute}/api/weddings/${wedding}/vendors/`, { vendor })
-			.then(res => {
-				console.log("Adding that vendors information");
-				console.log("The vendors information has been added");
-			})
-			.catch(error => {
-				console.error("Server Error", error);
-			});
-	};
 	//When a user deletes vendors information via the trash icon, the following function will be what will do the action
 	function handleDeleteVendor(evt) {
 		evt.preventDefault();
@@ -71,7 +57,7 @@ export default function VendorComponent() {
 						className="addVendor"
 						buttonLabel="Add Vendor"
 						modalTitle="Add Vendor"
-						onSubmit={handleSubmitVendor}
+						// onSubmit={handleSubmitVendor}
 					/>
 
 					<Table responsive hover bordered>

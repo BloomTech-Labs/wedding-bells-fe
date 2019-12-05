@@ -30,7 +30,7 @@ export const Headers = props => {
 };
 
 export const VendorData = ({
-	vendorName,
+	company_name,
 	category,
 	id,
 	onUpdate,
@@ -40,10 +40,15 @@ export const VendorData = ({
 		<React.Fragment>
 			<tr>
 				<th>{id}</th>
-				<td>{vendorName}</td>
+				<td>{company_name}</td>
 				<td>{category}</td>
 				<td className="editing">
-					<Button color="link" onClick={onUpdate} target="_blank" rel="noopener noreferrer">
+					<Button
+						color="link"
+						onClick={onUpdate}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<img
 							alt="edit"
 							className="editMe"
@@ -52,7 +57,12 @@ export const VendorData = ({
 					</Button>
 				</td>
 				<td className="deleting">
-					<Button color="link" onClick={onDelete} target="_blank" rel="noopener noreferrer">
+					<Button
+						color="link"
+						onClick={onDelete}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<img
 							alt="delete"
 							className="deleteMe"
