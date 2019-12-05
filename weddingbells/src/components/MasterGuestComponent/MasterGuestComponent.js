@@ -29,10 +29,13 @@ export default function MasterGuestComponent() {
 			});
 	}
 	*/
+	const envVarRoute = process.env.REACT_APP_BACKEND_BASE_URL;
 
 	/* Starting from this line and down, whenever the guestInfo loads or is updated the component will re-render */
 	const fetchGuestInfo = async () => {
-		const response = await axios.get("/api/weddings/:weddingId/guests");
+		const response = await axios.get(
+			`${envVarRoute}/api/weddings/:weddingId/guests`
+		);
 		setGuestInfo(response.data);
 	};
 
@@ -43,13 +46,13 @@ export default function MasterGuestComponent() {
 
 	//When a user adds a guest information via the form with the modal, the following function will be what will do the action
 	function handleSubmitGuest(evt) {
-		evt.preventDefault();
+		// evt.preventDefault();
 		const guest = {
 			...guestInfo,
 		};
 
 		axios
-			.post("/api/weddings/:weddingId/guests/:id", { guest })
+			.post(`${envVarRoute}/api/weddings/:weddingId/guests/:id`, { guest })
 			.then(res => {
 				console.log("Adding that guests information");
 				console.log("The guests information has been added");
@@ -61,10 +64,10 @@ export default function MasterGuestComponent() {
 
 	//When a user deletes a guests information via the trash icon, the following function will be what will do the action
 	function handleDeleteGuest(evt) {
-		evt.preventDefault();
+		// evt.preventDefault();
 
 		axios
-			.delete("/api/weddings/:weddingId/guests/:id")
+			.delete(`${envVarRoute}/api/weddings/:weddingId/guests/:id`)
 			.then(res => {
 				console.log("Deleting that guests information");
 				console.log("The guests information has been deleted");

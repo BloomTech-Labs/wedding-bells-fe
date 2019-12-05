@@ -12,6 +12,7 @@ import {
 	WeddingCreationView,
 	ProtectedView,
 	CouplePageView,
+	
 } from "../../views";
 
 import { toggleAuthModal } from "../../actions";
