@@ -1,22 +1,23 @@
 import React, { Component } from "react";
-import "./styles/App.css";
+import "./App.css";
 
 import { connect } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 import {
 	LandingPageView,
 	WeddingCreationView,
 	ProtectedView,
 	CouplePageView,
-} from "./views";
+	
+} from "../../views";
 
-import { toggleAuthModal } from "./actions";
+import { toggleAuthModal } from "../../actions";
 
-import PrivateRoute from "./components/PrivateRoute/PrivateRoute.js";
+import PrivateRoute from "../PrivateRoute/PrivateRoute.js";
 
 class App extends Component {
 	render() {

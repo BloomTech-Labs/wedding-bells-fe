@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import axios from "axios";
 
-import "../../styles/mappedOver.scss";
+import "./mappedOver.scss";
 
 import { Button } from "reactstrap";
 
