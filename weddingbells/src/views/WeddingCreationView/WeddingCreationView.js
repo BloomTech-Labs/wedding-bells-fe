@@ -5,7 +5,7 @@ import axios from "axios";
 import { Alert, DatePicker } from "antd";
 import GeoSuggest from "react-geosuggest";
 import styled from "styled-components";
-import "../styles/WeddingCreation.scss";
+import "./WeddingCreation.scss";
 
 const WeddingCreationForm = ({ couple, history }) => {
 	const [address, setAddress] = useState(null);
@@ -86,28 +86,37 @@ const WeddingCreationForm = ({ couple, history }) => {
 
 	return (
 		<>
+			<h1 className="title">Let's Create Your Weddding</h1>
 			<Form onSubmit={onSubmit}>
-				<GeoSuggest
-					country="us"
-					types={["geocode", "establishment"]}
-					onSuggestSelect={onSuggestSelect}
-					className="geosuggest-override"
-				/>
-				<DatePicker
-					size="large"
-					format="MMM-DD-YYYY"
-					showToday={false}
-					style={{
-						width: "300px",
-					}}
-					disabledDate={disabledDate}
-					onChange={onChange}
-				/>
-				<input
-					className="btn btn-primary"
-					type="submit"
-					value="Create Wedding"
-				/>
+				<div className="form-item">
+					<p>Our wedding venue is located at:</p>
+					<GeoSuggest
+						country="us"
+						types={["geocode", "establishment"]}
+						onSuggestSelect={onSuggestSelect}
+						className="geosuggest-override"
+					/>
+				</div>
+				<div className="form-item">
+					<p>Our wedding date is:</p>
+					<DatePicker
+						size="large"
+						format="MMM-DD-YYYY"
+						showToday={false}
+						style={{
+							width: "300px",
+						}}
+						disabledDate={disabledDate}
+						onChange={onChange}
+					/>
+				</div>
+				<div className="form-item">
+					<input
+						className="btn btn-primary"
+						type="submit"
+						value="Create Wedding"
+					/>
+				</div>
 			</Form>
 			{errorMsg && (
 				<Alert message="Error" description={errorMsg} type="error" showIcon />
@@ -117,9 +126,10 @@ const WeddingCreationForm = ({ couple, history }) => {
 };
 
 const Page = styled.div`
-	margin: 80px auto 0;
+	margin: 0 auto;
+	padding: 80px 0 0;
 	height: 100%;
-	min-height: 500px;
+	min-height: 400px;
 	max-width: 800px;
 	text-align: left;
 `;
@@ -128,7 +138,8 @@ const Form = styled.form`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-end;
+	flex-wrap: wrap;
 `;
 
 const WeddingCreationView = ({ couple, history }) => {

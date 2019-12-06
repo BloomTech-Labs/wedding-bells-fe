@@ -5,9 +5,9 @@ import { Table } from "reactstrap";
 import deleteMe from "../../assets/delete.svg";
 import editMe from "../../assets/pencil.svg";
 
-import OmniModal from "../Modal/index";
+import OmniModal from "../Modal/Modal";
 
-import { Headers, GuestData } from "../Guest List/mappedOver";
+import { Headers, GuestData } from "../GuestList/mappedOver";
 
 export default function GuestComponent() {
 	const weddingData = JSON.parse(localStorage.getItem("wedding"));

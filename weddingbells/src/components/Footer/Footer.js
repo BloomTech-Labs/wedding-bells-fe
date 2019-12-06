@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
 
-import "../../styles/footer.scss";
+import "./Footer.scss";
 
 import { HashLink } from "react-router-hash-link";
 
@@ -11,7 +11,7 @@ class Footer extends Component {
 		return (
 			<div className="footer-wrapper">
 				<div className="footer-logo">
-					<h3>Wedding Bells </h3>
+					<h3>H3rra</h3>
 				</div>
 				<div className="footer-links">
 					<HashLink to="#services" className="link">

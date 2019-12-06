@@ -1,0 +1,26 @@
+.services-wrapper {
+    width: 75%;
+    margin: 100px auto;
+}
+
+.services-wrapper .services-item {
+    // flexbox
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &:nth-child(2) {
+        flex-direction: row-reverse;
+    }
+}
+
+.services-wrapper .services-item .services-text {
+    // size
+    width: 50%;
+}
+
+.services-wrapper .services-item .services-image {
+    // size
+    width: 50%;
+}
