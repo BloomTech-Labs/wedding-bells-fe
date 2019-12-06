@@ -6,8 +6,7 @@ import TESTIMONIALS_DATA from "./data";
 import {
 	Carousel,
 	CarouselItem,
-	CarouselControl,
-	CarouselIndicators,
+	CarouselControl
 } from "reactstrap";
 
 class Testimonials extends Component {
