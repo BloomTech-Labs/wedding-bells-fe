@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Announcement from "../../Announcement";
+import Announcement from "./Announcement";
 
 class Announcements extends Component {
 	constructor(props) {

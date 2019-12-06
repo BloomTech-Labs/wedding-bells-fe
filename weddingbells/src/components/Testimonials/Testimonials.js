@@ -1,15 +1,12 @@
 import React, { Component } from "react";
-// import "../../styles/Testimonials.scss";
+import "./Testimonials.scss";
 
-// import Testimonialscard from "./Testimonialscard.js";
 import TESTIMONIALS_DATA from "./data";
 
 import {
 	Carousel,
 	CarouselItem,
-	CarouselControl,
-	CarouselIndicators,
-	// CarouselCaption,
+	CarouselControl
 } from "reactstrap";
 
 class Testimonials extends Component {
@@ -60,18 +57,14 @@ class Testimonials extends Component {
 					next={this.next}
 					previous={this.previous}
 				>
-					<CarouselIndicators
-						items={this.state.testimonials}
-						activeIndex={this.state.activeIndex}
-						onClickHandler={this.goToIndex}
-					/>
 					{this.state.testimonials.map(testimonial => (
 						<CarouselItem
 							onExiting={() => this.setState({ animating: true })}
 							onExited={() => this.setState({ animating: false })}
 							key={testimonial.id}
 						>
-							{testimonial.quoteText}
+							<p><text className="testimonials-quote">“</text>{testimonial.quoteText}</p>
+							<p>- {testimonial.author}</p>
 						</CarouselItem>
 					))}
 					<CarouselControl

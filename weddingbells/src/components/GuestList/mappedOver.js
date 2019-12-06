@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../styles/mappedOver.scss";
+import "./mappedOver.scss";
 
 import { Button } from "reactstrap";
 
@@ -13,10 +13,19 @@ export const Headers = props => {
 				</th>
 
 				<th>
-					<h5>Vendor Name</h5>
+					<h5>Name</h5>
 				</th>
 				<th>
-					<h5>Category</h5>
+					<h5>Email</h5>
+				</th>
+				<th>
+					<h5>Going?</h5>
+				</th>
+				<th>
+					<h5>Responded to Invitation?</h5>
+				</th>
+				<th>
+					<h5>Plus One?</h5>
 				</th>
 				<th>
 					<h5>Update</h5>
@@ -29,9 +38,12 @@ export const Headers = props => {
 	);
 };
 
-export const VendorData = ({
-	vendorName,
-	category,
+export const GuestData = ({
+	name,
+	email,
+	going,
+	response,
+	plusOne,
 	id,
 	onUpdate,
 	onDelete,
@@ -40,19 +52,32 @@ export const VendorData = ({
 		<React.Fragment>
 			<tr>
 				<th>{id}</th>
-				<td>{vendorName}</td>
-				<td>{category}</td>
+				<td>{name}</td>
+				<td>{email}</td>
+				<td>{going}</td>
+				<td>{response}</td>
+				<td>{plusOne}</td>
 				<td className="editing">
-					<Button color="link" onClick={onUpdate} target="_blank" rel="noopener noreferrer">
+					<Button
+						color="link"
+						onClick={onUpdate}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<img
-							alt="edit"
 							className="editMe"
+							alt="edit"
 							src={require("../../assets/pencil.svg")}
 						/>
 					</Button>
 				</td>
 				<td className="deleting">
-					<Button color="link" onClick={onDelete} target="_blank" rel="noopener noreferrer">
+					<Button
+						color="link"
+						onClick={onDelete}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<img
 							alt="delete"
 							className="deleteMe"

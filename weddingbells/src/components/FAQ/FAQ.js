@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // import styling
-import "../../styles/faq.scss";
+import "./FAQ.scss";
 
 // import components
 import FAQcard from "./FAQcard.js";
@@ -20,9 +20,11 @@ class FAQ extends Component {
 		return (
 			<div id="faq" className="faq-wrapper">
 				<h3>FAQ</h3>
-				{this.state.faqs.map(faq => (
-					<FAQcard key={faq.id} {...faq} />
-				))}
+				<div>
+					{this.state.faqs.map(faq => (
+						<FAQcard key={faq.id} {...faq} />
+					))}
+				</div>
 			</div>
 		);
 	}

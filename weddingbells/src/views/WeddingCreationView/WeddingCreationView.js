@@ -5,7 +5,7 @@ import axios from "axios";
 import { Alert, DatePicker } from "antd";
 import GeoSuggest from "react-geosuggest";
 import styled from "styled-components";
-import "../styles/WeddingCreation.scss";
+import "./WeddingCreation.scss";
 
 const WeddingCreationForm = ({ couple, history }) => {
 	const [address, setAddress] = useState(null);

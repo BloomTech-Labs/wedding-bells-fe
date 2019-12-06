@@ -3,14 +3,14 @@ import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 
 // import styling
-import "../../styles/header.scss";
+import "./Header.scss";
 
 class Header extends Component {
 	render() {
 		return (
 			<div className="header-wrapper">
 				<Link to="/" className="header-logo">
-					Wedding Bells
+					<h3>Wedding Bells</h3>
 				</Link>
 				<div className="header-links">
 					<HashLink to="#services" className="link">
