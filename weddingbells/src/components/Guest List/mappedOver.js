@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+
+import axios from "axios";
 
 import "../../styles/mappedOver.scss";
 
@@ -8,10 +10,6 @@ export const Headers = props => {
 	return (
 		<thead>
 			<tr>
-				<th>
-					<h5>#</h5>
-				</th>
-
 				<th>
 					<h5>Name</h5>
 				</th>
@@ -27,9 +25,9 @@ export const Headers = props => {
 				<th>
 					<h5>Plus One?</h5>
 				</th>
-				<th>
+				{/* <th>
 					<h5>Update</h5>
-				</th>
+				</th> */}
 				<th>
 					<h5>Delete</h5>
 				</th>
@@ -41,23 +39,25 @@ export const Headers = props => {
 export const GuestData = ({
 	name,
 	email,
-	going,
-	response,
-	plusOne,
+	is_going,
+	has_responded,
+	plus_one,
 	id,
 	onUpdate,
 	onDelete,
 }) => {
+	const weddingData = JSON.parse(localStorage.getItem("wedding"));
+	const [wedding, updateWedding] = useState(weddingData.id);
+	const envVarRoute = process.env.REACT_APP_BACKEND_BASE_URL;
 	return (
 		<React.Fragment>
 			<tr>
-				<th>{id}</th>
-				<td>{name}</td>
-				<td>{email}</td>
-				<td>{going}</td>
-				<td>{response}</td>
-				<td>{plusOne}</td>
-				<td className="editing">
+				<td>{String(name).replace(/\b\w/g, l => l.toUpperCase())}</td>
+				<td>{String(email).replace(/\b\w/g, l => l.toUpperCase())}</td>
+				<td>{String(is_going).replace(/\b\w/g, l => l.toUpperCase())}</td>
+				<td>{String(has_responded).replace(/\b\w/g, l => l.toUpperCase())}</td>
+				<td>{String(plus_one).replace(/\b\w/g, l => l.toUpperCase())}</td>
+				{/* <td className="editing">
 					<Button color="link" onClick={onUpdate} target="_blank" rel="noopener noreferrer">
 						<img
 							className="editMe"
@@ -65,9 +65,25 @@ export const GuestData = ({
 							src={require("../../assets/pencil.svg")}
 						/>
 					</Button>
-				</td>
+				</td> */}
 				<td className="deleting">
-					<Button color="link" onClick={onDelete} target="_blank" rel="noopener noreferrer">
+					<Button
+						color="link"
+						onClick={() => {
+							axios
+								.delete(`${envVarRoute}/api/weddings/${wedding}/guests/${id}`)
+								.then(res => {
+									console.log("Deleting that guests information");
+									console.log("The guests information has been deleted");
+								})
+								.then(window.location.reload())
+								.catch(error => {
+									console.error("Server Error", error);
+								});
+						}}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<img
 							alt="delete"
 							className="deleteMe"
