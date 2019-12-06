@@ -66,6 +66,7 @@ const WeddingCreationForm = ({ couple, history }) => {
 			);
 			const { data } = response;
 			localStorage.setItem("wedding", JSON.stringify(data));
+			history.push("/couple");
 		} catch (error) {
 			setErrorMsg(
 				"Failed to create wedding! Check your internet connection and wedding data then try again."
@@ -106,9 +107,6 @@ const WeddingCreationForm = ({ couple, history }) => {
 					className="btn btn-primary"
 					type="submit"
 					value="Create Wedding"
-					onClick={() => {
-						history.push("/couple");
-					}}
 				/>
 			</Form>
 			{errorMsg && (
@@ -148,7 +146,7 @@ const testData = {
 };
 
 const mapStateToProps = state => ({
-	couple: (state.authReducer && state.authReducer.couple) || testData,
+	couple: state.authReducer.couple || testData,
 });
 
 export default connect(mapStateToProps)(withRouter(WeddingCreationView));

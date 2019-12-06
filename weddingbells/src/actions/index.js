@@ -14,18 +14,21 @@ export const TOGGLE_AUTH_MODAL = "TOGGLE_AUTH_MODAL";
 const envVarPage = process.env.REACT_APP_BACKEND_BASE_URL;
 
 export const login = creds => dispatch => {
-	console.log(creds);
 	dispatch({ type: LOGIN_START });
 	return axios.post(`${envVarPage}/api/auth/login`, creds).then(res => {
 		localStorage.setItem("token", res.data.token);
-		localStorage.setItem("couple", JSON.stringify(res.data.couple));
-		dispatch({ type: LOGIN_SUCCESS, payload: res.data.couple });
+		localStorage.setItem("couple", JSON.stringify(res.data));
+		dispatch({ type: LOGIN_SUCCESS, payload: res.data });
 	});
 };
 
 export const signup = creds => dispatch => {
 	dispatch({ type: SIGNUP_START });
-	return axios.post(`${envVarPage}/api/auth/register`, creds);
+	return axios.post(`${envVarPage}/api/auth/register`, creds).then(res => {
+		localStorage.setItem("token", res.data.token);
+		localStorage.setItem("couple", JSON.stringify(res.data));
+		dispatch({ type: SIGNUP_SUCCESS, payload: res.data });
+	});
 };
 
 export const signout = () => dispatch => {};

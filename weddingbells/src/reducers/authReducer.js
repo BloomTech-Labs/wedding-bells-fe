@@ -36,6 +36,7 @@ export const authReducer = (state = initialState, action) => {
 				isLoggingIn: false,
 				isSigningUp: false,
 				error: "",
+				couple: action.payload,
 			};
 		case LOGIN_FAILURE:
 			return {
