@@ -30,8 +30,8 @@ export const signup = creds => dispatch => {
 	dispatch({ type: SIGNUP_START });
 	return axios.post(`${envVarPage}/api/auth/register`, creds).then(res => {
 		localStorage.setItem("token", res.data.token);
-		localStorage.setItem("couple", JSON.stringify(res.data));
-		dispatch({ type: SIGNUP_SUCCESS, payload: res.data });
+		localStorage.setItem("couple", JSON.stringify(res.data.couple));
+		dispatch({ type: SIGNUP_SUCCESS, payload: res.data.couple });
 	});
 };
 
