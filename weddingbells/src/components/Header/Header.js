@@ -10,7 +10,7 @@ class Header extends Component {
 		return (
 			<div className="header-wrapper">
 				<Link to="/" className="header-logo">
-					<h3>Wedding Bells</h3>
+					<h3>H3rra</h3>
 				</Link>
 				<div className="header-links">
 					<HashLink to="#services" className="link">
