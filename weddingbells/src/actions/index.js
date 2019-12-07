@@ -19,7 +19,10 @@ export const login = creds => dispatch => {
 		localStorage.setItem("token", res.data.token);
 		localStorage.setItem("couple", JSON.stringify(res.data.couple));
 		localStorage.setItem("wedding", JSON.stringify(res.data.wedding));
-		dispatch({ type: LOGIN_SUCCESS, payload: res.data });
+		dispatch({
+			type: LOGIN_SUCCESS,
+			payload: res.data,
+		});
 	});
 };
 
