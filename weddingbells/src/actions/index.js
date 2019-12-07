@@ -15,7 +15,6 @@ export const LOG_OUT = "LOG_OUT";
 const envVarPage = process.env.REACT_APP_BACKEND_BASE_URL;
 
 export const login = creds => dispatch => {
-	console.log(creds);
 	dispatch({ type: LOGIN_START });
 	return axios.post(`${envVarPage}/api/auth/login`, creds).then(res => {
 		localStorage.setItem("token", res.data.token);
@@ -26,13 +25,19 @@ export const login = creds => dispatch => {
 
 export const signup = creds => dispatch => {
 	dispatch({ type: SIGNUP_START });
-	return axios.post(`${envVarPage}/api/auth/register`, creds);
+	return axios.post(`${envVarPage}/api/auth/register`, creds).then(res => {
+		localStorage.setItem("token", res.data.token);
+		localStorage.setItem("couple", JSON.stringify(res.data.couple));
+		dispatch({ type: SIGNUP_SUCCESS, payload: res.data.couple });
+	});
 };
 
-export const logOutUser = creds => dispatch => {
-	sessionStorage.removeItem("jwt");
-	dispatch({ type: LOG_OUT });
-	return axios.post(`${envVarPage}/api/auth/logout`, creds);
+export function logout() {
+	return dispatch => {
+		localStorage.removeItem("couple", "token");
+		localStorage.clear();
+		dispatch({ type: LOG_OUT });
+	}
 };
 
 export const toggleAuthModal = () => dispatch => {
