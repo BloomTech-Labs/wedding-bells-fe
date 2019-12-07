@@ -10,9 +10,9 @@ class Footer extends Component {
 	render() {
 		return (
 			<div className="footer-wrapper">
-				<div className="footer-logo">
+				<Link to="/" className="footer-logo">
 					<h3>H3rra</h3>
-				</div>
+				</Link>
 				<div className="footer-links">
 					<HashLink to="#services" className="link">
 						Services
