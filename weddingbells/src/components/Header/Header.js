@@ -1,14 +1,16 @@
 import React, { Component} from "react";
 import { HashLink } from "react-router-hash-link";
+
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { bindActionCreators } from 'redux';
 import { logout } from "../../actions";
 import { withRouter } from "react-router-dom";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 // import styling
-import "../../styles/header.scss";
+import "./Header.scss";
 
 class Header extends Component {
 	// constructor(props) {
@@ -50,7 +52,9 @@ class Header extends Component {
 		} else {
 			return (
 			<div className="header-wrapper">
-				<div className="header-logo">Wedding Bells</div>
+				<Link to="/" className="header-logo">
+					<h3>Wedding Bells</h3>
+				</Link>
 				<div className="header-links">
 					<HashLink to="#services" className="link">
 						Services

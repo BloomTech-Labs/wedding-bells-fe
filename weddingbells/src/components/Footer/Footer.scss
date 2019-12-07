@@ -1,7 +1,5 @@
-.header-wrapper {
+.footer-wrapper {
 	// sizing & placement
-	position: fixed;
-	top: 0px;
 	width: 100%;
 	height: 80px;
 
@@ -16,12 +14,12 @@
 	align-items: center;
 }
 
-.header-wrapper .header-logo {
+.footer-wrapper .footer-logo {
 	// size & placement
 	margin-left: 75px;
 }
 
-.header-wrapper .header-links {
+.footer-wrapper .footer-links {
 	// size & placement
 	width: 30%;
 
@@ -32,7 +30,8 @@
 	justify-content: space-around;
 
 	.link {
-		// text
+		// text;
+		font-size: 1.2rem;
 		color: #000000;
 		text-decoration: none;
 	}

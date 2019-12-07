@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Collapse, Button, CardBody, Card } from "reactstrap";
+import { Collapse, Button } from "reactstrap";
 
 class FAQcard extends Component {
 	constructor(props) {
@@ -17,13 +17,11 @@ class FAQcard extends Component {
 	render() {
 		return (
 			<div className="faq-card">
-				<Button onClick={this.toggle}>
-					- {this.props.title}
+				<Button color="link" className="faq-item" onClick={this.toggle}>
+					{this.state.collapse ? "-" : "+"} {this.props.title}
 				</Button>
 				<Collapse isOpen={this.state.collapse}>
-					<Card>
-						<CardBody>{this.props.subText}</CardBody>
-					</Card>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.props.subText}
 				</Collapse>
 			</div>
 		);
