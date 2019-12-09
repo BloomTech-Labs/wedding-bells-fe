@@ -13,10 +13,10 @@ import { Link } from "react-router-dom";
 import "./Header.scss";
 
 class Header extends Component {
-	// constructor(props) {
-	// 	super(props);
-	// 	this.props.logout = this.logout.bind;
-	// }
+	constructor(props) {
+		super(props);
+		this.logout = this.logout.bind(this);
+	}
 
 	logout = e => {
 		e.preventDefault();
@@ -43,7 +43,7 @@ class Header extends Component {
 						<HashLink to="#about-us" className="link">
 							About Us
 					</HashLink>
-						<HashLink to="#" className="link" onClick={this.logout.bind(this)}>
+						<HashLink to="#" className="link" onClick={this.logout}>
 							LogOut
 					</HashLink>
 					</div>
@@ -91,4 +91,4 @@ function mapStateToProps(state) {
 
 
 // export default connect(null, {logout})(withRouter(Header));
-export default connect(mapStateToProps, {logout})(Header);
+export default connect(mapStateToProps, {logout})(withRouter(Header));
