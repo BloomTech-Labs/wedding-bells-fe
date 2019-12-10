@@ -4,31 +4,42 @@ import { HashLink } from "react-router-hash-link";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { bindActionCreators } from 'redux';
-import { logout } from "../../actions";
+import { logOutUser } from "../../actions";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 
 // import styling
 import "./Header.scss";
+import ActionButton from "antd/lib/modal/ActionButton";
+
+ const initialState = {
+	logoutCredentials: {
+	isLoggingIn: true,
+	isSigningUp: true,
+ 	error: "",
+	},
+ };
 
 class Header extends Component {
 	constructor(props) {
 		super(props);
 		this.logout = this.logout.bind(this);
+
+		this.state = initialState;
 	}
 
 	logout = e => {
 		e.preventDefault();
-		this.props.logout()
-		.then(() => this.props.history.push("/"));
+		this.props
+			.logOutUser(this.state.logoutCredentials)
+			.then(() => this.props.history.push("/"));
 	};
 
 
 
 	render() {
-
-		const  isAuthenticated = localStorage.couple;
+		const  isAuthenticated = localStorage.couple && localStorage.token;
 		if (isAuthenticated) {
 			return (
 				<div className="header-wrapper">
@@ -43,7 +54,7 @@ class Header extends Component {
 						<HashLink to="#about-us" className="link">
 							About Us
 					</HashLink>
-						<HashLink to="#" className="link" onClick={this.logout}>
+						<HashLink to="/" className="link" onClick={this.props.logout}>
 							LogOut
 					</HashLink>
 					</div>
@@ -81,7 +92,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-	// isAuthenticated: PropTypes.object.isRequired,
+	isAuthenticated: PropTypes.object.isRequired,
 	logout: PropTypes.func.isRequired
  }
 
@@ -91,4 +102,4 @@ function mapStateToProps(state) {
 
 
 // export default connect(null, {logout})(withRouter(Header));
-export default connect(mapStateToProps, {logout})(withRouter(Header));
+export default connect(mapStateToProps, {logOutUser})(withRouter(Header));

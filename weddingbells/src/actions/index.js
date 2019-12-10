@@ -32,12 +32,12 @@ export const signup = creds => dispatch => {
 	});
 };
 
-export function logout() {
-	return dispatch => {
-		localStorage.removeItem("couple", "token");
-		localStorage.clear();
-		dispatch({ type: LOG_OUT });
-	}
+export const logOutUser = () => dispatch => { 
+	localStorage.setItem("token", "couple");
+	localStorage.removeItem("token","couple");
+	window.localStorage.clear();
+	return dispatch({ type: LOG_OUT });
+	
 };
 
 export const toggleAuthModal = () => dispatch => {

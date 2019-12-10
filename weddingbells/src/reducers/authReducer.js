@@ -64,7 +64,6 @@ export const authReducer = (state = initialState, action) => {
 		
 		case LOG_OUT:
 			return {
-				...state,
 				isLoggingIn: false,
 				isSigningUp: false,
 				error: "",
