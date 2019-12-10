@@ -13,27 +13,25 @@ import { Link } from "react-router-dom";
 import "./Header.scss";
 import ActionButton from "antd/lib/modal/ActionButton";
 
- const initialState = {
-	logoutCredentials: {
+ const logoutCredentials = {
 	isLoggingIn: true,
 	isSigningUp: true,
  	error: "",
-	},
  };
 
 class Header extends Component {
 	constructor(props) {
 		super(props);
-		this.logout = this.logout.bind(this);
+		// this.logout = this.logout.bind(this);
 
-		this.state = initialState;
+		this.state = logoutCredentials;
 	}
 
 	logout = e => {
 		e.preventDefault();
 		this.props
 			.logOutUser(this.state.logoutCredentials)
-			.then(() => this.props.history.push("/"));
+			this.props.history.push("/");
 	};
 
 
@@ -54,7 +52,7 @@ class Header extends Component {
 						<HashLink to="#about-us" className="link">
 							About Us
 					</HashLink>
-						<HashLink to="/" className="link" onClick={this.props.logout}>
+						<HashLink to="/" className="link" onClick={this.logout}>
 							LogOut
 					</HashLink>
 					</div>
