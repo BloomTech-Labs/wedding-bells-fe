@@ -15,14 +15,11 @@ const VendorForm = () => {
 		console.log(data);
 
 		axios
-			.post(
-				`${envVarRoute}/api/weddings/${wedding}/vendors/`,
-				data,
-				console.log(data)
-			)
+			.post(`${envVarRoute}/api/weddings/${wedding}/vendors/`, data)
 			.then(res => {
 				console.log("Adding that vendors information");
 				console.log("The vendors information has been added");
+				window.location.reload();
 			})
 			.then(window.location.reload())
 			.catch(error => {

@@ -14,16 +14,12 @@ const GuestForm = () => {
 	const onSubmit = data => {
 		console.log(data);
 		axios
-			.post(
-				`${envVarRoute}/api/weddings/${wedding}/guests/`,
-				data,
-				console.log(data)
-			)
+			.post(`${envVarRoute}/api/weddings/${wedding}/guests/`, data)
 			.then(res => {
 				console.log("Adding that guests information");
 				console.log("The guests information has been added");
+				window.location.reload();
 			})
-			.then(window.location.reload())
 			.catch(error => {
 				console.error("Server Error", error);
 			});
