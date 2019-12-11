@@ -60,8 +60,8 @@ export const VendorData = ({ company_name, category, id, onUpdate }) => {
 								.then(res => {
 									console.log("Deleting that vendors information");
 									console.log("The vendors information has been deleted");
+									window.location.reload();
 								})
-								.then(window.location.reload())
 								.catch(error => {
 									console.error("Server Error", error);
 								});

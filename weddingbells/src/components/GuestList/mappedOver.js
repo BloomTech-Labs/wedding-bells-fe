@@ -75,8 +75,8 @@ export const GuestData = ({
 								.then(res => {
 									console.log("Deleting that guests information");
 									console.log("The guests information has been deleted");
+									window.location.reload();
 								})
-								.then(window.location.reload())
 								.catch(error => {
 									console.error("Server Error", error);
 								});
