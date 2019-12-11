@@ -21,7 +21,6 @@ const VendorForm = () => {
 				console.log("The vendors information has been added");
 				window.location.reload();
 			})
-			.then(window.location.reload())
 			.catch(error => {
 				console.error("Server Error", error);
 			});
