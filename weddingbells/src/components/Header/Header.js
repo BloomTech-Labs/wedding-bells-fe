@@ -39,14 +39,11 @@ class Header extends Component {
 				<div className="header-wrapper">
 					<div className="header-logo">H3rra</div>
 					<div className="header-links">
-						<HashLink to="#services" className="link">
-							Services
+						<HashLink to="/couple" className="link">
+							Couple
 						</HashLink>
-						<HashLink to="#faq" className="link">
-							FAQ
-						</HashLink>
-						<HashLink to="#about-us" className="link">
-							About Us
+						<HashLink to="/settings" className="link">
+							Settings
 						</HashLink>
 						<HashLink to="/" className="link" onClick={this.logout}>
 							LogOut
