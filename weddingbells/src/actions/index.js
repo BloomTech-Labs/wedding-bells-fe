@@ -36,18 +36,28 @@ export const login = creds => dispatch => {
 	});
 };
 
-export const updateCouple = creds => dispatch => {
+export const updateCouple = couple => dispatch => {
 	dispatch({ type: UPDATE_USER_START });
-	const { id } = localStorage.getItem("couple");
-	console.log(id);
-	// return axios.put(`${envVarPage}/api/users/`, creds).then(res => {});
+	const { id } = JSON.parse(localStorage.couple);
+	return axios({
+		method: "put",
+		url: `${envVarPage}/api/users/${id}`,
+		data: couple,
+		headers: {
+			Authorization: localStorage.token,
+		},
+	})
+		.then(res => {
+			localStorage.setItem("couple", JSON.stringify(res.data));
+			dispatch({ type: UPDATE_USER_SUCCESS, payload: res.data });
+		})
+		.catch(err => dispatch({ type: UPDATE_USER_FAILURE }));
 };
 
-export const updateWedding = creds => dispatch => {
+export const updateWedding = wedding => dispatch => {
 	dispatch({ type: UPDATE_WEDDING_START });
-	const { id } = localStorage.getItem("wedding");
-	console.log(id);
-	// return axios.put(`${envVarPage}/api/weddings`, creds).then(res => {});
+	const { id } = JSON.parse(localStorage.wedding);
+	return axios.put(`${envVarPage}/api/weddings/${id}`, wedding).then(res => {});
 };
 
 export const signup = creds => dispatch => {

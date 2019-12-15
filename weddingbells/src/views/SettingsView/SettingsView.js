@@ -10,16 +10,12 @@ import { updateCouple, updateWedding } from "../../actions/index.js";
 import { ListGroup, ListGroupItem, Button, Input } from "reactstrap";
 
 const initialState = {
-	updateCouple: {
-		spouse_one_name: "",
-		spouse_two_name: "",
-		email: "",
-		password: "",
-	},
-	updateWedding: {
-		location: "",
-		date: "",
-	},
+	spouse_one_name: "",
+	spouse_two_name: "",
+	email: "",
+	password: "",
+	location: "",
+	date: "",
 };
 
 class SettingsView extends Component {
@@ -31,14 +27,32 @@ class SettingsView extends Component {
 
 	handlerUpdateCouple = e => {
 		e.preventDefault();
-		console.log(JSON.parse(localStorage.couple));
-		this.props.updateCouple();
+		const couple = {
+			spouse_one_name: this.state.spouse_one_name,
+			spouse_two_name: this.state.spouse_two_name,
+			email: this.state.email,
+			password: this.state.password,
+		};
+		this.props.updateCouple(couple);
+		window.location.reload();
 	};
 
 	handlerUpdateWedding = e => {
 		e.preventDefault();
-		this.props.updateWedding();
+		const wedding = {
+			location: this.state.location,
+			date: this.state.date,
+		};
+		this.props.updateWedding(wedding);
 	};
+
+	handlerTextChange = e => {
+		this.setState({
+			...this.state,
+			[e.target.name]: e.target.value,
+		});
+	};
+
 	render() {
 		return (
 			<div className="settings_wrapper">
@@ -53,14 +67,14 @@ class SettingsView extends Component {
 							placeholder="Spouse One Name"
 							name="spouse_one_name"
 							type="text"
-							value={this.state.updateCouple.spouse_one_name}
+							value={this.state.spouse_one_name}
 							onChange={this.handlerTextChange}
 						/>
 						<Input
 							placeholder="Spouse Two Name"
 							name="spouse_two_name"
 							type="text"
-							value={this.state.updateCouple.spouse_two_name}
+							value={this.state.spouse_two_name}
 							onChange={this.handlerTextChange}
 						/>
 					</ListGroupItem>
@@ -70,7 +84,7 @@ class SettingsView extends Component {
 							placeholder="Email"
 							name="email"
 							type="email"
-							value={this.state.updateCouple.email}
+							value={this.state.email}
 							onChange={this.handlerTextChange}
 						/>
 					</ListGroupItem>
@@ -80,7 +94,7 @@ class SettingsView extends Component {
 							placeholder="Password"
 							name="password"
 							type="password"
-							value={this.state.updateCouple.password}
+							value={this.state.password}
 							onChange={this.handlerTextChange}
 						/>
 					</ListGroupItem>
@@ -96,7 +110,7 @@ class SettingsView extends Component {
 							placeholder="Location"
 							name="location"
 							type="text"
-							value={this.state.updateWedding.location}
+							value={this.state.location}
 							onChange={this.handlerTextChange}
 						/>
 					</ListGroupItem>
@@ -106,7 +120,7 @@ class SettingsView extends Component {
 							placeholder="Date"
 							name="date"
 							type="date"
-							value={this.state.updateWedding.date}
+							value={this.state.date}
 							onChange={this.handlerTextChange}
 						/>
 					</ListGroupItem>
