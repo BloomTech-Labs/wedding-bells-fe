@@ -44,6 +44,7 @@ class SettingsView extends Component {
 			date: this.state.date,
 		};
 		this.props.updateWedding(wedding);
+		window.location.reload();
 	};
 
 	handlerTextChange = e => {

@@ -49,7 +49,7 @@ export const updateCouple = couple => dispatch => {
 	})
 		.then(res => {
 			localStorage.setItem("couple", JSON.stringify(res.data));
-			dispatch({ type: UPDATE_USER_SUCCESS, payload: res.data });
+			dispatch({ type: UPDATE_USER_SUCCESS });
 		})
 		.catch(err => dispatch({ type: UPDATE_USER_FAILURE }));
 };
@@ -57,7 +57,19 @@ export const updateCouple = couple => dispatch => {
 export const updateWedding = wedding => dispatch => {
 	dispatch({ type: UPDATE_WEDDING_START });
 	const { id } = JSON.parse(localStorage.wedding);
-	return axios.put(`${envVarPage}/api/weddings/${id}`, wedding).then(res => {});
+	return axios({
+		method: "put",
+		url: `${envVarPage}/api/weddings/${id}`,
+		data: wedding,
+		headers: {
+			Authorization: localStorage.token,
+		},
+	})
+		.then(res => {
+			localStorage.setItem("wedding", JSON.stringify(res.data));
+			dispatch({ type: UPDATE_WEDDING_SUCCESS });
+		})
+		.catch(err => dispatch({ type: UPDATE_WEDDING_FAILURE }));
 };
 
 export const signup = creds => dispatch => {
