@@ -3,6 +3,9 @@ import axios from "axios";
 // add additional actions with:
 // export const ${action_name} = '${action_name}';
 
+export const FETCH_COUPLE_FAILURE = "FETCH_COUPLE_FAILURE";
+export const FETCH_COUPLE_START = "FETCH_COUPLE_START";
+export const FETCH_COUPLE_SUCCESS = "FETCH_COUPLE_SUCCESS";
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
 export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
@@ -10,6 +13,12 @@ export const SIGNUP_FAILURE = "SIGNUP_FAILURE";
 export const SIGNUP_START = "SIGNUP_START";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const TOGGLE_AUTH_MODAL = "TOGGLE_AUTH_MODAL";
+export const UPDATE_USER_FAILURE = "UPDATE_USER_FAILURE";
+export const UPDATE_USER_START = "UPDATE_USER_START";
+export const UPDATE_USER_SUCCESS = "UPDATE_USER_SUCCESS";
+export const UPDATE_WEDDING_FAILURE = "UPDATE_WEDDING_FAILURE";
+export const UPDATE_WEDDING_START = "UPDATE_WEDDING_START";
+export const UPDATE_WEDDING_SUCCESS = "UPDATE_WEDDING_SUCCESS";
 export const LOG_OUT = "LOG_OUT";
 
 const envVarPage = process.env.REACT_APP_BACKEND_BASE_URL;
@@ -27,6 +36,44 @@ export const login = creds => dispatch => {
 	});
 };
 
+export const updateCouple = couple => dispatch => {
+	dispatch({ type: UPDATE_USER_START });
+	const { id } = JSON.parse(localStorage.couple);
+	return axios({
+		method: "put",
+		url: `${envVarPage}/api/users/${id}`,
+		data: couple,
+		headers: {
+			Authorization: localStorage.token,
+		},
+	})
+		.then(res => {
+			console.log(res.data);
+			localStorage.setItem("couple", JSON.stringify(res.data));
+			dispatch({ type: UPDATE_USER_SUCCESS });
+		})
+		.catch(err => dispatch({ type: UPDATE_USER_FAILURE }));
+};
+
+export const updateWedding = wedding => dispatch => {
+	dispatch({ type: UPDATE_WEDDING_START });
+	const { id } = JSON.parse(localStorage.wedding);
+	return axios({
+		method: "put",
+		url: `${envVarPage}/api/weddings/${id}`,
+		data: wedding,
+		headers: {
+			Authorization: localStorage.token,
+		},
+	})
+		.then(res => {
+			console.log(res.data);
+			localStorage.setItem("wedding", JSON.stringify(res.data));
+			dispatch({ type: UPDATE_WEDDING_SUCCESS });
+		})
+		.catch(err => dispatch({ type: UPDATE_WEDDING_FAILURE }));
+};
+
 export const signup = creds => dispatch => {
 	dispatch({ type: SIGNUP_START });
 	return axios.post(`${envVarPage}/api/auth/register`, creds).then(res => {
@@ -36,12 +83,11 @@ export const signup = creds => dispatch => {
 	});
 };
 
-export const logOutUser = () => dispatch => { 
+export const logOutUser = () => dispatch => {
 	localStorage.setItem("token", "couple");
-	localStorage.removeItem("token","couple");
+	localStorage.removeItem("token", "couple");
 	window.localStorage.clear();
 	return dispatch({ type: LOG_OUT });
-	
 };
 
 export const toggleAuthModal = () => dispatch => {

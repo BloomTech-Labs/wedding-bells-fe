@@ -41,14 +41,11 @@ class Header extends Component {
 						<h3>H3rra</h3>
 					</Link>
 					<div className="header-links">
-						<HashLink to="#services" className="link">
-							Services
+						<HashLink to="/couple" className="link">
+							Couple
 						</HashLink>
-						<HashLink to="#faq" className="link">
-							FAQ
-						</HashLink>
-						<HashLink to="#about-us" className="link">
-							About Us
+						<HashLink to="/settings" className="link">
+							Settings
 						</HashLink>
 						<HashLink to="/" className="link" onClick={this.logout}>
 							LogOut

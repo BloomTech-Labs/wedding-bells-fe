@@ -6,7 +6,7 @@ import { authReducer } from "./authReducer.js";
 
 export default combineReducers({
 	// add additional reducers with:
-    // ${reducer_name}
+    // ${reducer_name},
     authReducer,
 	landingPageReducer,
 });
