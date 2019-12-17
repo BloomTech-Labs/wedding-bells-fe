@@ -26,7 +26,7 @@ class SettingsView extends Component {
 		this.state = initialState;
 	}
 
-	handlerUpdateCouple = e => {
+	handlerUpdateCouple = async e => {
 		e.preventDefault();
 		const couple = {
 			spouse_one_name: this.state.spouse_one_name,
@@ -34,18 +34,18 @@ class SettingsView extends Component {
 			email: this.state.email,
 			password: this.state.password,
 		};
-		this.props.updateCouple(couple);
-		// window.location.reload();
+		await this.props.updateCouple(couple);
+		window.location.reload();
 	};
 
-	handlerUpdateWedding = e => {
+	handlerUpdateWedding = async e => {
 		e.preventDefault();
 		const wedding = {
 			location: this.state.location,
 			date: this.state.date,
 		};
-		this.props.updateWedding(wedding);
-		// window.location.reload();
+		await this.props.updateWedding(wedding);
+		window.location.reload();
 	};
 
 	handlerTextChange = e => {

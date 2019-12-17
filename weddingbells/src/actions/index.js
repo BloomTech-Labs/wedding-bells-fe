@@ -48,6 +48,7 @@ export const updateCouple = couple => dispatch => {
 		},
 	})
 		.then(res => {
+			console.log(res.data);
 			localStorage.setItem("couple", JSON.stringify(res.data));
 			dispatch({ type: UPDATE_USER_SUCCESS });
 		})
@@ -66,6 +67,7 @@ export const updateWedding = wedding => dispatch => {
 		},
 	})
 		.then(res => {
+			console.log(res.data);
 			localStorage.setItem("wedding", JSON.stringify(res.data));
 			dispatch({ type: UPDATE_WEDDING_SUCCESS });
 		})
