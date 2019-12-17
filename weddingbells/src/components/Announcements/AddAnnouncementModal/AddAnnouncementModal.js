@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 
-import VendorForm from "../VendorForm/index";
-import GuestForm from "../GuestForm/index";
+import AnnouncementForm from "../../Announcements/AnnouncementForm";
 
 const OmniModal = props => {
 	const { buttonLabel, className, modalTitle, onSubmit } = props;
@@ -33,9 +32,7 @@ const OmniModal = props => {
 				external={externalCloseBtn}
 			>
 				<ModalHeader>{modalTitle}</ModalHeader>
-				<ModalBody>
-					{modalTitle === "Add Vendor" ? <VendorForm /> : <GuestForm />}
-				</ModalBody>
+				<ModalBody>{modalTitle === "Add An Announcement"}</ModalBody>
 			</Modal>
 		</div>
 	);
