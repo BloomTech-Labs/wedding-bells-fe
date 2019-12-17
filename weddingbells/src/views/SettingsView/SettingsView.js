@@ -8,6 +8,7 @@ import { updateCouple, updateWedding } from "../../actions/index.js";
 
 // import styling
 import { ListGroup, ListGroupItem, Button, Input } from "reactstrap";
+import "./SettingsView.scss";
 
 const initialState = {
 	spouse_one_name: "",
@@ -34,7 +35,7 @@ class SettingsView extends Component {
 			password: this.state.password,
 		};
 		this.props.updateCouple(couple);
-		window.location.reload();
+		// window.location.reload();
 	};
 
 	handlerUpdateWedding = e => {
@@ -44,7 +45,7 @@ class SettingsView extends Component {
 			date: this.state.date,
 		};
 		this.props.updateWedding(wedding);
-		window.location.reload();
+		// window.location.reload();
 	};
 
 	handlerTextChange = e => {
