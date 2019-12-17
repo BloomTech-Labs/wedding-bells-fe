@@ -37,7 +37,9 @@ class Header extends Component {
 		if (isAuthenticated) {
 			return (
 				<div className="header-wrapper">
-					<div className="header-logo">H3rra</div>
+					<Link to="/" className="header-logo">
+						<h3>H3rra</h3>
+					</Link>
 					<div className="header-links">
 						<HashLink to="/couple" className="link">
 							Couple
