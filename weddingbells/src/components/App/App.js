@@ -13,6 +13,7 @@ import {
 	ProtectedView,
 	CouplePageView,
 	SettingsView,
+	GuestPageView,
 } from "../../views";
 
 import { toggleAuthModal } from "../../actions";
@@ -31,6 +32,7 @@ class App extends Component {
 						path="/create-wedding"
 						render={() => <WeddingCreationView />}
 					/>
+					<Route exact path="/weddings/:slug" component={GuestPageView} />
 					<PrivateRoute path="/couple" component={CouplePageView} />
 					<PrivateRoute path="/protected" component={ProtectedView} />
 					<PrivateRoute path="/settings" component={SettingsView} />
