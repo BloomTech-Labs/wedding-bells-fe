@@ -5,6 +5,9 @@ import axios from "axios";
 
 export const FETCH_COUPLE_FAILURE = "FETCH_COUPLE_FAILURE";
 export const FETCH_COUPLE_START = "FETCH_COUPLE_START";
+export const FETCH_WEDDING_SUCCESS = "FETCH_WEDDING_SUCCESS";
+export const FETCH_WEDDING_FAILURE = "FETCH_WEDDING_FAILURE";
+export const FETCH_WEDDING_START = "FETCH_WEDDING_START";
 export const FETCH_COUPLE_SUCCESS = "FETCH_COUPLE_SUCCESS";
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
 export const LOGIN_START = "LOGIN_START";
@@ -22,6 +25,19 @@ export const UPDATE_WEDDING_SUCCESS = "UPDATE_WEDDING_SUCCESS";
 export const LOG_OUT = "LOG_OUT";
 
 const envVarPage = process.env.REACT_APP_BACKEND_BASE_URL;
+
+// == to do: fix fetchWedding so that it can grab a wedding regardless
+// == if we give it a slug or id
+// export const fetchWedding = creds => dispatch => {
+// 	return axios
+// 		.get(`${envVarPage}/api/weddings/${creds}`)
+// 		.then(res => {
+// 			this.setState({ wedding: res.data });
+// 		})
+// 		.catch(err => {
+// 			console.log(err);
+// 		});
+// };
 
 export const login = creds => dispatch => {
 	dispatch({ type: LOGIN_START });
