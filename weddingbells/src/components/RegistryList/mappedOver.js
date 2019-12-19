@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import axios from "axios";
 
+import test from "../RegistryList/data";
 // import "./mappedOver.scss";
 
 import {
@@ -14,10 +15,18 @@ import {
 	Button,
 } from "reactstrap";
 
-export const RegistryData = ({ company_name, url, id, editMe, deleteMe }) => {
+export const RegistryData = ({
+	company_name,
+	url,
+	id,
+	editMe,
+	deleteMe,
+	company_image_dropdown,
+}) => {
 	const weddingData = JSON.parse(localStorage.getItem("wedding"));
 	const [wedding, updateWedding] = useState(weddingData.id);
 	const envVarRoute = process.env.REACT_APP_BACKEND_BASE_URL;
+
 	return (
 		// <Button
 		// 	color="link"
@@ -46,11 +55,34 @@ export const RegistryData = ({ company_name, url, id, editMe, deleteMe }) => {
 		<React.Fragment>
 			<div>
 				<Card>
-					<CardImg top width="100%" src="require(url)" alt="Card image cap" />
+					<CardImg
+						top
+						width="100%"
+						src={require(test.filter(filterByID))}
+						alt="Card image cap"
+					/>
 					<CardBody>
 						<CardTitle>{company_name}</CardTitle>
-						<Button>Update</Button>
-						<Button>Delete</Button>
+						<Button
+							onClick={() => {
+								axios
+									.delete(
+										`${envVarRoute}/api/weddings/${wedding}/registries/${id}`
+									)
+									.then(res => {
+										console.log("Deleting that registries information");
+										console.log("The registries information has been deleted");
+										window.location.reload();
+									})
+									.catch(error => {
+										console.error("Server Error", error);
+									});
+							}}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Delete
+						</Button>
 					</CardBody>
 				</Card>
 			</div>

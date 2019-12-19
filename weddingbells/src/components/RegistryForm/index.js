@@ -15,10 +15,10 @@ const RegistryForm = () => {
 		console.log(data);
 
 		axios
-			.post(`${envVarRoute}/api/weddings/${wedding}/vendors/`, data)
+			.post(`${envVarRoute}/api/weddings/${wedding}/registries/`, data)
 			.then(res => {
-				console.log("Adding that vendors information");
-				console.log("The vendors information has been added");
+				console.log(res, "Adding the registry information");
+				console.log("The registry information has been added");
 				window.location.reload();
 			})
 			.catch(error => {

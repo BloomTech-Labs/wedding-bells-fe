@@ -21,7 +21,7 @@ export default function RegistryComponent() {
 
 	const fetchRegistryInfo = async () => {
 		const response = await axios.get(
-			`${envVarRoute}/api/weddings/${wedding}/registry`
+			`${envVarRoute}/api/weddings/${wedding}/registries`
 		);
 		console.log(response.data);
 		setRegistryInfo(response.data);
@@ -33,6 +33,13 @@ export default function RegistryComponent() {
 
 	/* Ending at this line, whenever the registryInfo loads or is updated the component will re-render */
 
+	function filterByID(item) {
+		console.log(item.company_name);
+		console.log(company_name);
+		// if (item.company_name == { company_name }) {
+		// 	return item.company_image_dropdown;
+		// }
+	}
 	return (
 		<div className="masterRegistryComponent">
 			<div className="registryList">
