@@ -1,0 +1,11 @@
+.registry-group {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.registry-group .registry-card .card {
+    border: none;
+}
