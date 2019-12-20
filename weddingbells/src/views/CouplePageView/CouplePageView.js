@@ -12,9 +12,9 @@ class CouplePageView extends Component {
 	render() {
 		return (
 			<div className="couplePageView">
+				<MasterRegistryComponent />
 				<MasterGuestComponent />
 				<VendorComponent />
-				<MasterRegistryComponent />
 			</div>
 		);
 	}

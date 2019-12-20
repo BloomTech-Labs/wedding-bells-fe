@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import axios from "axios";
 
-import test from "../RegistryList/data";
-// import "./mappedOver.scss";
+import companylist from "../RegistryList/data";
+import "./mappedOver.scss";
 
 import {
 	Card,
@@ -22,10 +22,12 @@ export const RegistryData = ({
 	editMe,
 	deleteMe,
 	company_image_dropdown,
+	reginfo,
 }) => {
 	const weddingData = JSON.parse(localStorage.getItem("wedding"));
 	const [wedding, updateWedding] = useState(weddingData.id);
 	const envVarRoute = process.env.REACT_APP_BACKEND_BASE_URL;
+	console.log(reginfo)
 
 	return (
 		// <Button
@@ -53,16 +55,18 @@ export const RegistryData = ({
 		// 	/>
 		// </Button>
 		<React.Fragment>
-			<div>
+			<div className="registry-card">
 				<Card>
+					<a href={reginfo.url} target="_blank" rel="noopener noreferrer">
 					<CardImg
 						top
 						width="100%"
-						src={require(test.filter(filterByID))}
+						src={require("../../assets/registry-img/" +	companylist.filter(item => item.company_name == reginfo.company_name)[0].company_image_dropdown)}
 						alt="Card image cap"
 					/>
+					</a>
+					<a href={reginfo.url} target="_blank" rel="noopener noreferrer"><Button>Let's go buy me stuff!</Button></a>
 					<CardBody>
-						<CardTitle>{company_name}</CardTitle>
 						<Button
 							onClick={() => {
 								axios
