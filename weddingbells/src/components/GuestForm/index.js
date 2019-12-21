@@ -55,40 +55,7 @@ const GuestForm = () => {
 					/>
 				</Col>
 			</FormGroup>
-			<FormGroup row>
-				<Label for="is_going" sm={6}>
-					Are they going?
-				</Label>
-				<Col sm={5}>
-					<select name="is_going" ref={register({ required: true })}>
-						<option value="true">True</option>
-						<option value="false">False</option>
-					</select>
-				</Col>
-			</FormGroup>
-			<FormGroup row>
-				<Label for="has_responded" sm={6}>
-					Have they responded?
-				</Label>
-				<Col sm={5}>
-					<select name="has_responded" ref={register({ required: true })}>
-						<option value="true">true</option>
-						<option value="false">False</option>
-					</select>
-				</Col>
-			</FormGroup>
-			<FormGroup row>
-				<Label for="plus_one" sm={6}>
-					Are they bringing a plus one?
-				</Label>
-				<Col sm={5}>
-					<select name="plus_one" ref={register({ required: true })}>
-						<option value="true">True</option>
-						<option value="false">False</option>
-					</select>
-				</Col>
-			</FormGroup>
-			<input type="submit" />
+			<input type="submit" value="Invite Guest" />
 		</Form>
 	);
 };

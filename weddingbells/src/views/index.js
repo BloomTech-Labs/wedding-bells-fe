@@ -7,3 +7,4 @@ export { default as GuestPageView } from "./GuestPageView/GuestPageView";
 export { default as ProtectedView } from "./ProtectedView";
 export { default as WeddingCreationView } from "./WeddingCreationView/WeddingCreationView";
 export { default as SettingsView } from "./SettingsView/SettingsView";
+export { default as WeddingInviteView } from "./WeddingInviteView/WeddingInviteView";
