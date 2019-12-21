@@ -8,6 +8,8 @@ import MasterGuestComponent from "../../components/MasterGuestComponent/MasterGu
 
 import VendorComponent from "../../components/MasterVendorComponent/MasterVendorComponent";
 
+import AnnouncementComponent from "../../components/MasterAnnouncementComponent/MasterAnnouncementComponent";
+
 class CouplePageView extends Component {
 	render() {
 		return (
@@ -15,6 +17,7 @@ class CouplePageView extends Component {
 				<MasterRegistryComponent />
 				<MasterGuestComponent />
 				<VendorComponent />
+				<AnnouncementComponent />
 			</div>
 		);
 	}
