@@ -7,6 +7,8 @@ const initialState = {
 	wedding: {},
 };
 
+const envVarPage = process.env.REACT_APP_BACKEND_BASE_URL;
+
 class GuestPageView extends Component {
 	constructor(props) {
 		super(props);
@@ -18,22 +20,8 @@ class GuestPageView extends Component {
 		const slug = this.props.match.params.slug;
 		this.fetchCoupleNames(slug);
 		this.fetchWedding(slug);
+		this.fetchRegistries(slug);
 	}
-
-	fetchWedding = async slug => {
-		const envVarPage = process.env.REACT_APP_BACKEND_BASE_URL;
-		await axios
-			.get(`${envVarPage}/api/weddings/${slug}`)
-			.then(res => {
-				this.setState({ wedding: res.data });
-			})
-			.catch(err => {
-				console.log(err);
-            });
-        this.setState({
-            wedding: {...this.state.wedding, date: this.state.wedding.date.split('T')[0]}
-        })
-	};
 
 	fetchCoupleNames = async slug => {
 		const parsedSlug = slug.split("-");
@@ -61,15 +49,41 @@ class GuestPageView extends Component {
 		}
 	};
 
+	fetchWedding = async slug => {
+		await axios
+			.get(`${envVarPage}/api/weddings/${slug}`)
+			.then(res => {
+				this.setState({ wedding: res.data });
+			})
+			.catch(err => {
+				console.log(err);
+			});
+		this.setState({
+			wedding: {
+				...this.state.wedding,
+				date: this.state.wedding.date.split("T")[0],
+			},
+		});
+	};
+
+	fetchRegistries = async slug => {
+		// await axios
+		// 	.get(``)
+	};
+
 	render() {
 		return (
 			<div className="guestpage_wrapper">
-				<h2>
-					WELCOME TO {this.state.spouse_one} AND {this.state.spouse_two}'S
-					WEDDING!
-				</h2>
-				<h3>Date: {this.state.wedding.date}</h3>
-				<h3>Location: {this.state.wedding.location}</h3>
+				<div className="guestpage_wedding">
+					<h2>
+						WELCOME TO {this.state.spouse_one} AND {this.state.spouse_two}'S
+						WEDDING!
+					</h2>
+					<h3>Date: {this.state.wedding.date}</h3>
+					<h3>Location: {this.state.wedding.location}</h3>
+				</div>
+				<div className="guestpage_registries"></div>
+				<div className="guestpage_announcements"></div>
 			</div>
 		);
 	}
