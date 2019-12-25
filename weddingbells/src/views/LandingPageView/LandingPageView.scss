@@ -2,9 +2,8 @@
 	// sizing & placement
 	display: flex;
 	justify-content: center;
-	height: 100vh;
+	height: calc(100vh - 80px);
 	width: 100%;
-	
 
 	// background
 	background-image: url("https://images.pexels.com/photos/1683989/pexels-photo-1683989.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
@@ -13,13 +12,9 @@
 
 	// display
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	flex-direction: column;
+	justify-content: space-around;
 	align-items: center;
 }
 
-.landingpage_wrapper .top .calltoaction {
-	// sizing & placement
-	margin: auto auto;
-}
+
