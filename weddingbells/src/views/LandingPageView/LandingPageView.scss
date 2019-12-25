@@ -13,8 +13,11 @@
 	// display
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
 }
 
+.landingpage_wrapper .top .calltoaction {
+	margin-top: 3rem;
+}
 

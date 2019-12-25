@@ -12,16 +12,14 @@ import Services from "../../components/Services/Services.js";
 import About from "../../components/About/About";
 import AuthModal from "../../components/AuthModal/AuthModal";
 
-import herralogosalmon from '../../assets/herralogosalmon.png';
+import herologo from '../../assets/herologo.png';
 
 class LandingPageView extends Component {
 	render() {
 		return (
 			<div className="landingpage_wrapper">
 				<div className="top">
-				<img alt='herra logo' src={herralogosalmon}></img>
-					<h5>Where Love Meets Planning</h5>			
-
+				<img alt='herra logo' src={herologo}></img>			
 					<div className="calltoaction">
 						<Button onClick={() => this.props.toggleAuthModal()}>
 							Get Started
