@@ -39,7 +39,7 @@ class Header extends Component {
 			return (
 				<div className="header-wrapper">
 					<Link to="/" className="header-logo">
-						<img alt='herra logo' src={smallherralogo}></img>
+						<img alt="herra logo" src={smallherralogo}></img>
 					</Link>
 					<div className="header-links">
 						<HashLink to="/couple" className="link">
