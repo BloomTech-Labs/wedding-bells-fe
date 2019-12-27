@@ -1,18 +1,22 @@
-#about-us .about {
-    margin-top: 100px;
+#about-us {
+	margin-top: 10rem;
+	padding-left: 5.6rem;
 }
 
 #about-us .team {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: flex-start;
+}
+
+#about-us .team-member {
+	margin-bottom: 5rem;
 }
 
 #about-us .team-pics {
-    height: 150px;
-    width: auto;
-    border-radius: 5px;
-    box-shadow: 10px 10px 50px grey;
+	height: 150px;
+	width: auto;
+	border-radius: 5px;
+	box-shadow: 10px 10px 50px grey;
 }

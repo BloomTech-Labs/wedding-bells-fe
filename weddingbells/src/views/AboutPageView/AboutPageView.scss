@@ -1,0 +1,23 @@
+.about_page_wrapper {
+	height: 100%;
+	width: 100%;
+}
+
+.about_page_wrapper .herophrase {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 5rem;
+}
+
+.about_page_wrapper .herophrase .phrase {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 4rem;
+	padding-left: 2rem;
+	max-width: 50rem;
+}
+
+.about_page_wrapper .herophrase img {
+	box-shadow: 10px 10px 50px grey;
+}
