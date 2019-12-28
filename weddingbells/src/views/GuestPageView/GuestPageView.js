@@ -5,6 +5,7 @@ const initialState = {
 	spouse_one: "",
 	spouse_two: "",
 	wedding: {},
+	registries: {},
 };
 
 const envVarPage = process.env.REACT_APP_BACKEND_BASE_URL;
@@ -15,12 +16,13 @@ class GuestPageView extends Component {
 
 		this.state = initialState;
 	}
-	componentDidMount() {
+
+	async componentDidMount() {
 		// grab the slug passed on the URL
 		const slug = this.props.match.params.slug;
-		this.fetchCoupleNames(slug);
-		this.fetchWedding(slug);
-		this.fetchRegistries(slug);
+		await this.fetchCoupleNames(slug);
+		await this.fetchWedding(slug);
+		await this.fetchRegistries(slug);
 	}
 
 	fetchCoupleNames = async slug => {
@@ -67,11 +69,25 @@ class GuestPageView extends Component {
 	};
 
 	fetchRegistries = async slug => {
-		// await axios
-		// 	.get(``)
+		const registryLink =
+			`${envVarPage}/api/weddings/` +
+			this.state.wedding.id.toString() +
+			`/registries/`;
+
+		await axios
+			.get(registryLink)
+			.then(res => {
+				this.setState({ registries: res.data });
+				console.log(res.data);
+			})
+			.catch(err => {
+				console.log(err);
+				console.log(this.state.wedding.id, slug);
+			});
 	};
 
 	render() {
+		console.log(this.state)
 		return (
 			<div className="guestpage_wrapper">
 				<div className="guestpage_wedding">
@@ -82,7 +98,14 @@ class GuestPageView extends Component {
 					<h3>Date: {this.state.wedding.date}</h3>
 					<h3>Location: {this.state.wedding.location}</h3>
 				</div>
-				<div className="guestpage_registries"></div>
+				<div className="guestpage_registries">
+					{this.state.registries.map(registry => (
+						<div>
+							<p>{registry.company_name}</p>
+							<p>{registry.url}</p>
+						</div>
+					))}
+				</div>
 				<div className="guestpage_announcements"></div>
 			</div>
 		);
