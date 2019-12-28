@@ -5,7 +5,8 @@ const initialState = {
 	spouse_one: "",
 	spouse_two: "",
 	wedding: {},
-	registries: {},
+	registries: [],
+	announcements: [],
 };
 
 const envVarPage = process.env.REACT_APP_BACKEND_BASE_URL;
@@ -19,11 +20,27 @@ class GuestPageView extends Component {
 
 	async componentDidMount() {
 		// grab the slug passed on the URL
+		console.log("CDM");
 		const slug = this.props.match.params.slug;
 		await this.fetchCoupleNames(slug);
 		await this.fetchWedding(slug);
 		await this.fetchRegistries(slug);
+		// await this.fetchAnnouncements(slug);
 	}
+
+	fetchAnnouncements = async slug => {
+		const registryLink =
+			`${envVarPage}/api/weddings/` +
+			this.state.wedding.id.toString() +
+			`/registries/`;
+
+		await axios
+			.get(registryLink)
+			.then(res => {
+				this.setState({ announcements: res.data });
+			})
+			.catch(err => console.log(err));
+	};
 
 	fetchCoupleNames = async slug => {
 		const parsedSlug = slug.split("-");
@@ -51,6 +68,22 @@ class GuestPageView extends Component {
 		}
 	};
 
+	fetchRegistries = async slug => {
+		const registryLink =
+			`${envVarPage}/api/weddings/` +
+			this.state.wedding.id.toString() +
+			`/registries/`;
+
+		await axios
+			.get(registryLink)
+			.then(res => {
+				this.setState({ registries: res.data });
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	};
+
 	fetchWedding = async slug => {
 		await axios
 			.get(`${envVarPage}/api/weddings/${slug}`)
@@ -68,26 +101,7 @@ class GuestPageView extends Component {
 		});
 	};
 
-	fetchRegistries = async slug => {
-		const registryLink =
-			`${envVarPage}/api/weddings/` +
-			this.state.wedding.id.toString() +
-			`/registries/`;
-
-		await axios
-			.get(registryLink)
-			.then(res => {
-				this.setState({ registries: res.data });
-				console.log(res.data);
-			})
-			.catch(err => {
-				console.log(err);
-				console.log(this.state.wedding.id, slug);
-			});
-	};
-
 	render() {
-		console.log(this.state)
 		return (
 			<div className="guestpage_wrapper">
 				<div className="guestpage_wedding">
