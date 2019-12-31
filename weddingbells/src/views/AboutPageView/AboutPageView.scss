@@ -6,18 +6,18 @@
 .about_page_wrapper .herophrase {
 	display: flex;
 	justify-content: space-around;
-	margin-top: 5rem;
+	margin-top: 2rem;
 }
 
 .about_page_wrapper .herophrase .phrase {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-top: 4rem;
+	margin-top: 2rem;
 	padding-left: 2rem;
-	max-width: 50rem;
+	max-width: 30rem;
 }
 
 .about_page_wrapper .herophrase img {
-	box-shadow: 10px 10px 50px grey;
+	box-shadow: 1rem 1rem 5rem grey;
 }

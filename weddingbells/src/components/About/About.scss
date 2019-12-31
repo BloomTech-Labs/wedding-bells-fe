@@ -1,6 +1,6 @@
 #about-us {
 	margin-top: 10rem;
-	padding-left: 5.6rem;
+	padding-left: 10rem;
 }
 
 #about-us .team {
@@ -10,11 +10,37 @@
 	align-items: flex-start;
 }
 
-#about-us .team-member {
+#about-us .team .member-wrapper {
+	display: flex;
+	flex-direction: row;
+	height: 12rem;
+}
+
+#about-us .team .member-wrapper .quote {
+	display: flex;
+	align-items: center;
+	border-radius: 5px;
+	background-color: rgba($color: #000000, $alpha: 0.25);
+	height: 78%;
+	max-width: 70%;
+	margin-left: 5rem;
+	padding: 0 1rem 0 1rem;
+}
+
+#about-us .team .member-wrapper .team-member {
 	margin-bottom: 5rem;
 }
 
-#about-us .team-pics {
+#about-us .team .member-wrapper .team-member .socials {
+	display: flex;
+	flex-direction: row;
+}
+
+#about-us .team .member-wrapper .team-member .socials h3 a {
+	color: #5d5d5d;
+}
+
+#about-us .team .member-wrapper .team-member .team-pics {
 	height: 150px;
 	width: auto;
 	border-radius: 5px;
