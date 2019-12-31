@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import "./GuestPageView.scss";
+
 const initialState = {
 	spouse_one: "",
 	spouse_two: "",
@@ -20,8 +22,9 @@ class GuestPageView extends Component {
 
 	async componentDidMount() {
 		// grab the slug passed on the URL
-		console.log("CDM");
 		const slug = this.props.match.params.slug;
+
+		// fetch needed info from BE
 		await this.fetchCoupleNames(slug);
 		await this.fetchWedding(slug);
 		await this.fetchRegistries(slug);
@@ -101,26 +104,46 @@ class GuestPageView extends Component {
 		});
 	};
 
+	parseCompanyName = name => {
+		return name.replace(/\s+/g, "-").toLowerCase();
+	};
+
 	render() {
 		return (
 			<div className="guestpage_wrapper">
-				<div className="guestpage_wedding">
+				<div className="guestpage_section guestpage_wedding">
 					<h2>
 						WELCOME TO {this.state.spouse_one} AND {this.state.spouse_two}'S
 						WEDDING!
 					</h2>
-					<h3>Date: {this.state.wedding.date}</h3>
-					<h3>Location: {this.state.wedding.location}</h3>
+					<h4>Date: {this.state.wedding.date}</h4>
+					<h4>Location: {this.state.wedding.location}</h4>
 				</div>
-				<div className="guestpage_registries">
-					{this.state.registries.map(registry => (
-						<div>
-							<p>{registry.company_name}</p>
-							<p>{registry.url}</p>
-						</div>
-					))}
+				<div className="guestpage_section guestpage_announcements">
+					<h2>Announcements</h2>
 				</div>
-				<div className="guestpage_announcements"></div>
+				<div className="guestpage_section guestpage_registries">
+					<h2>Registries</h2>
+					<div className="registry-list">
+						{this.state.registries.map(registry => (
+							<div className="registry-card">
+								<a
+									href={registry.url}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<img
+										src={require("../../assets/registry-img/" +
+											this.parseCompanyName(registry.company_name) +
+											".png")}
+										className="registry-img"
+										alt={registry.company_name}
+									/>
+								</a>
+							</div>
+						))}
+					</div>
+				</div>
 			</div>
 		);
 	}

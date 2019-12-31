@@ -27,7 +27,7 @@ const REGISTRY_DATA = [
 		id: 5,
 		company_name: "Bed Bath and Beyond",
 		url: "",
-		company_image_dropdown: "bb&b.png",
+		company_image_dropdown: "bed-bath-and-beyond.png",
 	},
 	{
 		id: 6,
@@ -69,19 +69,19 @@ const REGISTRY_DATA = [
 		id: 12,
 		company_name: "Pottery Barn",
 		url: "",
-		company_image_dropdown: "potterybarn.png",
+		company_image_dropdown: "pottery-barn.png",
 	},
 	{
 		id: 13,
 		company_name: "The Container Store",
 		url: "",
-		company_image_dropdown: "thecontainerstore.png",
+		company_image_dropdown: "the-container-store.png",
 	},
 	{
 		id: 14,
 		company_name: "Ikea",
 		url: "",
-		company_image_dropdown: "potterybarn.png",
+		company_image_dropdown: "ikea.png",
 	},
 ];
 

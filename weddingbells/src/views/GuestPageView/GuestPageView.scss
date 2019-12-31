@@ -1,0 +1,20 @@
+.guestpage_wrapper .guestpage_section {
+	margin: 50px;
+}
+.guestpage_wrapper .guestpage_registries .registry-list {
+	width: 1000px;
+	margin: 0 auto;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: flex-start;
+}
+
+.guestpage_wrapper .guestpage_registries .registry-img {
+	margin: 20px;
+
+	width: 200px;
+}
