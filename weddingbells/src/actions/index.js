@@ -3,18 +3,25 @@ import axios from "axios";
 // add additional actions with:
 // export const ${action_name} = '${action_name}';
 
+export const ANNOUNCEMENT_FAILURE = "ANNOUNCEMENT_FAILURE";
+export const ANNOUNCEMENT_START = "ANNOUNCEMENT_START";
+export const ANNOUNCEMENT_SUCCESS = "ANNOUNCEMENT_SUCCESS";
+export const FETCH_ANNOUNCEMENT_FAILURE = "FETCH_ANNOUNCEMENT_FAILURE";
+export const FETCH_ANNOUNCEMENT_START = "FETCH_ANNOUNCEMENT_START";
+export const FETCH_ANNOUNCEMENT_SUCCESS = "FETCH_ANNOUNCEMENT_SUCCESS";
 export const FETCH_COUPLE_FAILURE = "FETCH_COUPLE_FAILURE";
 export const FETCH_COUPLE_START = "FETCH_COUPLE_START";
+export const FETCH_COUPLE_SUCCESS = "FETCH_COUPLE_SUCCESS";
 export const FETCH_WEDDING_SUCCESS = "FETCH_WEDDING_SUCCESS";
 export const FETCH_WEDDING_FAILURE = "FETCH_WEDDING_FAILURE";
 export const FETCH_WEDDING_START = "FETCH_WEDDING_START";
-export const FETCH_COUPLE_SUCCESS = "FETCH_COUPLE_SUCCESS";
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
 export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const SIGNUP_FAILURE = "SIGNUP_FAILURE";
 export const SIGNUP_START = "SIGNUP_START";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
+export const TOGGLE_ANNOUNCEMENT_MODAL = "TOGGLE_ANNOUNCEMENT_MODAL";
 export const TOGGLE_AUTH_MODAL = "TOGGLE_AUTH_MODAL";
 export const UPDATE_USER_FAILURE = "UPDATE_USER_FAILURE";
 export const UPDATE_USER_START = "UPDATE_USER_START";
@@ -50,6 +57,21 @@ export const login = creds => dispatch => {
 			payload: res.data,
 		});
 	});
+};
+
+export const fetchAnnouncements = creds => dispatch => {
+	dispatch({ type: FETCH_ANNOUNCEMENT_START });
+};
+
+export const postAnnouncement = announcement => dispatch => {
+	dispatch({ type: ANNOUNCEMENT_START });
+	return axios
+		.post(
+			`${envVarPage}/api/weddings/${announcement.weddingId}/announcements`,
+			announcement.announcement
+		)
+		.then(res => {})
+		.catch(err => dispatch({ type: ANNOUNCEMENT_FAILURE }));
 };
 
 export const updateCouple = couple => dispatch => {

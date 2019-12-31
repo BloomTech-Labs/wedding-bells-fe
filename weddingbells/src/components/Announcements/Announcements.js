@@ -1,29 +1,37 @@
 import React, { Component } from "react";
 
-import Announcement from "./Announcement";
+import AnnouncementsModal from "./AnnouncementsModal";
+
+import { Button } from "reactstrap";
 
 class Announcements extends Component {
 	constructor(props) {
 		super(props);
+
 		this.state = {
 			announcements: {},
+			isOpen: false,
 		};
 	}
-	
-	componentDidMount() {
-        this.setState({updateAnnouncements()})
-    }
+
+	toggleModal = e => {
+		this.setState({ isOpen: !this.state.isOpen });
+	};
+
 	render() {
 		return (
-			<div className="announcements">
-				{this.state.announcements.map(announcement => (
-					<Announcement key={announcement.id} {...announcement} />
-				))}
+			<div className="announcements-wrapper">
+				<Button color="primary" onClick={this.toggleModal}>
+					Make An Announcement
+				</Button>
+				<div className="announcements-list"></div>
+				<AnnouncementsModal
+					isOpen={this.state.isOpen}
+					toggle={this.toggleModal}
+				/>
 			</div>
 		);
 	}
 }
-/* 
-Refer to https://codesandbox.io/s/rm4pyq9m0o on how to set up a GET request, a componentDidUpdate, and a function, also using setState
-*/
+
 export default Announcements;
