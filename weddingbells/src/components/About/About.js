@@ -30,6 +30,11 @@ class About extends Component {
 						<i class="fa fa-linkedin-square"></i>
 					</a>
 				),
+				twitter: (
+					<a target="_blank" href="https://twitter.com/_PolyG">
+						<i class="fa fa-twitter-square"></i>
+					</a>
+				),
 			},
 			{
 				name: "Cedric Amaya",
@@ -46,6 +51,11 @@ class About extends Component {
 						<i class="fa fa-linkedin-square"></i>
 					</a>
 				),
+				twitter: (
+					<a target="_blank" href="https://twitter.com/CedricAmaya">
+						<i class="fa fa-twitter-square"></i>
+					</a>
+				),
 			},
 			{
 				name: "Robert Pedersen",
@@ -60,6 +70,11 @@ class About extends Component {
 				linkedin: (
 					<a target="_blank" href="https://www.linkedin.com/in/robpedersendev">
 						<i class="fa fa-linkedin-square"></i>
+					</a>
+				),
+				twitter: (
+					<a target="_blank" href="https://twitter.com/RobPedersenDev">
+						<i class="fa fa-twitter-square"></i>
 					</a>
 				),
 			},
@@ -81,6 +96,11 @@ class About extends Component {
 						<i class="fa fa-linkedin-square"></i>
 					</a>
 				),
+				twitter: (
+					<a target="_blank" href="https://twitter.com/breybatten_dev">
+						<i class="fa fa-twitter-square"></i>
+					</a>
+				),
 			},
 			{
 				name: "Sammy Chang",
@@ -98,6 +118,11 @@ class About extends Component {
 						href="https://www.linkedin.com/in/sammy-chang-927976a3/"
 					>
 						<i class="fa fa-linkedin-square"></i>
+					</a>
+				),
+				twitter: (
+					<a target="_blank" href="https://twitter.com/DanTheDev3">
+						<i class="fa fa-twitter-square"></i>
 					</a>
 				),
 			},
@@ -119,9 +144,11 @@ class About extends Component {
 						<i class="fa fa-linkedin-square"></i>
 					</a>
 				),
-				// twitter:(
-
-				// ),
+				twitter: (
+					<a target="_blank" href="https://twitter.com/DanTheDev3">
+						<i class="fa fa-twitter-square"></i>
+					</a>
+				),
 			},
 			{
 				name: "Marco Guzman",
@@ -141,6 +168,11 @@ class About extends Component {
 						<i class="fa fa-linkedin-square"></i>
 					</a>
 				),
+				twitter: (
+					<a target="_blank" href="https://twitter.com/guziekastan">
+						<i class="fa fa-twitter-square"></i>
+					</a>
+				),
 			},
 		];
 
@@ -154,10 +186,13 @@ class About extends Component {
 								<div className="socials">
 									<h3>{dev.github}</h3>
 									<h3>{dev.linkedin}</h3>
+									<h3>{dev.twitter}</h3>
 								</div>
-								<p>{dev.name}</p>
+								<h6>{dev.name}</h6>
 							</div>
-							<p className="quote">{dev.quote}</p>
+							<div className="quote-wrapper">
+								<p className="quote">{dev.quote}</p>
+							</div>
 						</div>
 					))}
 				</div>
