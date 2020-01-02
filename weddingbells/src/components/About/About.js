@@ -121,7 +121,7 @@ class About extends Component {
 					</a>
 				),
 				twitter: (
-					<a target="_blank" href="https://twitter.com/DanTheDev3">
+					<a target="_blank" href="https://twitter.com/slackerbot1">
 						<i class="fa fa-twitter-square"></i>
 					</a>
 				),
@@ -154,7 +154,7 @@ class About extends Component {
 				name: "Marco Guzman",
 				img: marco,
 				quote:
-					"I'm a Computer Science major and software developer with a great passion for solving problems with the use of code. I love working day-to-day on projects that require multidisciplinary skill sets and solving complex issues that make the lives of others easier.",
+					"I turned to development because it allows me to create tools that can help others.  To be able to solve these problems that people come across to interact with others is great and I look forward to continue to do that professionally.",
 				github: (
 					<a target="_blank" href="https://github.com/mag16">
 						<i class="fa fa-github-square"></i>
