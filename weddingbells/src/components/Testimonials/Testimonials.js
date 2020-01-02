@@ -3,11 +3,7 @@ import "./Testimonials.scss";
 
 import TESTIMONIALS_DATA from "./data";
 
-import {
-	Carousel,
-	CarouselItem,
-	CarouselControl
-} from "reactstrap";
+import { Carousel, CarouselItem, CarouselControl } from "reactstrap";
 
 class Testimonials extends Component {
 	constructor() {
@@ -63,7 +59,15 @@ class Testimonials extends Component {
 							onExited={() => this.setState({ animating: false })}
 							key={testimonial.id}
 						>
-							<p><text className="testimonials-quote">“</text>{testimonial.quoteText}</p>
+							<img
+								className="testimonial-img"
+								src={testimonial.img}
+								alt="couple image"
+							/>
+							<p>
+								<text className="testimonials-quote">“</text>
+								{testimonial.quoteText}
+							</p>
 							<p>- {testimonial.author}</p>
 						</CarouselItem>
 					))}
