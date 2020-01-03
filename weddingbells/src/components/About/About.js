@@ -19,7 +19,7 @@ class About extends Component {
 				name: "Poly Goveia",
 				img: poly,
 				quote:
-					"I'm a Computer Science major and software developer with a great passion for solving problems with the use of code. I love working day-to-day on projects that require multidisciplinary skill sets and solving complex issues that make the lives of others easier.",
+					"I am a Full-stack developer with an insatiable love for code and coffee. I speak multiple languages including English, Portuguese, and Javascript. You can find me at a local coffee shop sipping on iced coffee, and working through challenging problems.",
 				github: (
 					<a target="_blank" href="https://github.com/Poly-G">
 						<i class="fa fa-github-square"></i>
@@ -106,7 +106,7 @@ class About extends Component {
 				name: "Sammy Chang",
 				img: sammy,
 				quote:
-					"I'm a Computer Science major and software developer with a great passion for solving problems with the use of code. I love working day-to-day on projects that require multidisciplinary skill sets and solving complex issues that make the lives of others easier.",
+					"Award-winning web developer with a wide range of skills in both FE and BE web development. Experienced in creating interactive websites and databases. Love using technology to solve problems in creative ways.",
 				github: (
 					<a target="_blank" href="https://github.com/schang1146">
 						<i class="fa fa-github-square"></i>
