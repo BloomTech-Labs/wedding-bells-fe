@@ -18,14 +18,14 @@ const OFFER_DATA = [
 		id: 2,
 		title: "Registry Linking",
 		subText:
-			"With the click of a button, you can link all of your wedding registries directly to your Hera account .",
+			"With the click of a button, you can link all of your wedding registries directly to your Herra account .",
 		image: image2,
 	},
 	{
 		id: 3,
-		title: "Personalized Wedding Page",
+		title: "Keep Your Guests Updated",
 		subText:
-			"At Hera, we believe every couple is unique. With that in mind, we allow you and your spouse to customize your wedding page to your hearts’ content.",
+			"At Herra, we know the details can be ever changing. With that in mind, we provide an announcement section so your guests can stay updated.",
 		image: image3,
 	},
 ];

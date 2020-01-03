@@ -47,7 +47,7 @@ class Testimonials extends Component {
 	render() {
 		return (
 			<div className="testimonials-wrapper">
-				<h3>Testimonials</h3>
+				{/* <h3>Testimonials</h3> */}
 				<Carousel
 					activeIndex={this.state.activeIndex}
 					next={this.next}
@@ -59,16 +59,17 @@ class Testimonials extends Component {
 							onExited={() => this.setState({ animating: false })}
 							key={testimonial.id}
 						>
-							<img
-								className="testimonial-img"
-								src={testimonial.img}
-								alt="couple image"
-							/>
-							<p>
-								<text className="testimonials-quote">“</text>
-								{testimonial.quoteText}
-							</p>
-							<p>- {testimonial.author}</p>
+							<div className="set-wrapper">
+								<img
+									className="testimonial-img"
+									src={testimonial.img}
+									alt="couple image"
+								/>
+								<div className="testimonials-quote">
+									<p>{testimonial.quoteText}</p>
+									<i>- {testimonial.author}</i>
+								</div>
+							</div>
 						</CarouselItem>
 					))}
 					<CarouselControl
