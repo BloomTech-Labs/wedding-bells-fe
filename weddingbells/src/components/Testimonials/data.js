@@ -1,21 +1,34 @@
+import femaleandfemale from "../../assets/testimonial-imgs/femaleandfemale.png";
+import maleandfemale from "../../assets/testimonial-imgs/maleandfemale.png";
+import maleandfemale2 from "../../assets/testimonial-imgs/maleandfemale2.png";
+import maleandmale from "../../assets/testimonial-imgs/maleandmale.png";
+
 const TESTIMONIALS_DATA = [
 	{
-        id: 1,
-        author: "Anonymous 1",
+		id: 1,
+		author: "Amanda and Stephanie",
 		quoteText:
-			"BEST WEDDING APP EVER",
+			"We were struggling to keep track of our wedding plans. Herra was there to save the day!",
+		img: femaleandfemale,
 	},
 	{
 		id: 2,
-		author: "Wasn't this in the FAQ? Why am I a question?",
-		quoteText:
-			"Planned my entire wedding in a day!",
+		author: "Derek and Sarah",
+		quoteText: "We planned our entire wedding in a day!",
+		img: maleandfemale,
 	},
 	{
 		id: 3,
-		author: "Totally not regretting this",
+		author: "Richard and Michelle",
 		quoteText:
-			"I clicked shotgun wedding and had my wedding a day later!",
+			"Herra was so easy to use. It made planning our wedding so much easier!",
+		img: maleandfemale2,
+	},
+	{
+		id: 3,
+		author: "Bret and Charlie",
+		quoteText: "We couldn't recommend Herra enough! 12 out of 10!!!",
+		img: maleandmale,
 	},
 ];
 
