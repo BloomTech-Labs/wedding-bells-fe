@@ -61,7 +61,7 @@ class About extends Component {
 				name: "Robert Pedersen",
 				img: bob,
 				quote:
-					"I am a Lambda School student that attends part-time in the evenings. My favorite hobbies include backpacking, camping, and fishing. If I am not working or doing anything of the above, you can find me spending time with my family.",
+					"I am a full stack web developer that loves to work both solo and in groups to make the impossible, possible. I love being in nature whether its backpacking, swimming, or camping. If I am not coding or out in nature you can find me playing a board game with my friends or family. If you need help with a challenge, Im the man for the job.",
 				github: (
 					<a target="_blank" href="https://github.com/robpedersendev">
 						<i class="fa fa-github-square"></i>
