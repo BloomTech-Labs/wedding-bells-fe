@@ -1,6 +1,6 @@
-import image1 from "../../assets/image1.svg";
-import image2 from "../../assets/image2.svg";
-import image3 from "../../assets/image3.svg";
+import image1 from "../../assets/wedding-rings.png";
+import image2 from "../../assets/registries.png";
+import image3 from "../../assets/wedding-hands.png";
 
 // import image1 from "./image 1.jpg";
 // import image2 from "./image 4.jpg";
@@ -18,14 +18,14 @@ const OFFER_DATA = [
 		id: 2,
 		title: "Registry Linking",
 		subText:
-			"With the click of a button, you can link all of your wedding registries directly to your Hera account .",
+			"With the click of a button, you can link all of your wedding registries directly to your Herra account .",
 		image: image2,
 	},
 	{
 		id: 3,
-		title: "Personalized Wedding Page",
+		title: "Keep Your Guests Updated",
 		subText:
-			"At Hera, we believe every couple is unique. With that in mind, we allow you and your spouse to customize your wedding page to your hearts’ content.",
+			"At Herra, we know the details can be ever changing. With that in mind, we provide an announcement section so your guests can stay updated.",
 		image: image3,
 	},
 ];

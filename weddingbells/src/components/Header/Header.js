@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 
 // import styling
 import "./Header.scss";
+import smallherralogo from "../../assets/smallherralogo.png";
 import ActionButton from "antd/lib/modal/ActionButton";
 
 const logoutCredentials = {
@@ -38,7 +39,7 @@ class Header extends Component {
 			return (
 				<div className="header-wrapper">
 					<Link to="/" className="header-logo">
-						<h3>H3rra</h3>
+						<img alt="herra logo" src={smallherralogo}></img>
 					</Link>
 					<div className="header-links">
 						<HashLink to="/couple" className="link">
@@ -57,20 +58,20 @@ class Header extends Component {
 			return (
 				<div className="header-wrapper">
 					<Link to="/" className="header-logo">
-						<h3>H3rra</h3>
+						<img alt="herra logo" src={smallherralogo}></img>
 					</Link>
 					<div className="header-links">
-						<HashLink to="#services" className="link">
+						<Link to="/about" className="link">
+							About Us
+						</Link>
+						<HashLink to="/#services" className="link">
 							Services
 						</HashLink>
-						<HashLink to="#faq" className="link">
-							FAQ
-						</HashLink>
-						<HashLink to="#about-us" className="link">
-							About Us
+						<HashLink to="/#testimonials" className="link">
+							Testimonials
 						</HashLink>
 						<HashLink
-							to="#"
+							to="/#"
 							className="link"
 							onClick={this.props.toggleAuthModal}
 						>
