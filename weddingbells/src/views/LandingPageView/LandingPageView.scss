@@ -1,6 +1,8 @@
 .landingpage_wrapper .top {
 	// sizing & placement
-	height: 100vh;
+	display: flex;
+	justify-content: center;
+	height: calc(100vh - 80px);
 	width: 100%;
 
 	// background
@@ -10,13 +12,12 @@
 
 	// display
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 }
 
 .landingpage_wrapper .top .calltoaction {
-	// sizing & placement
-	margin: auto auto;
+	margin-top: 3rem;
 }
+

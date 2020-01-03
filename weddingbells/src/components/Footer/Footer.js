@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./Footer.scss";
 
+import smallherralogo from "../../assets/smallherralogo.png";
 import { HashLink } from "react-router-hash-link";
 
 class Footer extends Component {
@@ -11,8 +12,9 @@ class Footer extends Component {
 		return (
 			<div className="footer-wrapper">
 				<Link to="/" className="footer-logo">
-					<h3>H3rra</h3>
+					<img alt="herra logo" src={smallherralogo}></img>
 				</Link>
+				<p>© HerraTeam 2020</p>
 			</div>
 		);
 	}
