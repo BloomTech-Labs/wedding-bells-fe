@@ -61,16 +61,26 @@ export const login = creds => dispatch => {
 
 export const fetchAnnouncements = creds => dispatch => {
 	dispatch({ type: FETCH_ANNOUNCEMENT_START });
+	const weddingId = JSON.parse(localStorage.wedding).id
+	return axios
+		.get(`${envVarPage}/api/weddings/${weddingId}/announcements`)
+		.then(res => {
+			dispatch({ type: FETCH_ANNOUNCEMENT_SUCCESS, payload: res.data });
+		})
+		.catch(err => dispatch({ type: FETCH_ANNOUNCEMENT_FAILURE }));
 };
 
 export const postAnnouncement = announcement => dispatch => {
 	dispatch({ type: ANNOUNCEMENT_START });
+	const weddingId = JSON.parse(localStorage.wedding).id
 	return axios
 		.post(
-			`${envVarPage}/api/weddings/${announcement.weddingId}/announcements`,
-			announcement.announcement
+			`${envVarPage}/api/weddings/${weddingId}/announcements`,
+			announcement
 		)
-		.then(res => {})
+		.then(res => {
+			dispatch({ type: ANNOUNCEMENT_SUCCESS });
+		})
 		.catch(err => dispatch({ type: ANNOUNCEMENT_FAILURE }));
 };
 
@@ -105,7 +115,6 @@ export const updateWedding = wedding => dispatch => {
 		},
 	})
 		.then(res => {
-			console.log(res.data);
 			localStorage.setItem("wedding", JSON.stringify(res.data));
 			dispatch({ type: UPDATE_WEDDING_SUCCESS });
 		})

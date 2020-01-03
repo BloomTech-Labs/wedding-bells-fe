@@ -9,7 +9,7 @@ import {
 } from "../actions";
 
 const initialState = {
-	announcements: {},
+	announcements: [],
 	announcementModalVisible: false,
 	isFetchingAnnouncements: false,
 	isMakingAnnouncements: false,

@@ -20,18 +20,25 @@ class AnnouncementsModal extends Component {
 		super();
 
 		this.state = {
-			announcement: "",
+			announcement: {
+				title: "",
+				announcement: "",
+			},
 		};
 	}
 
 	handlerAnnouncement = e => {
 		e.preventDefault();
 		this.props.postAnnouncement(this.state.announcement);
+		this.props.toggle();
 	};
 
 	handlerTextChange = e => {
 		this.setState({
-			[e.target.name]: e.target.value,
+			announcement: {
+				...this.state.announcement,
+				[e.target.name]: e.target.value,
+			},
 		});
 	};
 
@@ -42,11 +49,17 @@ class AnnouncementsModal extends Component {
 				<ModalBody>
 					<Form>
 						<Input
-							placeholder="Announcement..."
-							name="announcement"
-							value={this.state.announcement}
+							placeholder="Title"
+							name="title"
+							value={this.state.announcement.title}
 							onChange={this.handlerTextChange}
-						></Input>
+						/>
+						<Input
+							placeholder="Announcement"
+							name="announcement"
+							value={this.state.announcement.announcement}
+							onChange={this.handlerTextChange}
+						/>
 						<Button color="primary" onClick={this.handlerAnnouncement}>
 							Submit
 						</Button>

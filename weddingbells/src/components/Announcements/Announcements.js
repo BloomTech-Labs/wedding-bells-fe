@@ -1,18 +1,28 @@
+// import dependencies
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import AnnouncementsModal from "./AnnouncementsModal";
 
 import { Button } from "reactstrap";
+
+// import actions
+import { fetchAnnouncements } from "../../actions";
 
 class Announcements extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			announcements: {},
 			isOpen: false,
 		};
 	}
+
+	// todo: shouldn't have to make creds everything component mounts/updates
+
+	componentDidMount = () => {
+		this.props.fetchAnnouncements();
+	};
 
 	toggleModal = e => {
 		this.setState({ isOpen: !this.state.isOpen });
@@ -24,7 +34,11 @@ class Announcements extends Component {
 				<Button color="primary" onClick={this.toggleModal}>
 					Make An Announcement
 				</Button>
-				<div className="announcements-list"></div>
+				<div className="announcements-list">
+					{this.props.announcements.map(announcement =>
+						console.log(announcement)
+					)}
+				</div>
 				<AnnouncementsModal
 					isOpen={this.state.isOpen}
 					toggle={this.toggleModal}
@@ -34,4 +48,8 @@ class Announcements extends Component {
 	}
 }
 
-export default Announcements;
+const mapStateToProps = state => ({
+	announcements: state.announcementReducer.announcements,
+});
+
+export default connect(mapStateToProps, { fetchAnnouncements })(Announcements);
