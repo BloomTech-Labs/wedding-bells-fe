@@ -27,8 +27,6 @@ class LandingPageView extends Component {
 					</div>
 				</div>
 				<Services />
-
-				{/* <FAQ /> */}
 				<Testimonials />
 				<AuthModal
 					isOpen={this.props.authModalVisible}

@@ -46,8 +46,7 @@ class Testimonials extends Component {
 
 	render() {
 		return (
-			<div className="testimonials-wrapper">
-				{/* <h3>Testimonials</h3> */}
+			<div id="testimonials" className="testimonials-wrapper">
 				<Carousel
 					activeIndex={this.state.activeIndex}
 					next={this.next}

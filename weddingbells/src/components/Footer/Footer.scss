@@ -4,23 +4,22 @@
 	height: 80px;
 
 	// background
-	background-color: #c4c4c4;
+	background-color: ececec;
 
 	// display
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 }
 
-.footer-wrapper .footer-logo {
-	// size & placement
-	margin-top: 5px;
-	margin-left: 75px;
-	text-decoration: none;
-	color: #000000;
-}
+// .footer-wrapper .footer-logo {
+// 	// size & placement
+// 	margin-top: 5px;
+// 	margin-left: 75px;
+// 	text-decoration: none;
+// 	color: #000000;
+// }
 
 .footer-wrapper .footer-links {
 	// size & placement
