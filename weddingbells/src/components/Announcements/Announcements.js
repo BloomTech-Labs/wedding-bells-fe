@@ -35,9 +35,9 @@ class Announcements extends Component {
 					Make An Announcement
 				</Button>
 				<div className="announcements-list">
-					{this.props.announcements.map(announcement =>
-						console.log(announcement)
-					)}
+					{this.props.announcements.map(announcement => (
+						<p>{announcement.title}</p>
+					))}
 				</div>
 				<AnnouncementsModal
 					isOpen={this.state.isOpen}

@@ -27,7 +27,6 @@ export const RegistryData = ({
 	const weddingData = JSON.parse(localStorage.getItem("wedding"));
 	const [wedding, updateWedding] = useState(weddingData.id);
 	const envVarRoute = process.env.REACT_APP_BACKEND_BASE_URL;
-	console.log(reginfo)
 
 	return (
 		// <Button
@@ -58,14 +57,19 @@ export const RegistryData = ({
 			<div className="registry-card">
 				<Card>
 					<a href={reginfo.url} target="_blank" rel="noopener noreferrer">
-					<CardImg
-						top
-						width="100%"
-						src={require("../../assets/registry-img/" +	companylist.filter(item => item.company_name == reginfo.company_name)[0].company_image_dropdown)}
-						alt="Card image cap"
-					/>
+						<CardImg
+							top
+							width="100%"
+							src={require("../../assets/registry-img/" +
+								companylist.filter(
+									item => item.company_name == reginfo.company_name
+								)[0].company_image_dropdown)}
+							alt="Card image cap"
+						/>
 					</a>
-					<a href={reginfo.url} target="_blank" rel="noopener noreferrer"><Button>Let's go buy me stuff!</Button></a>
+					<a href={reginfo.url} target="_blank" rel="noopener noreferrer">
+						<Button>Let's go buy me stuff!</Button>
+					</a>
 					<CardBody>
 						<Button
 							onClick={() => {

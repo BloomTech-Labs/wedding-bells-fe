@@ -13,7 +13,7 @@ import {
 import { connect } from "react-redux";
 
 // import actions
-import { postAnnouncement } from "../../actions";
+import { fetchAnnouncements, postAnnouncement } from "../../actions";
 
 class AnnouncementsModal extends Component {
 	constructor() {
@@ -27,9 +27,10 @@ class AnnouncementsModal extends Component {
 		};
 	}
 
-	handlerAnnouncement = e => {
+	handlerAnnouncement = async e => {
 		e.preventDefault();
-		this.props.postAnnouncement(this.state.announcement);
+		await this.props.postAnnouncement(this.state.announcement);
+		await this.props.fetchAnnouncements();
 		this.props.toggle();
 	};
 
@@ -70,4 +71,6 @@ class AnnouncementsModal extends Component {
 	}
 }
 
-export default connect(null, { postAnnouncement })(AnnouncementsModal);
+export default connect(null, { fetchAnnouncements, postAnnouncement })(
+	AnnouncementsModal
+);

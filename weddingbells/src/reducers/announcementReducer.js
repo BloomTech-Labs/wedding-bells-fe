@@ -34,7 +34,6 @@ export const announcementReducer = (state = initialState, action) => {
 			return {
 				...state,
 				isMakingAnnouncements: false,
-				announcements: action.payload,
 			};
 		case FETCH_ANNOUNCEMENT_FAILURE:
 			return {

@@ -59,9 +59,9 @@ export const login = creds => dispatch => {
 	});
 };
 
-export const fetchAnnouncements = creds => dispatch => {
+export const fetchAnnouncements = () => dispatch => {
 	dispatch({ type: FETCH_ANNOUNCEMENT_START });
-	const weddingId = JSON.parse(localStorage.wedding).id
+	const weddingId = JSON.parse(localStorage.wedding).id;
 	return axios
 		.get(`${envVarPage}/api/weddings/${weddingId}/announcements`)
 		.then(res => {
@@ -72,12 +72,9 @@ export const fetchAnnouncements = creds => dispatch => {
 
 export const postAnnouncement = announcement => dispatch => {
 	dispatch({ type: ANNOUNCEMENT_START });
-	const weddingId = JSON.parse(localStorage.wedding).id
+	const weddingId = JSON.parse(localStorage.wedding).id;
 	return axios
-		.post(
-			`${envVarPage}/api/weddings/${weddingId}/announcements`,
-			announcement
-		)
+		.post(`${envVarPage}/api/weddings/${weddingId}/announcements`, announcement)
 		.then(res => {
 			dispatch({ type: ANNOUNCEMENT_SUCCESS });
 		})
