@@ -4,6 +4,14 @@
 	box-sizing: border-box;
 }
 
+html {
+	background-color: #ececec;
+}
+
+#root {
+	background-color: #ececec;
+}
+
 .App {
 	text-align: center;
 }

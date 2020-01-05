@@ -8,6 +8,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 import {
+	AboutPageView,
 	LandingPageView,
 	WeddingCreationView,
 	ProtectedView,
@@ -28,6 +29,7 @@ class App extends Component {
 				<Header toggleAuthModal={this.props.toggleAuthModal} />
 				<Switch>
 					<Route exact path="/" render={() => <LandingPageView />} />
+					<Route exact path="/about" render={() => <AboutPageView />} />
 					<Route
 						exact
 						path="/create-wedding"
