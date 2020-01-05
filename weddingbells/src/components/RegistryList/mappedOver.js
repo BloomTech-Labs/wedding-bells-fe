@@ -8,10 +8,10 @@ import "./mappedOver.scss";
 import {
 	Card,
 	CardImg,
-	CardText,
+	// CardText,
 	CardBody,
-	CardTitle,
-	CardSubtitle,
+	// CardTitle,
+	// CardSubtitle,
 	Button,
 } from "reactstrap";
 
@@ -25,7 +25,10 @@ export const RegistryData = ({
 	reginfo,
 }) => {
 	const weddingData = JSON.parse(localStorage.getItem("wedding"));
-	const [wedding, updateWedding] = useState(weddingData.id);
+	const [
+		wedding, 
+		// updateWedding
+	] = useState(weddingData.id);
 	const envVarRoute = process.env.REACT_APP_BACKEND_BASE_URL;
 
 	return (
@@ -62,7 +65,7 @@ export const RegistryData = ({
 							width="100%"
 							src={require("../../assets/registry-img/" +
 								companylist.filter(
-									item => item.company_name == reginfo.company_name
+									item => item.company_name === reginfo.company_name
 								)[0].company_image_dropdown)}
 							alt="Card image cap"
 						/>

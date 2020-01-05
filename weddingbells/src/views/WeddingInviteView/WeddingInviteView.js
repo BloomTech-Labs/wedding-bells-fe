@@ -19,7 +19,7 @@ const WeddingInviteView = props => {
 	const handleGuestUpdates = event => {
 		const updatedGuest = {
 			...guest,
-			[event.target.name]: event.target.value == "true",
+			[event.target.name]: event.target.value === "true",
 		};
 		setGuest(updatedGuest);
 	};

@@ -8,7 +8,7 @@ import {
 	Modal,
 	ModalHeader,
 	ModalBody,
-	ModalFooter,
+	// ModalFooter,
 } from "reactstrap";
 import { connect } from "react-redux";
 

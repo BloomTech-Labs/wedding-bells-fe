@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import AnnouncementsModal from "./AnnouncementsModal";
 
-import { Button } from "reactstrap";
+import { Button, Table } from "reactstrap";
 
 // import actions
 import { fetchAnnouncements } from "../../actions";
@@ -34,11 +34,24 @@ class Announcements extends Component {
 				<Button color="primary" onClick={this.toggleModal}>
 					Make An Announcement
 				</Button>
-				<div className="announcements-list">
-					{this.props.announcements.map(announcement => (
-						<p>{announcement.title}</p>
-					))}
-				</div>
+				<Table className="announcements-list" bordered hover>
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Announcement</th>
+							<th>Timestamp</th>
+						</tr>
+					</thead>
+					<tbody>
+						{this.props.announcements.map(announcement => (
+							<tr className="announcement">
+								<td>{announcement.title}</td>
+								<td>{announcement.announcement}</td>
+								<td>{announcement.time_stamp.split("T")[0]}</td>
+							</tr>
+						))}
+					</tbody>
+				</Table>
 				<AnnouncementsModal
 					isOpen={this.state.isOpen}
 					toggle={this.toggleModal}
