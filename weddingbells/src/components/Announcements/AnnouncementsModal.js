@@ -43,9 +43,22 @@ class AnnouncementsModal extends Component {
 		});
 	};
 
+	resetState = e => {
+		this.setState({
+			announcement: {
+				title: "",
+				announcement: "",
+			},
+		});
+	};
+
 	render() {
 		return (
-			<Modal isOpen={this.props.isOpen} toggle={this.props.toggle}>
+			<Modal
+				isOpen={this.props.isOpen}
+				toggle={this.props.toggle}
+				onClosed={this.resetState}
+			>
 				<ModalHeader>Make An Announcement</ModalHeader>
 				<ModalBody>
 					<Form>

@@ -24,8 +24,9 @@ class Announcements extends Component {
 		this.props.fetchAnnouncements();
 	};
 
-	handlerDeleteAnnouncement = announcementId => {
-		this.props.deleteAnnouncement(announcementId);
+	handlerDeleteAnnouncement = async announcementId => {
+		await this.props.deleteAnnouncement(announcementId);
+		await this.props.fetchAnnouncements();
 	};
 
 	toggleModal = e => {
