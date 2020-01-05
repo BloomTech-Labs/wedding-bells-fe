@@ -26,6 +26,7 @@ class LandingPageView extends Component {
 						</Button>
 					</div>
 				</div>
+				<div id="services"></div>
 				<Services />
 				<Testimonials />
 				<AuthModal

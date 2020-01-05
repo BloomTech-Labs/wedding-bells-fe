@@ -57,11 +57,19 @@ class Header extends Component {
 		} else {
 			return (
 				<div className="header-wrapper">
-					<Link to="/" className="header-logo">
+					<Link
+						to="/"
+						onClick={() => window.scrollTo(0, 0)}
+						className="header-logo"
+					>
 						<img alt="herra logo" src={smallherralogo}></img>
 					</Link>
 					<div className="header-links">
-						<Link to="/about" className="link">
+						<Link
+							to="/about"
+							onClick={() => window.scrollTo(0, 0)}
+							className="link"
+						>
 							About Us
 						</Link>
 						<HashLink to="/#services" className="link">

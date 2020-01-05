@@ -16,7 +16,7 @@ class Services extends React.Component {
 	render() {
 		const { services } = this.state;
 		return (
-			<div id="services" className="services-wrapper">
+			<div className="services-wrapper">
 				{services.map(({ id, ...otherServicesProps }) => (
 					<ServicesItem key={id} {...otherServicesProps} />
 				))}

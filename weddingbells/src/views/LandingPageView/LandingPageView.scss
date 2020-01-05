@@ -2,7 +2,7 @@
 	// sizing & placement
 	display: flex;
 	justify-content: center;
-	height: calc(100vh - 80px);
+	height: 100vh;
 	width: 100%;
 
 	// background
@@ -17,7 +17,14 @@
 	align-items: center;
 }
 
-.landingpage_wrapper .top .calltoaction {
+.landingpage_wrapper .top img {
 	margin-top: 3rem;
 }
 
+.landingpage_wrapper .top #services {
+	height: 80px;
+}
+
+.landingpage_wrapper .top .calltoaction {
+	margin-top: 3rem;
+}

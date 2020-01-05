@@ -8,12 +8,13 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 import {
+	AboutPageView,
 	LandingPageView,
 	WeddingCreationView,
 	ProtectedView,
 	CouplePageView,
 	SettingsView,
-  WeddingInviteView,
+	WeddingInviteView,
 } from "../../views";
 
 import { toggleAuthModal } from "../../actions";
@@ -27,6 +28,7 @@ class App extends Component {
 				<Header toggleAuthModal={this.props.toggleAuthModal} />
 				<Switch>
 					<Route exact path="/" render={() => <LandingPageView />} />
+					<Route exact path="/about" render={() => <AboutPageView />} />
 					<Route
 						exact
 						path="/create-wedding"
@@ -34,7 +36,7 @@ class App extends Component {
 					/>
 					<PrivateRoute path="/couple" component={CouplePageView} />
 					<PrivateRoute path="/settings" component={SettingsView} />
-          <Route
+					<Route
 						exact
 						path="/weddings/:weddingId/invite/:guestId"
 						component={WeddingInviteView}
