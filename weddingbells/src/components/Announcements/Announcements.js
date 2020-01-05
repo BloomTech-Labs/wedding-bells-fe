@@ -9,6 +9,8 @@ import { Button, Table } from "reactstrap";
 // import actions
 import { deleteAnnouncement, fetchAnnouncements } from "../../actions";
 
+import "./Announcements.scss";
+
 class Announcements extends Component {
 	constructor(props) {
 		super(props);
