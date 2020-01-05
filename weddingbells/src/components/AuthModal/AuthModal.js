@@ -8,6 +8,7 @@ import { withRouter } from "react-router-dom";
 import { login, signup } from "../../actions";
 
 // import styling
+import smallherralogo from "../../assets/smallherralogo.png";
 import "./AuthModal.scss";
 import {
 	Form,
@@ -134,7 +135,7 @@ class AuthModal extends Component {
 				onClosed={() => this.setState(initialState)}
 			>
 				<ModalHeader toggle={this.props.toggleAuthModal}>
-					Wedding Bells
+					<img src={smallherralogo} alt="herra logo"></img>
 				</ModalHeader>
 				<div>
 					<Nav tabs>
@@ -184,14 +185,14 @@ class AuthModal extends Component {
 								<ModalFooter>
 									<Button onClick={this.handlerLogIn}>Log In</Button>
 								</ModalFooter>
-								<ModalFooter>
+								{/* <ModalFooter>
 									<Button onClick={this.props.toggleAuthModal}>
 										Sign In With Google
 									</Button>
 									<Button onClick={this.props.toggleAuthModal}>
 										Sign In With Facebook
 									</Button>
-								</ModalFooter>
+								</ModalFooter> */}
 							</ModalBody>
 						</TabPane>
 						<TabPane tabId="2">
