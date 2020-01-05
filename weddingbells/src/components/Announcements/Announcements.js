@@ -40,6 +40,7 @@ class Announcements extends Component {
 							<th>Title</th>
 							<th>Announcement</th>
 							<th>Timestamp</th>
+							<th>Delete</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -48,6 +49,11 @@ class Announcements extends Component {
 								<td>{announcement.title}</td>
 								<td>{announcement.announcement}</td>
 								<td>{announcement.time_stamp.split("T")[0]}</td>
+								<td><Button color="link"><img
+							alt="delete"
+							className="deleteMe"
+							src={require("../../assets/delete.svg")}
+						/></Button></td>
 							</tr>
 						))}
 					</tbody>
