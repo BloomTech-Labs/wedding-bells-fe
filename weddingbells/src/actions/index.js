@@ -6,6 +6,9 @@ import axios from "axios";
 export const ANNOUNCEMENT_FAILURE = "ANNOUNCEMENT_FAILURE";
 export const ANNOUNCEMENT_START = "ANNOUNCEMENT_START";
 export const ANNOUNCEMENT_SUCCESS = "ANNOUNCEMENT_SUCCESS";
+export const DELETE_ANNOUNCEMENT_FAILURE = "DELETE_ANNOUNCEMENT_FAILURE";
+export const DELETE_ANNOUNCEMENT_START = "DELETE_ANNOUNCEMENT_START";
+export const DELETE_ANNOUNCEMENT_SUCCESS = "DELETE_ANNOUNCEMENT_SUCCESS";
 export const FETCH_ANNOUNCEMENT_FAILURE = "FETCH_ANNOUNCEMENT_FAILURE";
 export const FETCH_ANNOUNCEMENT_START = "FETCH_ANNOUNCEMENT_START";
 export const FETCH_ANNOUNCEMENT_SUCCESS = "FETCH_ANNOUNCEMENT_SUCCESS";
@@ -57,6 +60,21 @@ export const login = creds => dispatch => {
 			payload: res.data,
 		});
 	});
+};
+
+export const deleteAnnouncement = announcementId => dispatch => {
+	dispatch({ type: DELETE_ANNOUNCEMENT_START });
+	const weddingId = JSON.parse(localStorage.wedding).id;
+	return axios
+		.delete(
+			`${envVarPage}/api/weddings/${weddingId}/announcements/${announcementId}`
+		)
+		.then(res => {
+			dispatch({ type: DELETE_ANNOUNCEMENT_SUCCESS });
+		})
+		.catch(err => {
+			dispatch({ type: DELETE_ANNOUNCEMENT_FAILURE });
+		});
 };
 
 export const fetchAnnouncements = () => dispatch => {

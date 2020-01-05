@@ -2,6 +2,9 @@ import {
 	ANNOUNCEMENT_FAILURE,
 	ANNOUNCEMENT_START,
 	ANNOUNCEMENT_SUCCESS,
+	DELETE_ANNOUNCEMENT_FAILURE,
+	DELETE_ANNOUNCEMENT_START,
+	DELETE_ANNOUNCEMENT_SUCCESS,
 	FETCH_ANNOUNCEMENT_FAILURE,
 	FETCH_ANNOUNCEMENT_START,
 	FETCH_ANNOUNCEMENT_SUCCESS,
@@ -11,6 +14,7 @@ import {
 const initialState = {
 	announcements: [],
 	announcementModalVisible: false,
+	isDeletingAnnouncements: false,
 	isFetchingAnnouncements: false,
 	isMakingAnnouncements: false,
 	error: "",
@@ -34,6 +38,23 @@ export const announcementReducer = (state = initialState, action) => {
 			return {
 				...state,
 				isMakingAnnouncements: false,
+			};
+		case DELETE_ANNOUNCEMENT_FAILURE:
+			return {
+				...state,
+				isDeletingAnnouncements: false,
+				error: action.payload,
+			};
+		case DELETE_ANNOUNCEMENT_START:
+			return {
+				...state,
+				isDeletingAnnouncements: true,
+				error: "",
+			};
+		case DELETE_ANNOUNCEMENT_SUCCESS:
+			return {
+				...state,
+				isDeletingAnnouncements: false,
 			};
 		case FETCH_ANNOUNCEMENT_FAILURE:
 			return {

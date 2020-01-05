@@ -7,7 +7,7 @@ import AnnouncementsModal from "./AnnouncementsModal";
 import { Button, Table } from "reactstrap";
 
 // import actions
-import { fetchAnnouncements } from "../../actions";
+import { deleteAnnouncement, fetchAnnouncements } from "../../actions";
 
 class Announcements extends Component {
 	constructor(props) {
@@ -22,6 +22,10 @@ class Announcements extends Component {
 
 	componentDidMount = () => {
 		this.props.fetchAnnouncements();
+	};
+
+	handlerDeleteAnnouncement = announcementId => {
+		this.props.deleteAnnouncement(announcementId);
 	};
 
 	toggleModal = e => {
@@ -49,11 +53,20 @@ class Announcements extends Component {
 								<td>{announcement.title}</td>
 								<td>{announcement.announcement}</td>
 								<td>{announcement.time_stamp.split("T")[0]}</td>
-								<td><Button color="link"><img
-							alt="delete"
-							className="deleteMe"
-							src={require("../../assets/delete.svg")}
-						/></Button></td>
+								<td>
+									<Button
+										color="link"
+										onClick={() =>
+											this.handlerDeleteAnnouncement(announcement.id)
+										}
+									>
+										<img
+											alt="delete"
+											className="deleteMe"
+											src={require("../../assets/delete.svg")}
+										/>
+									</Button>
+								</td>
 							</tr>
 						))}
 					</tbody>
@@ -71,4 +84,7 @@ const mapStateToProps = state => ({
 	announcements: state.announcementReducer.announcements,
 });
 
-export default connect(mapStateToProps, { fetchAnnouncements })(Announcements);
+export default connect(mapStateToProps, {
+	deleteAnnouncement,
+	fetchAnnouncements,
+})(Announcements);
