@@ -1,4 +1,8 @@
-.guestpage_wrapper .guestpage_section {
+.guestpage_section:first-child {
+	padding-top: 100px;
+}
+
+.guestpage_section:not(:first-child) {
 	margin: 50px;
 }
 .guestpage_wrapper .guestpage_registries .registry-list {

@@ -9,7 +9,7 @@ import { Button, Table } from "reactstrap";
 // import actions
 import { deleteAnnouncement, fetchAnnouncements } from "../../actions";
 
-import "./Announcements.scss";
+import "./MasterAnnouncementComponent.scss";
 
 class Announcements extends Component {
 	constructor(props) {
@@ -37,11 +37,11 @@ class Announcements extends Component {
 
 	render() {
 		return (
-			<div className="announcements-wrapper">
+			<div className="master-announcements-wrapper">
 				<Button color="primary" onClick={this.toggleModal}>
 					Make An Announcement
 				</Button>
-				<Table className="announcements-list" bordered hover>
+				<Table className="master-announcements-list" bordered hover>
 					<thead>
 						<tr>
 							<th>Title</th>
@@ -52,7 +52,7 @@ class Announcements extends Component {
 					</thead>
 					<tbody>
 						{this.props.announcements.map(announcement => (
-							<tr className="announcement">
+							<tr className="master-announcement">
 								<td>{announcement.title}</td>
 								<td>{announcement.announcement}</td>
 								<td>{announcement.time_stamp.split("T")[0]}</td>

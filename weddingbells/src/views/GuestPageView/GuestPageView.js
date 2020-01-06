@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import { ListGroup, ListGroupItem, Collapse } from "reactstrap";
+
 import "./GuestPageView.scss";
 
 const initialState = {
@@ -28,14 +30,14 @@ class GuestPageView extends Component {
 		await this.fetchCoupleNames(slug);
 		await this.fetchWedding(slug);
 		await this.fetchRegistries(slug);
-		// await this.fetchAnnouncements(slug);
+		await this.fetchAnnouncements();
 	}
 
-	fetchAnnouncements = async slug => {
+	fetchAnnouncements = async () => {
 		const registryLink =
 			`${envVarPage}/api/weddings/` +
 			this.state.wedding.id.toString() +
-			`/registries/`;
+			`/announcements/`;
 
 		await axios
 			.get(registryLink)
@@ -121,6 +123,17 @@ class GuestPageView extends Component {
 				</div>
 				<div className="guestpage_section guestpage_announcements">
 					<h2>Announcements</h2>
+					<ListGroup className="announcements-list">
+						{this.state.announcements.map(announcement => (
+							<ListGroupItem className="announcement">
+								<h5>{announcement.title}</h5>
+								<p>
+									{`${announcement.time_stamp.split("T")[0]} : 
+									${announcement.announcement}`}
+								</p>
+							</ListGroupItem>
+						))}
+					</ListGroup>
 				</div>
 				<div className="guestpage_section guestpage_registries">
 					<h2>Registries</h2>
