@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import { Alert } from "antd";
 import axios from "axios";
-import "./WeddingIviteView.scss";
+import "./WeddingInviteView.scss";
 
 import Container from "../../components/Container/Container";
 import WeddingDetailsHero from "../../components/WeddingDetailsHero/WeddingDetailsHero";

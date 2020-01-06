@@ -59,7 +59,7 @@ class SettingsView extends Component {
 		return (
 			<div className="settings_wrapper">
 				<h2>H3rra Settings</h2>
-				<h3>Account Settings</h3>
+				<h3 className="settings_title">Account Settings:</h3>
 				<ListGroup>
 					<ListGroupItem tag="button">
 						{`Names: ${JSON.parse(localStorage.couple)["spouse_one_name"]} & ${
@@ -102,7 +102,7 @@ class SettingsView extends Component {
 					</ListGroupItem>
 					<Button onClick={this.handlerUpdateCouple}>Apply</Button>
 				</ListGroup>
-				<h3>Wedding Stuff</h3>
+				<h3 className="settings_title">Wedding Stuff:</h3>
 				<ListGroup>
 					<ListGroupItem tag="button">
 						{`Wedding Location: ${
@@ -117,7 +117,7 @@ class SettingsView extends Component {
 						/>
 					</ListGroupItem>
 					<ListGroupItem tag="button">
-						{`Wedding Date: ${JSON.parse(localStorage.wedding)["date"]}`}
+						{`Wedding Date: ${JSON.parse(localStorage.wedding)["date"].split("T")[0]}`}
 						<Input
 							placeholder="Date"
 							name="date"
