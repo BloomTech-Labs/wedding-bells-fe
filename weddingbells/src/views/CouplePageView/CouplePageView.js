@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "./couplepageview.scss";
 
-import AnnouncementComponent from "../../components/Announcements/Announcements";
+import MasterAnnouncementComponent from "../../components/MasterAnnouncementComponent/MasterAnnouncementComponent";
 
 import MasterRegistryComponent from "../../components/MasterRegistryComponent/MasterRegistry";
 
@@ -14,7 +14,7 @@ class CouplePageView extends Component {
 	render() {
 		return (
 			<div className="couplePageView">
-				<AnnouncementComponent />
+				<MasterAnnouncementComponent />
 				<MasterRegistryComponent />
 				<MasterGuestComponent />
 				<VendorComponent />
