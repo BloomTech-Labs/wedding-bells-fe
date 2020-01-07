@@ -25,7 +25,7 @@ const TESTIMONIALS_DATA = [
 		img: maleandfemale2,
 	},
 	{
-		id: 3,
+		id: 4,
 		author: "Bret and Charlie",
 		quoteText: "We couldn't recommend Herra enough! 12 out of 10!!!",
 		img: maleandmale,

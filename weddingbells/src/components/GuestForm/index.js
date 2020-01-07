@@ -9,7 +9,10 @@ const GuestForm = () => {
 
 	const envVarRoute = process.env.REACT_APP_BACKEND_BASE_URL;
 	const weddingData = JSON.parse(localStorage.getItem("wedding"));
-	const [wedding, updateWedding] = useState(weddingData.id);
+	const [
+		wedding,
+		// updateWedding
+	] = useState(weddingData.id);
 	//When a user adds a guest information via the form with the modal, the following function will be what will do the action
 	const onSubmit = data => {
 		console.log(data);

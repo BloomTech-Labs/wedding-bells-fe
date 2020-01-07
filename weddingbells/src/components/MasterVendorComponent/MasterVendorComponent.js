@@ -14,7 +14,10 @@ export default function VendorComponent() {
 
 	//Use React hooks to set state
 	const [vendorInfo, setVendorInfo] = useState([{ vendorInfo: {} }]);
-	const [wedding, updateWedding] = useState(weddingData.id);
+	const [
+		wedding,
+		// updateWedding
+	] = useState(weddingData.id);
 
 	const envVarRoute = process.env.REACT_APP_BACKEND_BASE_URL;
 	/* Starting from this line and down, whenever the vendorInfo loads or is updated the component will re-render */

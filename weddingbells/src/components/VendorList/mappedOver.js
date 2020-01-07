@@ -29,7 +29,10 @@ export const Headers = props => {
 
 export const VendorData = ({ company_name, category, id, onUpdate }) => {
 	const weddingData = JSON.parse(localStorage.getItem("wedding"));
-	const [wedding, updateWedding] = useState(weddingData.id);
+	const [
+		wedding,
+		// updateWedding
+	] = useState(weddingData.id);
 	const envVarRoute = process.env.REACT_APP_BACKEND_BASE_URL;
 	return (
 		<React.Fragment>
