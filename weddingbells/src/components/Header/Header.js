@@ -3,13 +3,14 @@ import { HashLink } from "react-router-hash-link";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { bindActionCreators } from "redux";
+// import { bindActionCreators } from "redux";
 import { logOutUser } from "../../actions";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 // import styling
 import "./Header.scss";
+// import ActionButton from "antd/lib/modal/ActionButton";
 import smallherralogo from "../../assets/smallherralogo.png";
 import ActionButton from "antd/lib/modal/ActionButton";
 

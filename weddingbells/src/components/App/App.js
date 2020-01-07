@@ -14,6 +14,7 @@ import {
 	ProtectedView,
 	CouplePageView,
 	SettingsView,
+	GuestPageView,
 	WeddingInviteView,
 } from "../../views";
 
@@ -34,6 +35,7 @@ class App extends Component {
 						path="/create-wedding"
 						render={() => <WeddingCreationView />}
 					/>
+					<Route exact path="/weddings/:slug" component={GuestPageView} />
 					<PrivateRoute path="/couple" component={CouplePageView} />
 					<PrivateRoute path="/settings" component={SettingsView} />
 					<Route

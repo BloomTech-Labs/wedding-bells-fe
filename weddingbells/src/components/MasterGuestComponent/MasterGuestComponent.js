@@ -13,7 +13,10 @@ export default function GuestComponent() {
 	const weddingData = JSON.parse(localStorage.getItem("wedding"));
 
 	const [guestInfo, setGuestInfo] = useState([{ guestInfo: {} }]);
-	const [wedding, updateWedding] = useState(weddingData.id);
+	const [
+		wedding, 
+		// updateWedding
+	] = useState(weddingData.id);
 
 	//Since we are using React hooks, we are no longer going to use componentDidMount and on top of this, we are not going to need the usual axios.GET request as located below
 
