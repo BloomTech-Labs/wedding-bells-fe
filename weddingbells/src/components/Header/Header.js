@@ -43,6 +43,9 @@ class Header extends Component {
 						<img alt="herra logo" src={smallherralogo}></img>
 					</Link>
 					<div className="header-links">
+						<HashLink to={`/weddings/${JSON.parse(localStorage.wedding).slug}`} className="link">
+							Website
+						</HashLink>
 						<HashLink to="/couple" className="link">
 							Couple
 						</HashLink>
