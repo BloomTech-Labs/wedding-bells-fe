@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import useForm from "react-hook-form";
 
-import { Form, FormGroup, Label, Col } from "reactstrap";
+import { Form, FormGroup, Label, Col, Button } from "reactstrap";
 
 const GuestForm = () => {
 	const { register, handleSubmit, errors } = useForm();
@@ -58,7 +58,9 @@ const GuestForm = () => {
 					/>
 				</Col>
 			</FormGroup>
-			<input type="submit" value="Invite Guest" />
+			<Button color="secondary" type="submit">
+				Submit
+			</Button>
 		</Form>
 	);
 };

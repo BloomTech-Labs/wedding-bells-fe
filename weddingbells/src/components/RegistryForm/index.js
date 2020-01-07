@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useForm from "react-hook-form";
 import axios from "axios";
 
-import { Form, FormGroup, Label, Col } from "reactstrap";
+import { Form, FormGroup, Label, Col, Button } from "reactstrap";
 
 const RegistryForm = () => {
 	const weddingData = JSON.parse(localStorage.getItem("wedding"));
@@ -64,7 +64,9 @@ const RegistryForm = () => {
 					/>
 				</Col>
 			</FormGroup>
-			<input type="submit" />
+			<Button color="secondary" type="submit">
+				Submit
+			</Button>
 		</Form>
 	);
 };
