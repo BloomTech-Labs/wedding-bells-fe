@@ -25,4 +25,15 @@ describe("Already have an account?", function () {
         cy.contains('a', 'LogOut').click()
         cy.location('pathname').should('equal','/')
     });
+
+    it("fails to access protected page view once logged out", () => {
+			cy.request({
+				url: "http://localhost:3000/couple",
+				failOnStatusCode: false,
+			})
+				.its("status")
+				.should("equal", 200);
+		});
+
+
 });
