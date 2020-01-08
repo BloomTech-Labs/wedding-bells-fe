@@ -11,6 +11,12 @@ import OmniModal from "../RegistryModal/registryModal";
 
 import "./MasterRegistry.scss";
 
+const btnStyle = {
+	display: "flex",
+	justifyContent: "flex-end",
+	padding: "0 2rem 1rem 0",
+};
+
 export default function RegistryComponent() {
 	const weddingData = JSON.parse(localStorage.getItem("wedding"));
 
@@ -18,7 +24,7 @@ export default function RegistryComponent() {
 	// const [registryInfo, setRegistryInfo] = useState([{ registryInfo: {} }]);
 	const [registryInfo, setRegistryInfo] = useState([]);
 	const [
-		wedding, 
+		wedding,
 		// updateWedding
 	] = useState(weddingData.id);
 
@@ -41,7 +47,7 @@ export default function RegistryComponent() {
 	return (
 		<div className="masterRegistryComponent">
 			<div className="registryList">
-				<div className="tableGroup">
+				<div className="tableGroup" style={btnStyle}>
 					<OmniModal
 						className="addRegistry"
 						buttonLabel="Add Registry"

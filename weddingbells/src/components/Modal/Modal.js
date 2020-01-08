@@ -4,6 +4,12 @@ import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 import VendorForm from "../VendorForm/index";
 import GuestForm from "../GuestForm/index";
 
+const btnStyle = {
+	display: "flex",
+	justifyContent: "flex-end",
+	padding: "0 2rem 1rem 0",
+};
+
 const OmniModal = props => {
 	const { buttonLabel, className, modalTitle, onSubmit } = props;
 
@@ -21,10 +27,7 @@ const OmniModal = props => {
 		</button>
 	);
 	return (
-		<div>
-			<Button color="secondary" onClick={toggle}>
-				{buttonLabel}
-			</Button>
+		<div style={btnStyle}>
 			<Modal
 				isOpen={modal}
 				toggle={toggle}
@@ -36,6 +39,9 @@ const OmniModal = props => {
 					{modalTitle === "Add Vendor" ? <VendorForm /> : <GuestForm />}
 				</ModalBody>
 			</Modal>
+			<Button color="secondary" onClick={toggle}>
+				{buttonLabel}
+			</Button>
 		</div>
 	);
 };

@@ -40,12 +40,6 @@ export default function VendorComponent() {
 		<div className="masterVendorComponent">
 			<div className="vendorList">
 				<div className="tableGroup">
-					<OmniModal
-						className="addVendor"
-						buttonLabel="Add Vendor"
-						modalTitle="Add Vendor"
-					/>
-
 					<Table responsive hover bordered>
 						<Headers />
 
@@ -60,6 +54,11 @@ export default function VendorComponent() {
 							))}
 						</tbody>
 					</Table>
+					<OmniModal
+						className="addVendor"
+						buttonLabel="Add Vendor"
+						modalTitle="Add Vendor"
+					/>
 				</div>
 			</div>
 		</div>

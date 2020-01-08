@@ -14,7 +14,7 @@ export default function GuestComponent() {
 
 	const [guestInfo, setGuestInfo] = useState([{ guestInfo: {} }]);
 	const [
-		wedding, 
+		wedding,
 		// updateWedding
 	] = useState(weddingData.id);
 
@@ -57,12 +57,6 @@ export default function GuestComponent() {
 		<div className="masterGuestComponent">
 			<div className="guestList">
 				<div className="tableGroup">
-					<OmniModal
-						className="addGuest"
-						buttonLabel="Add Guest "
-						modalTitle="Add Guest"
-					/>
-
 					<Table responsive hover bordered>
 						<Headers />
 
@@ -77,6 +71,11 @@ export default function GuestComponent() {
 							))}
 						</tbody>
 					</Table>
+					<OmniModal
+						className="addGuest"
+						buttonLabel="Add Guest "
+						modalTitle="Add Guest"
+					/>
 				</div>
 			</div>
 		</div>
