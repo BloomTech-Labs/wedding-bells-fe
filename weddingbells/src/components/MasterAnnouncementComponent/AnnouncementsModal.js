@@ -74,7 +74,7 @@ class AnnouncementsModal extends Component {
 							value={this.state.announcement.announcement}
 							onChange={this.handlerTextChange}
 						/>
-						<Button color="primary" onClick={this.handlerAnnouncement}>
+						<Button color="secondary" onClick={this.handlerAnnouncement}>
 							Submit
 						</Button>
 					</Form>

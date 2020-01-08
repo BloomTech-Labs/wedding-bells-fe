@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import useForm from "react-hook-form";
 
-import { Form, FormGroup, Label, Col } from "reactstrap";
+import { Form, FormGroup, Label, Col, Button } from "reactstrap";
+
+const labelStyle = {
+	paddingTop: 0,
+};
 
 const GuestForm = () => {
 	const { register, handleSubmit, errors } = useForm();
@@ -33,7 +37,7 @@ const GuestForm = () => {
 	return (
 		<Form onSubmit={handleSubmit(onSubmit)}>
 			<FormGroup row>
-				<Label for="name" sm={6}>
+				<Label for="name" sm={6} style={labelStyle}>
 					Guest Name
 				</Label>
 				<Col sm={5}>
@@ -46,7 +50,7 @@ const GuestForm = () => {
 				</Col>
 			</FormGroup>
 			<FormGroup row>
-				<Label for="email" sm={6}>
+				<Label for="email" sm={6} style={labelStyle}>
 					Guest Email
 				</Label>
 				<Col sm={5}>
@@ -58,7 +62,9 @@ const GuestForm = () => {
 					/>
 				</Col>
 			</FormGroup>
-			<input type="submit" value="Invite Guest" />
+			<Button color="secondary" type="submit">
+				Submit
+			</Button>
 		</Form>
 	);
 };

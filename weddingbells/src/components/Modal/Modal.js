@@ -22,7 +22,7 @@ const OmniModal = props => {
 	);
 	return (
 		<div>
-			<Button color="primary" onClick={toggle}>
+			<Button color="secondary" onClick={toggle}>
 				{buttonLabel}
 			</Button>
 			<Modal

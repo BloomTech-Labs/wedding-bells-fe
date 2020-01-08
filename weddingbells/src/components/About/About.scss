@@ -16,15 +16,20 @@
 	height: 15rem;
 }
 
-#about-us .team .member-wrapper .quote {
+#about-us .team .member-wrapper .quote-wrapper {
+	height: 17rem;
+}
+
+#about-us .team .member-wrapper .quote-wrapper .quote {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-weight: 400;
 	border-radius: 5px;
 	background-color: rgba($color: #000000, $alpha: 0.25);
 	box-shadow: 5px 5px 15px grey;
 	height: 78%;
-	max-width: 80%;
+	max-width: 63.5rem;
 	margin-left: 5rem;
 	padding: 0 1rem 0 1rem;
 }
