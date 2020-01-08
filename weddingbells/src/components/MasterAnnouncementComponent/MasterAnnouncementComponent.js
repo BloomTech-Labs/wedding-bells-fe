@@ -11,6 +11,12 @@ import { deleteAnnouncement, fetchAnnouncements } from "../../actions";
 
 import "./MasterAnnouncementComponent.scss";
 
+const btnStyle = {
+	display: "flex",
+	justifyContent: "flex-end",
+	padding: "0 2rem 1rem 0",
+};
+
 class Announcements extends Component {
 	constructor(props) {
 		super(props);
@@ -75,9 +81,11 @@ class Announcements extends Component {
 					isOpen={this.state.isOpen}
 					toggle={this.toggleModal}
 				/>
-				<Button color="secondary" onClick={this.toggleModal}>
-					Make An Announcement
-				</Button>
+				<div style={btnStyle}>
+					<Button color="secondary" onClick={this.toggleModal}>
+						Make An Announcement
+					</Button>
+				</div>
 			</div>
 		);
 	}

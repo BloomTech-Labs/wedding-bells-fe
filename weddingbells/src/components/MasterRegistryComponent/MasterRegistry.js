@@ -47,12 +47,7 @@ export default function RegistryComponent() {
 	return (
 		<div className="masterRegistryComponent">
 			<div className="registryList">
-				<div className="tableGroup" style={btnStyle}>
-					<OmniModal
-						className="addRegistry"
-						buttonLabel="Add Registry"
-						modalTitle="Add Registry"
-					/>
+				<div className="tableGroup">
 					<div className="registry-group">
 						{registryInfo.map((registry, idx) => (
 							<RegistryData
@@ -62,6 +57,13 @@ export default function RegistryComponent() {
 								reginfo={registry}
 							/>
 						))}
+					</div>
+					<div style={btnStyle}>
+						<OmniModal
+							className="addRegistry"
+							buttonLabel="Add Registry"
+							modalTitle="Add Registry"
+						/>
 					</div>
 				</div>
 			</div>
