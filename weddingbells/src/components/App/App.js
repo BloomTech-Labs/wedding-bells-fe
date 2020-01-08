@@ -27,24 +27,26 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Header toggleAuthModal={this.props.toggleAuthModal} />
-				<Switch>
-					<Route exact path="/" render={() => <LandingPageView />} />
-					<Route exact path="/about" render={() => <AboutPageView />} />
-					<Route
-						exact
-						path="/create-wedding"
-						render={() => <WeddingCreationView />}
-					/>
-					<Route exact path="/weddings/:slug" component={GuestPageView} />
-					<PrivateRoute path="/couple" component={CouplePageView} />
-					<PrivateRoute path="/settings" component={SettingsView} />
-					<Route
-						exact
-						path="/weddings/:weddingId/invite/:guestId"
-						component={WeddingInviteView}
-					/>
-					<PrivateRoute path="/protected" component={ProtectedView} />
-				</Switch>
+				<div className="the-wrap">
+					<Switch>
+						<Route exact path="/" render={() => <LandingPageView />} />
+						<Route exact path="/about" render={() => <AboutPageView />} />
+						<Route
+							exact
+							path="/create-wedding"
+							render={() => <WeddingCreationView />}
+						/>
+						<Route exact path="/weddings/:slug" component={GuestPageView} />
+						<PrivateRoute path="/couple" component={CouplePageView} />
+						<PrivateRoute path="/settings" component={SettingsView} />
+						<Route
+							exact
+							path="/weddings/:weddingId/invite/:guestId"
+							component={WeddingInviteView}
+						/>
+						<PrivateRoute path="/protected" component={ProtectedView} />
+					</Switch>
+				</div>
 				<Footer toggleAuthModal={this.props.toggleAuthModal} />
 			</div>
 		);

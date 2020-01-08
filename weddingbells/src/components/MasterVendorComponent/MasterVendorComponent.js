@@ -9,6 +9,10 @@ import OmniModal from "../Modal/Modal";
 
 import { Headers, VendorData } from "../VendorList/mappedOver";
 
+const wrapPad = {
+	paddingBottom: "4rem",
+};
+
 export default function VendorComponent() {
 	const weddingData = JSON.parse(localStorage.getItem("wedding"));
 
@@ -37,9 +41,10 @@ export default function VendorComponent() {
 	/* Ending at this line, whenever the vendorInfo loads or is updated the component will re-render */
 
 	return (
-		<div className="masterVendorComponent">
+		<div className="masterVendorComponent" style={wrapPad}>
 			<div className="vendorList">
 				<div className="tableGroup">
+					<h3>Vendors</h3>
 					<Table responsive hover bordered>
 						<Headers />
 

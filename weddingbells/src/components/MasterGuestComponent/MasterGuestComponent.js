@@ -57,6 +57,7 @@ export default function GuestComponent() {
 		<div className="masterGuestComponent">
 			<div className="guestList">
 				<div className="tableGroup">
+					<h3>Guest List</h3>
 					<Table responsive hover bordered>
 						<Headers />
 

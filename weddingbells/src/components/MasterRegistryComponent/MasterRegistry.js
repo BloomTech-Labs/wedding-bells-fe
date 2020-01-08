@@ -48,6 +48,7 @@ export default function RegistryComponent() {
 		<div className="masterRegistryComponent">
 			<div className="registryList">
 				<div className="tableGroup">
+					<h3>Registries</h3>
 					<div className="registry-group">
 						{registryInfo.map((registry, idx) => (
 							<RegistryData
