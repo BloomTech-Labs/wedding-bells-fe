@@ -38,7 +38,7 @@ class Announcements extends Component {
 	render() {
 		return (
 			<div className="master-announcements-wrapper">
-				<Button color="primary" onClick={this.toggleModal}>
+				<Button color="secondary" onClick={this.toggleModal}>
 					Make An Announcement
 				</Button>
 				<Table className="master-announcements-list" bordered hover>

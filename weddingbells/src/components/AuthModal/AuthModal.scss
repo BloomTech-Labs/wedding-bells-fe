@@ -1,3 +1,17 @@
 .nav-item:hover {
-    cursor: pointer;
+	cursor: pointer;
+}
+
+.modal-content {
+	width: 50rem;
+	max-width: 25rem;
+	margin: auto;
+}
+
+.modal-content .tab-content .tab-pane .modal-body form input {
+	margin-bottom: 1rem;
+}
+
+.modal-content .tab-content .tab-pane .modal-body .modal-footer {
+	padding-bottom: 0;
 }
