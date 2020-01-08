@@ -99,7 +99,7 @@ In order for the app to function correctly, the user must set up their own envir
 
 
 # Testing
-N/A
+#### _Cypress_
 
 # Installation Instructions
 
