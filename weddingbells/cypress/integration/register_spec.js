@@ -1,9 +1,14 @@
 ///reference types="cypress" />
+
+/*registration modal
+After testing user once, will need to change credentials to re-test as that user (joe@gmail)
+has already been created with the test and a new user needs to be added after running test.
+*/
 describe("Looking to Join Modal?", function () {
     
      beforeEach(() => {
          cy.visit("/")
-        //  cy.location('pathname').should('equal','/Sign Up')
+        
 			})
     
 
