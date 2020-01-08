@@ -4,6 +4,10 @@ import axios from "axios";
 
 import { Form, FormGroup, Label, Col, Button } from "reactstrap";
 
+const labelStyle = {
+	paddingTop: 0,
+};
+
 const RegistryForm = () => {
 	const weddingData = JSON.parse(localStorage.getItem("wedding"));
 	const [wedding, updateWedding] = useState(weddingData.id);
@@ -29,7 +33,7 @@ const RegistryForm = () => {
 	return (
 		<Form onSubmit={handleSubmit(onSubmit)}>
 			<FormGroup row>
-				<Label for="category" sm={4}>
+				<Label for="category" sm={4} style={labelStyle}>
 					Registry Site
 				</Label>
 				<Col sm={5}>
@@ -52,7 +56,7 @@ const RegistryForm = () => {
 				</Col>
 			</FormGroup>
 			<FormGroup row>
-				<Label for="category" sm={4}>
+				<Label for="category" sm={4} style={labelStyle}>
 					Registry Site
 				</Label>
 				<Col sm={5}>

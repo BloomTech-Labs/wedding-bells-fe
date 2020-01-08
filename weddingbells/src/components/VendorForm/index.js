@@ -4,6 +4,10 @@ import axios from "axios";
 
 import { Form, FormGroup, Label, Col, Button } from "reactstrap";
 
+const labelStyle = {
+	paddingTop: 0,
+};
+
 const VendorForm = () => {
 	const weddingData = JSON.parse(localStorage.getItem("wedding"));
 	const [wedding, updateWedding] = useState(weddingData.id);
@@ -30,7 +34,7 @@ const VendorForm = () => {
 	return (
 		<Form onSubmit={handleSubmit(onSubmit)}>
 			<FormGroup row>
-				<Label for="company_name" sm={4}>
+				<Label for="company_name" sm={4} style={labelStyle}>
 					Vendor Name
 				</Label>
 				<Col sm={5}>
@@ -44,7 +48,7 @@ const VendorForm = () => {
 				</Col>
 			</FormGroup>
 			<FormGroup row>
-				<Label for="category" sm={4}>
+				<Label for="category" sm={4} style={labelStyle}>
 					Select Vendor
 				</Label>
 				<Col sm={5}>
