@@ -46,6 +46,12 @@ class Header extends Component {
 						<HashLink to="/couple" className="link">
 							Couple
 						</HashLink>
+						<HashLink
+							to={`/weddings/${JSON.parse(localStorage.wedding).slug}`}
+							className="link"
+						>
+							Wedding
+						</HashLink>
 						<HashLink to="/settings" className="link">
 							Settings
 						</HashLink>

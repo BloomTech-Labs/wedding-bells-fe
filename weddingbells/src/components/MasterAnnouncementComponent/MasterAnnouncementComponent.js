@@ -11,6 +11,12 @@ import { deleteAnnouncement, fetchAnnouncements } from "../../actions";
 
 import "./MasterAnnouncementComponent.scss";
 
+const btnStyle = {
+	display: "flex",
+	justifyContent: "flex-end",
+	padding: "0 2rem 1rem 0",
+};
+
 class Announcements extends Component {
 	constructor(props) {
 		super(props);
@@ -38,16 +44,22 @@ class Announcements extends Component {
 	render() {
 		return (
 			<div className="master-announcements-wrapper">
-				<Button color="secondary" onClick={this.toggleModal}>
-					Make An Announcement
-				</Button>
+				<h3>Announcements</h3>
 				<Table className="master-announcements-list" bordered hover>
 					<thead>
 						<tr>
-							<th>Title</th>
-							<th>Announcement</th>
-							<th>Timestamp</th>
-							<th>Delete</th>
+							<th>
+								<h5>Title</h5>
+							</th>
+							<th>
+								<h5>Announcement</h5>
+							</th>
+							<th>
+								<h5>Timestamp</h5>
+							</th>
+							<th>
+								<h5>Delete</h5>
+							</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -78,6 +90,11 @@ class Announcements extends Component {
 					isOpen={this.state.isOpen}
 					toggle={this.toggleModal}
 				/>
+				<div style={btnStyle}>
+					<Button color="secondary" onClick={this.toggleModal}>
+						Make An Announcement
+					</Button>
+				</div>
 			</div>
 		);
 	}

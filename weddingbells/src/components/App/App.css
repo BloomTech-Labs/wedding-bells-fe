@@ -8,11 +8,17 @@ html {
 	background-color: #ececec;
 }
 
+html body {
+	background-color: #ececec;
+}
+
 #root {
+	height: 100%;
 	background-color: #ececec;
 }
 
 .App {
+	height: 100%;
 	text-align: center;
 }
 

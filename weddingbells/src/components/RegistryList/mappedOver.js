@@ -15,6 +15,10 @@ import {
 	Button,
 } from "reactstrap";
 
+const btnSize = {
+	width: "30px",
+};
+
 export const RegistryData = ({
 	company_name,
 	url,
@@ -26,36 +30,12 @@ export const RegistryData = ({
 }) => {
 	const weddingData = JSON.parse(localStorage.getItem("wedding"));
 	const [
-		wedding, 
+		wedding,
 		// updateWedding
 	] = useState(weddingData.id);
 	const envVarRoute = process.env.REACT_APP_BACKEND_BASE_URL;
 
 	return (
-		// <Button
-		// 	color="link"
-		// 	//When a user deletes vendors information via the trash icon, the following function will be what will do the action
-		// 	onClick={() => {
-		// 		axios
-		// 			.delete(`${envVarRoute}/api/weddings/${wedding}/vendors/${id}`)
-		// 			.then(res => {
-		// 				console.log("Deleting that vendors information");
-		// 				console.log("The vendors information has been deleted");
-		// 				window.location.reload();
-		// 			})
-		// 			.catch(error => {
-		// 				console.error("Server Error", error);
-		// 			});
-		// 	}}
-		// 	target="_blank"
-		// 	rel="noopener noreferrer"
-		// >
-		// 	<img
-		// 		alt="delete"
-		// 		className="deleteMe"
-		// 		src={require("../../assets/delete.svg")}
-		// 	/>
-		// </Button>
 		<React.Fragment>
 			<div className="registry-card">
 				<Card>
@@ -69,9 +49,6 @@ export const RegistryData = ({
 								)[0].company_image_dropdown)}
 							alt="Card image cap"
 						/>
-					</a>
-					<a href={reginfo.url} target="_blank" rel="noopener noreferrer">
-						<Button>Let's go buy me stuff!</Button>
 					</a>
 					<CardBody>
 						<Button
@@ -89,10 +66,16 @@ export const RegistryData = ({
 										console.error("Server Error", error);
 									});
 							}}
+							color="link"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							Delete
+							<img
+								style={btnSize}
+								alt="delete"
+								className="deleteMe"
+								src={require("../../assets/delete.svg")}
+							/>
 						</Button>
 					</CardBody>
 				</Card>

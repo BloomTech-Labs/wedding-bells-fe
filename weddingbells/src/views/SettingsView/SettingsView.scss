@@ -1,10 +1,39 @@
 .settings_wrapper {
-    margin: 0 auto;
-    padding: 100px 0 75px 0;
-    width: 500px;
+	margin: 0 auto;
+	padding: 100px 0 50px 0;
 }
 
-.settings_wrapper .settings_title {
-    text-align: left;
-    margin: 25px 0 5px 0;
+.settings_wrapper .settings-forms-wrapper .settings .settings_title {
+	margin-bottom: 5px;
+}
+
+.settings_wrapper .settings-forms-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 470px;
+	margin-bottom: 150px;
+}
+
+.settings_wrapper .settings-forms-wrapper .settings-one {
+	padding-right: 2rem;
+}
+
+.settings_wrapper .settings-forms-wrapper .settings {
+	height: 350px;
+}
+
+.settings_wrapper .settings-forms-wrapper .settings .list-group {
+	height: 100%;
+
+	// padding-left: 5rem;
+}
+
+.settings_wrapper
+	.settings-forms-wrapper
+	.settings
+	.list-group
+	.list-group-item {
+	height: 50%;
+	width: 300px;
 }
