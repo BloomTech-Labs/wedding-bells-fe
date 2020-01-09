@@ -62,7 +62,7 @@ const RegistryForm = () => {
 				<Col sm={5}>
 					<input
 						type="url"
-						placeholder="url"
+						placeholder="Add your registry url"
 						name="url"
 						ref={register({ required: true })}
 					/>

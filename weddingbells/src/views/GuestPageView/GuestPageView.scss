@@ -1,10 +1,42 @@
+.guestpage_wrapper {
+	padding-top: 80px;
+}
+
 .guestpage_section:first-child {
-	padding-top: 100px;
+	// padding-top: 100px;
 }
 
 .guestpage_section:not(:first-child) {
 	margin: 50px;
 }
+
+.guestpage_wedding {
+	h2 {
+		font-size: 44px;
+	}
+	h4 {
+		font-size: 42px;
+	}
+
+	& * {
+		color: white;
+	}
+
+	width: 100%;
+	height: 75vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url(https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9);
+	background-size: cover;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+}
+
 .guestpage_wrapper .guestpage_registries .registry-list {
 	width: 1000px;
 	margin: 0 auto;
@@ -20,5 +52,5 @@
 .guestpage_wrapper .guestpage_registries .registry-img {
 	margin: 20px;
 
-	width: 200px;
+	width: 100px;
 }
