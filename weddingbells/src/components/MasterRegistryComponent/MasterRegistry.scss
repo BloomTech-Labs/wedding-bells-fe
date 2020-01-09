@@ -1,11 +1,19 @@
+.table-group {
+	display: flex;
+	justify-content: center;
+}
+
 .registry-group {
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-    align-items: flex-end;
-    flex-wrap: wrap;
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+	align-items: flex-end;
+	flex-wrap: wrap;
+	max-width: 1150px;
+	padding-top: 40px;
+	margin: auto;
 }
 
 .registry-group .registry-card .card {
-    border: none;
+	border: none;
 }

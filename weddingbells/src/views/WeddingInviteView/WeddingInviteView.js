@@ -61,7 +61,10 @@ const WeddingInviteView = props => {
 				<Alert
 					closable
 					type={status}
-					style={{ display: status ? "block" : "none" }}
+					style={{
+						display: status ? "block" : "none",
+						backgroundColor: "ececec",
+					}}
 					message={status === "success" ? "Success!" : "Error!"}
 					showIcon
 					description={

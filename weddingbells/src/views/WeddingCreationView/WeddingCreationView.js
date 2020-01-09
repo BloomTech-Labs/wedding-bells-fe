@@ -85,8 +85,8 @@ const WeddingCreationForm = ({ couple, history }) => {
 	};
 
 	return (
-		<>
-			<h1 className="title">Let's Create Your Weddding</h1>
+		<div className="wedding-creation-wrapper">
+			<h1 className="title">Let's Create Your Wedding</h1>
 			<Form onSubmit={onSubmit}>
 				<div className="form-item">
 					<p>Our wedding venue is located at:</p>
@@ -121,7 +121,7 @@ const WeddingCreationForm = ({ couple, history }) => {
 			{errorMsg && (
 				<Alert message="Error" description={errorMsg} type="error" showIcon />
 			)}
-		</>
+		</div>
 	);
 };
 

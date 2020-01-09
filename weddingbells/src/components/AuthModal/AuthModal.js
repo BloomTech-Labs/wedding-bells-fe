@@ -200,6 +200,7 @@ class AuthModal extends Component {
 								<Form>
 									<Input
 										placeholder="Spouse #1 Name"
+										autoFocus
 										name="spouse_one_name"
 										value={this.state.signupCredentials.spouse_one_name}
 										onChange={this.handlerTextChange}
