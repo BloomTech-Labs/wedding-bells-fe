@@ -43,23 +43,17 @@ class Header extends Component {
 						<img alt="herra logo" src={smallherralogo}></img>
 					</Link>
 					<div className="header-links">
-						<HashLink to={`/weddings/${JSON.parse(localStorage.wedding).slug}`} className="link">
+						<HashLink to={(localStorage.wedding && !(String(localStorage.wedding) === "undefined")) ? `/weddings/${JSON.parse(localStorage.wedding).slug}` : "/create-wedding"} className="link">
 							Website
 						</HashLink>
 						<HashLink to="/couple" className="link">
 							Couple
 						</HashLink>
-						<HashLink
-							to={`/weddings/${JSON.parse(localStorage.wedding).slug}`}
-							className="link"
-						>
-							Wedding
-						</HashLink>
 						<HashLink to="/settings" className="link">
 							Settings
 						</HashLink>
 						<HashLink to="/" className="link" onClick={this.logout}>
-							LogOut
+							Log Out
 						</HashLink>
 					</div>
 				</div>
